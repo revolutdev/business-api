@@ -1,0 +1,1704 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>API Reference</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all.js"></script>
+  </head>
+
+  <body class="index" data-languages="[&quot;shell&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="tocify-wrapper">
+      <img src="images/logo.png" alt="Logo" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="shell">shell</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <div id="toc">
+      </div>
+        <ul class="toc-footer">
+            <li><a href='https://business.revolut.com'>Sign up for Revolut Business</a></li>
+            <li><br/>Copyright © 2017 Revolut Ltd</li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id="introduction">Introduction</h1>
+
+<p>This is Revolut Business API documentation. Here you will find what functionality is available to you to integrate your Revolut business account into your current and future business processes and to automate your business transactions. There are APIs for most of what you can do via your Revolut Business web portal.</p>
+
+<p>To help you navigate, this page is split into 3 vertical sections: </p>
+
+<ul>
+<li>the navigation menu and search on the left,</li>
+<li>the content in the middle,</li>
+<li>and usage examples on the right.</li>
+</ul>
+
+<h1 id="getting-started">Getting started</h1>
+
+<blockquote>
+<p>Authentication Request:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl -X POST http://test-b2b.revolut.com/api/1.0/authenticate 
+  --data
+
+  <span class="o">{</span> 
+    <span class="s2">"client_id"</span>: <span class="s2">"&lt;Your Client ID&gt;"</span>, 
+    <span class="s2">"client_secret"</span>: <span class="s2">"&lt;Your Client Secret&gt;"</span> 
+  <span class="o">}</span>
+</code></pre>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"auth_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AFwsf4FDLKFNS4h0hdE4rfrsfdf"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"expires_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-10T10:10:10.0Z"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Pass the generated token in all API requests as</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>Authorization: Bearer AFwsf4FDLKFNS4h0hdE4rfrsfdf
+</code></pre>
+<p>Once you sign up for your Revolut Business account on <a href="https://business.revolut.com">business.revolut.com</a>, you will be issued with two pairs of API credentials, one for sandbox and one for production environment. The sandbox environment is useful for development and allows to play with fake test data. Some of the data will be pre-populated so you can start quickly.</p>
+
+<aside class="warning">Please DO NOT use production environment until you have tested your integration sufficiently and are happy that it works as expected.</aside>
+
+<p>Before you can use any of the APIs, you need to get an auth token by calling <code class="prettyprint">/authenticate</code> endpoint with your Client ID and secret. The generated auth token is expected to be included in all API requests to the server in a <code class="prettyprint">Authorization</code> header. The auth token has expiry time, so you will need to request a new auth token after it expires.</p>
+
+<h3 id="request">Request</h3>
+
+<p><code class="prettyprint">GET http://test-b2b.revolut.com/api/1.0/authenticate</code></p>
+
+<h4 id="request-fields">Request fields</h4>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>client_id</td>
+<td>your API client ID</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>client_secret</td>
+<td>your API secret</td>
+<td>Text</td>
+</tr>
+</tbody></table>
+
+<h3 id="response">Response</h3>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>auth_token</td>
+<td>authentication token to be used for subsequent API calls</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>expires_at</td>
+<td>time when the returned auth token expires</td>
+<td>ISO date/time</td>
+</tr>
+</tbody></table>
+
+<h1 id="accounts">Accounts</h1>
+
+<h2 id="get-accounts">Get Accounts</h2>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://test-b2b.revolut.com/api/1.0/accounts"</span>
+  -H <span class="s2">"Authorization: Bearer &lt;your auth token&gt;"</span>
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2a0d4d03-e26c-4159-9de1-c6bf3adfd8a1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Current GBP account"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"balance"</span><span class="p">:</span><span class="w"> </span><span class="mf">100.00</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GBP"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"public"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-01T11:11:11.0Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-01T11:11:11.0Z"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"df8d6b20-0725-482e-a29e-fb09631480cf"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EUR expenses account"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"balance"</span><span class="p">:</span><span class="w"> </span><span class="mf">1234.00</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EUR"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"public"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-01T11:11:11.0Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-01T11:11:11.0Z"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves your accounts.</p>
+
+<h3 id="request">Request</h3>
+
+<p><code class="prettyprint">GET http://test-b2b.revolut.com/api/1.0/accounts</code></p>
+
+<h3 id="response">Response</h3>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>the account ID</td>
+<td>UUID</td>
+</tr>
+<tr>
+<td>name</td>
+<td>the account name</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>balance</td>
+<td>the account balance</td>
+<td>Decimal</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>the account currency</td>
+<td>3-letter ISO currency code</td>
+</tr>
+<tr>
+<td>state</td>
+<td>the account state, one of <code class="prettyprint">active</code>, <code class="prettyprint">inactive</code></td>
+<td>Text</td>
+</tr>
+<tr>
+<td>public</td>
+<td>determines if the account is visible to other Businesses on Revolut</td>
+<td>Boolean</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>the instant when the account was created</td>
+<td>ISO date/time</td>
+</tr>
+<tr>
+<td>updated_at</td>
+<td>the instant when the account was last updated</td>
+<td>ISO date/time</td>
+</tr>
+</tbody></table>
+
+<h2 id="get-account">Get Account</h2>
+<pre class="highlight shell tab-shell"><code>curl http://test-b2b.revolut.com/api/1.0/accounts/df8d6b20-0725-482e-a29e-fb09631480cf
+  -H <span class="s2">"Authorization: Bearer &lt;your auth token&gt;"</span>
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"df8d6b20-0725-482e-a29e-fb09631480cf"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EUR expenses account"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"balance"</span><span class="p">:</span><span class="w"> </span><span class="mf">1234.00</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EUR"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"public"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-01T11:11:11.0Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-01T11:11:11.0Z"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves one of your accounts by ID.</p>
+
+<h3 id="request">Request</h3>
+
+<p><code class="prettyprint">GET http://test-b2b.revolut.com/api/1.0/accounts/&lt;id&gt;</code></p>
+
+<h4 id="url-parameters">URL Parameters</h4>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>the ID of the account to retrieve</td>
+<td>UUID</td>
+</tr>
+</tbody></table>
+
+<h3 id="response">Response</h3>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>the account ID</td>
+<td>UUID</td>
+</tr>
+<tr>
+<td>name</td>
+<td>the account name</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>balance</td>
+<td>the account balance</td>
+<td>Decimal</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>the account currency</td>
+<td>3-letter ISO currency code</td>
+</tr>
+<tr>
+<td>state</td>
+<td>the account state, one of <code class="prettyprint">active</code>, <code class="prettyprint">inactive</code></td>
+<td>Text</td>
+</tr>
+<tr>
+<td>public</td>
+<td>determines if the account is visible to other Businesses on Revolut</td>
+<td>Boolean</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>the instant when the account was created</td>
+<td>ISO date/time</td>
+</tr>
+<tr>
+<td>updated_at</td>
+<td>the instant when the account was last updated</td>
+<td>ISO date/time</td>
+</tr>
+</tbody></table>
+
+<h1 id="counterpaties">Counterpaties</h1>
+
+<h2 id="add-counterparty">Add Counterparty</h2>
+<pre class="highlight shell tab-shell"><code>curl -X POST http://test-b2b.revolut.com/api/1.0/counterparty
+  -H <span class="s2">"Authorization: Bearer &lt;your auth token&gt;"</span>
+
+<span class="o">{</span>
+  <span class="s2">"name"</span>: <span class="s2">"John Smith Co."</span>,
+  <span class="s2">"type"</span>: <span class="s2">"business"</span>,
+  <span class="s2">"phone"</span>: <span class="s2">"+44723456789"</span>,
+  <span class="s2">"email"</span>: <span class="s2">"john@smith.co"</span>
+<span class="o">}</span>
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6b3c696e-7c3d-464a-8dbe-fc70e183d42e"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"business"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+44723456789"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"profile_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"revolut"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Smith Co."</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GB"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"created"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-01T11:11:11.0Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-01T11:11:11.0Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"accounts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e183d42e-7c3d-8dbe-464a-fc706b3c696e"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GBP"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e183d42e-7c3d-8dbe-464a-fc706b3c696e"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EUR"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Before a transaction or payment can be made, you need to add counterparties which you intend to transact with.</p>
+
+<h3 id="request">Request</h3>
+
+<p><code class="prettyprint">POST http://test-b2b.revolut.com/api/1.0/counterparty</code></p>
+
+<h4 id="request-fields">Request fields</h4>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>a name of the counterparty</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>profile_type</td>
+<td>an optional type of counterparty, <code class="prettyprint">business</code> or <code class="prettyprint">personal</code></td>
+<td>Text</td>
+</tr>
+<tr>
+<td>phone</td>
+<td>a valid phone number of the counterparty. It can be a phone number that identifies them uniquely as a Revolut user</td>
+<td>A valid international phone number, starting with <code class="prettyprint">+</code></td>
+</tr>
+<tr>
+<td>email</td>
+<td>an optional valid email address of the counterparty</td>
+<td>Email</td>
+</tr>
+</tbody></table>
+
+<h3 id="response">Response</h3>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>the ID of the counterparty</td>
+<td>UUID</td>
+</tr>
+<tr>
+<td>name</td>
+<td>the name of the counterparty</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>phone</td>
+<td>the phone number of the counterparty</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>profile_type</td>
+<td>the type of the Revolut profile, <code class="prettyprint">business</code> or <code class="prettyprint">personal</code></td>
+<td>Text</td>
+</tr>
+<tr>
+<td>country</td>
+<td>the country where the counterparty resides</td>
+<td>2-letter ISO code</td>
+</tr>
+<tr>
+<td>state</td>
+<td>the state of the counterparty, one of <code class="prettyprint">created</code>, <code class="prettyprint">deleted</code></td>
+<td>Text</td>
+</tr>
+<tr>
+<td>type</td>
+<td>the type of counterparty, <code class="prettyprint">revolut</code> or <code class="prettyprint">external</code></td>
+<td>Text</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>the instant when the counterparty was created</td>
+<td>ISO date/time</td>
+</tr>
+<tr>
+<td>updated_at</td>
+<td>the instant when the counterparty was last updated</td>
+<td>ISO date/time</td>
+</tr>
+<tr>
+<td>accounts</td>
+<td>the list of pulic accounts of this counterparty</td>
+<td>JSON array</td>
+</tr>
+<tr>
+<td>accounts[n].id</td>
+<td>the ID of a counterparty&rsquo;s account</td>
+<td>UUID</td>
+</tr>
+<tr>
+<td>accounts[n].currency</td>
+<td>the currency of a counterparty&rsquo;s account</td>
+<td>3-letter ISO currency code</td>
+</tr>
+</tbody></table>
+
+<h2 id="delete-counterparty">Delete Counterparty</h2>
+<pre class="highlight shell tab-shell"><code>curl -X DELETE http://test-b2b.revolut.com/api/1.0/counterparty/6b3c696e-7c3d-464a-8dbe-fc70e183d42e
+  -H <span class="s2">"Authorization: Bearer &lt;your auth token&gt;"</span>
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>204 No Content
+</code></pre>
+<p>This endpoint deletes a counterparty with the given ID. Once a counterparty is deleted no payments can be made with it.</p>
+
+<h3 id="request">Request</h3>
+
+<p><code class="prettyprint">DELETE http://test-b2b.revolut.com/api/1.0/counterparty/&lt;id&gt;</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>the ID of the counterparty to delete</td>
+<td>UUID</td>
+</tr>
+</tbody></table>
+
+<h2 id="get-counterparty">Get Counterparty</h2>
+<pre class="highlight shell tab-shell"><code>curl http://test-b2b.revolut.com/api/1.0/counterparties
+  -H <span class="s2">"Authorization: Bearer &lt;your auth token&gt;"</span>
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6b3c696e-7c3d-464a-8dbe-fc70e183d42e"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"revolut"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+44723456789"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"profile_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"personal"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Smith"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GB"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-01T11:11:11.0Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-01T11:11:11.0Z"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves a counterparty by ID.</p>
+
+<h3 id="request">Request</h3>
+
+<p><code class="prettyprint">GET http://test-b2b.revolut.com/api/1.0/counterparty/&lt;id&gt;</code></p>
+
+<h4 id="url-parameters">URL Parameters</h4>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>the ID of the counterparty to retrieve</td>
+<td>UUID</td>
+</tr>
+</tbody></table>
+
+<h3 id="response">Response</h3>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>the ID of the counterparty</td>
+<td>UUID</td>
+</tr>
+<tr>
+<td>name</td>
+<td>the name of the counterparty</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>type</td>
+<td>the type of counterparty, <code class="prettyprint">revolut</code> or <code class="prettyprint">external</code></td>
+<td>Text</td>
+</tr>
+<tr>
+<td>phone</td>
+<td>the phone number of the counterparty</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>profile_type</td>
+<td>the type of the Revolut profile, <code class="prettyprint">business</code> or <code class="prettyprint">personal</code></td>
+<td>Text</td>
+</tr>
+<tr>
+<td>country</td>
+<td>the country where the counterparty resides</td>
+<td>2-letter ISO code</td>
+</tr>
+<tr>
+<td>state</td>
+<td>the state of the counterparty, one of <code class="prettyprint">created</code>, <code class="prettyprint">deleted</code></td>
+<td>Text</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>the instant when the counterparty was created</td>
+<td>ISO date/time</td>
+</tr>
+<tr>
+<td>updated_at</td>
+<td>the instant when the counterparty was last updated</td>
+<td>ISO date/time</td>
+</tr>
+<tr>
+<td>accounts</td>
+<td>the list of pulic accounts of this counterparty</td>
+<td>JSON array</td>
+</tr>
+<tr>
+<td>accounts[n].id</td>
+<td>the ID of a counterparty&rsquo;s account</td>
+<td>UUID</td>
+</tr>
+<tr>
+<td>accounts[n].currency</td>
+<td>the currency of a counterparty&rsquo;s account</td>
+<td>3-letter ISO currency code</td>
+</tr>
+</tbody></table>
+
+<h2 id="get-counterparties">Get Counterparties</h2>
+<pre class="highlight shell tab-shell"><code>curl http://test-b2b.revolut.com/api/1.0/counterparties
+  -H <span class="s2">"Authorization: Bearer &lt;your auth token&gt;"</span>
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6b3c696e-7c3d-464a-8dbe-fc70e183d42e"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"revolut"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+44723456789"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"profile_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"personal"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Joe Smith"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GB"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-01T11:11:11.0Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-01T11:11:11.0Z"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e0cbf846-3726-4ee0-82a8-48be0bc28efd"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"revolut"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+44723111111"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"profile_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"business"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bolts &amp; Wistles Ltd"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GB"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-21T11:22:11.0Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-21T11:22:11.0Z"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all your counterparties.</p>
+
+<h3 id="request">Request</h3>
+
+<p><code class="prettyprint">GET http://test-b2b.revolut.com/api/1.0/counterparties</code></p>
+
+<h3 id="response">Response</h3>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>the ID of the counterparty</td>
+<td>UUID</td>
+</tr>
+<tr>
+<td>name</td>
+<td>the name of the counterparty</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>type</td>
+<td>the type of counterparty, <code class="prettyprint">revolut</code> or <code class="prettyprint">external</code></td>
+<td>Text</td>
+</tr>
+<tr>
+<td>phone</td>
+<td>the phone number of the counterparty</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>profile_type</td>
+<td>the type of the Revolut profile, <code class="prettyprint">business</code> or <code class="prettyprint">personal</code></td>
+<td>Text</td>
+</tr>
+<tr>
+<td>country</td>
+<td>the country where the counterparty resides</td>
+<td>2-letter ISO code</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>the instant when the counterparty was created</td>
+<td>ISO date/time</td>
+</tr>
+<tr>
+<td>updated_at</td>
+<td>the instant when the counterparty was last updated</td>
+<td>ISO date/time</td>
+</tr>
+<tr>
+<td>accounts</td>
+<td>the list of pulic accounts of this counterparty</td>
+<td>JSON array</td>
+</tr>
+<tr>
+<td>accounts[n].id</td>
+<td>the ID of a counterparty&rsquo;s account</td>
+<td>UUID</td>
+</tr>
+<tr>
+<td>accounts[n].currency</td>
+<td>the currency of a counterparty&rsquo;s account</td>
+<td>3-letter ISO currency code</td>
+</tr>
+</tbody></table>
+
+<h1 id="payments">Payments</h1>
+
+<p>All incoming and outgoing payments are represented as transactions and are processed in two stages from the user&rsquo;s perspective: </p>
+
+<ol>
+<li>a new transaction is created, </li>
+<li>the created transaction is processed, i.e. 
+
+<ul>
+<li>credit/debit on both sides of transaction if Revolut-to-Revolut, </li>
+<li>posted to the external payment network (Faster Paymetns, SEPA, SWIFT etc.).</li>
+</ul></li>
+</ol>
+
+<p>A new transaction has <code class="prettyprint">pending</code> state, and processed transaction&rsquo;s state can be one of <code class="prettyprint">completed</code>, <code class="prettyprint">failed</code>, <code class="prettyprint">reverted</code> or <code class="prettyprint">declined</code>.</p>
+
+<h2 id="transfer-between-own-accounts">Transfer between own accounts</h2>
+<pre class="highlight shell tab-shell"><code>curl -X POST http://test-b2b.revolut.com/api/1.0/transfer
+  -H <span class="s2">"Authorization: Bearer &lt;your auth token&gt;"</span>
+  --data
+<span class="o">{</span>
+  <span class="s2">"request_id"</span>: <span class="s2">"e0cbf84637264ee082a848b"</span>,
+  <span class="s2">"source_account_id"</span>: <span class="s2">"bdab1c20-8d8c-430d-b967-87ac01af060c"</span>,
+  <span class="s2">"target_account_id"</span>: <span class="s2">"5138z40d1-05bb-49c0-b130-75e8cf2f7693"</span>,
+  <span class="s2">"amount"</span>: 123.11,
+  <span class="s2">"currency"</span>: <span class="s2">"EUR"</span>,
+  <span class="s2">"description"</span>: <span class="s2">"Expenses funding"</span>
+<span class="o">}</span>
+</code></pre>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"62b61a4f-fb09-4e87-b0ab-b66c85f5485c"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"completed"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-21T11:22:11.0Z"</span><span class="w">
+  </span><span class="s2">"completed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-21T11:22:11.0Z"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint processes transfers between your accounts. Such transfers are normally processed instantly, however, it is possible to provide an optional <code class="prettyprint">webhook</code> in case the transfer processing is delayed. The webhook should be able to process a POST request. If the provided endpoint if not available or fails (responds with 50x HTTP error) for any reason, the call will be retried 3 times with an increasing interval between attempts.</p>
+
+<p>The resulting transaction has type &ldquo;transfer&rdquo;.</p>
+
+<h3 id="request">Request</h3>
+
+<p><code class="prettyprint">POST http://test-b2b.revolut.com/api/1.0/transfer</code></p>
+
+<h4 id="request-fields">Request fields</h4>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>request_id</td>
+<td>a unique value used to handle duplicates submitted as a result of lost connection or another client error</td>
+<td>UUID</td>
+</tr>
+<tr>
+<td>source_account_id</td>
+<td>the ID of a source account</td>
+<td>UUID</td>
+</tr>
+<tr>
+<td>target_account_id</td>
+<td>the ID of a target account</td>
+<td>UUID</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>a amount to transfer</td>
+<td>Decimal</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>a currency to transfer, both source and target accounts should be in this currency</td>
+<td>3-letter ISO currency code</td>
+</tr>
+<tr>
+<td>description</td>
+<td>a textual reference shown on the transaction</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>webhook</td>
+<td>an optional webhook that will be called on transaction completion</td>
+<td>URL</td>
+</tr>
+</tbody></table>
+
+<h3 id="response">Response</h3>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>the ID of the created transaction</td>
+<td>UUID</td>
+</tr>
+<tr>
+<td>state</td>
+<td>the transction state: <code class="prettyprint">pending</code>, <code class="prettyprint">completed</code>, <code class="prettyprint">declined</code> or <code class="prettyprint">failed</code></td>
+<td>Text</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>the instant when the transaction was created</td>
+<td>ISO date/time</td>
+</tr>
+</tbody></table>
+
+<h2 id="create-payment">Create Payment</h2>
+<pre class="highlight shell tab-shell"><code>curl -X POST http://test-b2b.revolut.com/api/1.0/pay
+  -H <span class="s2">"Authorization: Bearer &lt;your auth token&gt;"</span>
+  --data
+</code></pre>
+<blockquote>
+<p>Pay a counterparty</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"request_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e0cbf84637264ee082a848b"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bdab1c20-8d8c-430d-b967-87ac01af060c"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"receiver"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"counterparty_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5138z40d1-05bb-49c0-b130-75e8cf2f7693"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"db7c73d3-b0df-4e0e-8a9a-f42aa99f52ab"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+  </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">123.11</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EUR"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invoice payment #123"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"webhook"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://mega.company.com/transaction/e0cbf84637264ee082a848b"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Response for an instantly processed payment:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d56dd396-523b-4613-8cc7-54974c17bcac"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"completed"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-01T10:10:10.0Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"completed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-01T10:10:10.0Z"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Response for a payment that is processed asynchonously or is scheduled for processing in the future:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d56dd396-523b-4613-8cc7-54974c17bcac"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-01T10:10:10.0Z"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint creates a new payment. If the payment is for another Revolut account, business or personal, the transaction may be processed synchronously.</p>
+
+<aside class="notice">To avoid duplicate payment submission because on an error in your code, we strongly recommend to provide a unique <code>request_id</code> for each submitted payment. The <code>request_id</code> must be previously persisted on your side.</aside>
+
+<h3 id="request">Request</h3>
+
+<p><code class="prettyprint">POST http://test-b2b.revolut.com/api/1.0/pay</code></p>
+
+<h4 id="request-fields">Request fields</h4>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>request_id</td>
+<td>the client provided ID of the transaction</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>account_id</td>
+<td>the ID of the account to pay from</td>
+<td>UUID</td>
+</tr>
+<tr>
+<td>receiver.counterparty_id</td>
+<td>the ID of the receiving counterparty</td>
+<td>UUID</td>
+</tr>
+<tr>
+<td>receiver.account_id</td>
+<td>the ID of the receiving counterparty&rsquo;s account, can be own account</td>
+<td>UUID</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>the transaction amount</td>
+<td>Decimal</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>the transaction currency</td>
+<td>Decimal</td>
+</tr>
+<tr>
+<td>description</td>
+<td>the transaction description</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>webhook</td>
+<td>an optional webhook that will be called when transaction is processed</td>
+<td>URL</td>
+</tr>
+</tbody></table>
+
+<h3 id="response">Response</h3>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>the ID of the created transaction</td>
+<td>UUID</td>
+</tr>
+<tr>
+<td>state</td>
+<td>the transction state: <code class="prettyprint">pending</code>, <code class="prettyprint">completed</code>, <code class="prettyprint">declined</code> or <code class="prettyprint">failed</code></td>
+<td>Text</td>
+</tr>
+<tr>
+<td>reason</td>
+<td>an optional reason code for <code class="prettyprint">declined</code> or <code class="prettyprint">failed</code> transaction state</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>the instant when the transaction was created</td>
+<td>ISO date/time</td>
+</tr>
+</tbody></table>
+
+<h2 id="schedule-payment">Schedule Payment</h2>
+<pre class="highlight shell tab-shell"><code>curl -X POST http://test-b2b.revolut.com/api/1.0/pay
+  -H <span class="s2">"Authorization: Bearer &lt;your auth token&gt;"</span>
+  --data
+</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"request_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e0cbf84637264ee082a848b"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bdab1c20-8d8c-430d-b967-87ac01af060c"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"receiver"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"counterparty_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5138z40d1-05bb-49c0-b130-75e8cf2f7693"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+  </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">123.11</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EUR"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invoice payment #123"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"webhook"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://mega.company.com/transaction/e0cbf84637264ee082a848b"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"schedule_for"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-10T12:00:00Z"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>It is possible to schedule payments for minimum 6 hours and up to 30 days ahead. 
+To schedule a future payment, as opposed to immediate execution, just pass an additional field in the <code class="prettyprint">POST /pay</code> request:</p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>schedule_for</td>
+<td>a future date/time</td>
+<td>ISO date/time</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">Payments scheduled for the same time are not guaranteed to be executed all at the same time. As scheduled processor runs every several hours, the payments will be processed in batches, and if you schedule too many payments it will require more time to process all of them.</aside>
+
+<h2 id="check-payment-status">Check Payment Status</h2>
+<pre class="highlight shell tab-shell"><code>curl http://test-b2b.revolut.com/api/1.0/transaction/e0cbf84637264ee082a848b?id_type<span class="o">=</span>request_id 
+  -H <span class="s2">"Authorization: Bearer &lt;your auth token&gt;"</span>
+</code></pre>
+<blockquote>
+<p>Example response for internal transfer between your accounts:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> 
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"62b61a4f-fb09-4e87-b0ab-b66c85f5485c"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"transfer"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"request_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e0cbf84637264ee082a848b"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"completed"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-10T12:00:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-10T12:00:10Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"completed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-10T12:00:10Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"webhook"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://mega.company.com/transaction/e0cbf84637264ee082a848b"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"legs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"leg_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8bf591b9-e802-4e37-a5bb-f870603d8207"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bdab1c20-8d8c-430d-b967-87ac01af060c"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"counterparty"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"self"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5138z40d1-05bb-49c0-b130-75e8cf2f7693"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">-123.11</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EUR"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Expenses funding"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"leg_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"516b9146-9264-4bb5-936f-497469b5c44e"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5138z40d1-05bb-49c0-b130-75e8cf2f7693"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"counterparty"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"self"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bdab1c20-8d8c-430d-b967-87ac01af060c"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+      </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">123.11</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EUR"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Expenses funding"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Example response for a payment to another Revolut business/user: </p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"62b61a4f-fb09-4e87-b0ab-b66c85f5485c"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"transfer"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"request_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e0cbf84637264ee082a848b"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"completed"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-10T12:00:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-10T12:00:10Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"completed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-10T12:00:10Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"legs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"leg_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0485605a-6062-4820-981d-1736f4be0b2c"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bdab1c20-8d8c-430d-b967-87ac01af060c"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"counterparty"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5138z40d1-05bb-49c0-b130-75e8cf2f7693"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"revolut"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bdab1c20-8d8c-430d-b967-87ac01af060c"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+      </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">-123.11</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EUR"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Payment for Blows &amp; Wistles Co."</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Example response for a failed transfer:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"62b61a4f-fb09-4e87-b0ab-b66c85f5485c"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"transfer"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"request_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e0cbf84637264ee082a848b"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"failed"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Account does not exist"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-10T12:00:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-10T12:00:10Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"legs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"leg_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0485605a-6062-4820-981d-1736f4be0b2c"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bdab1c20-8d8c-430d-b967-87ac01af060c"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"counterparty"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5138z40d1-05bb-49c0-b130-75e8cf2f7693"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"revolut"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bdab1c20-8d8c-430d-b967-87ac01af060c"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+      </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">-123.11</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EUR"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Payment for Blows &amp; Wistles Co."</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves transaction details by transaction ID or by request ID.</p>
+
+<h3 id="request">Request</h3>
+
+<p>To retrieve a transaction by ID:</p>
+
+<p><code class="prettyprint">GET http://test-b2b.revolut.com/api/1.0/transaction/&lt;id&gt;</code></p>
+
+<p>To retrieve a transaction by request ID:</p>
+
+<p><code class="prettyprint">GET http://test-b2b.revolut.com/api/1.0/transaction/&lt;request_id&gt;?id_type=request_id</code></p>
+
+<h3 id="response">Response</h3>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>the ID of transaction</td>
+<td>UUID</td>
+</tr>
+<tr>
+<td>type</td>
+<td>the type of transaction</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>request_id</td>
+<td>the client provided request ID</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>state</td>
+<td>the transction state: <code class="prettyprint">pending</code>, <code class="prettyprint">completed</code>, <code class="prettyprint">declined</code> or <code class="prettyprint">failed</code></td>
+<td>Text</td>
+</tr>
+<tr>
+<td>reason</td>
+<td>an optional reason code for <code class="prettyprint">declined</code> or <code class="prettyprint">failed</code> transaction state</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>the instant when the transaction was created</td>
+<td>ISO date/time</td>
+</tr>
+<tr>
+<td>updated_at</td>
+<td>the instant when the transaction was last updated</td>
+<td>ISO date/time</td>
+</tr>
+<tr>
+<td>completed_at</td>
+<td>the instant when the transaction was completed, mandatory for <code class="prettyprint">completed</code> state only</td>
+<td>ISO date/time</td>
+</tr>
+<tr>
+<td>scheduled_for</td>
+<td>an optional instant when the transaction was scheduled for</td>
+<td>ISO date/time</td>
+</tr>
+<tr>
+<td>webhook</td>
+<td>the webhook provided at transaction creation</td>
+<td>URL</td>
+</tr>
+<tr>
+<td>legs</td>
+<td>the legs of transaction, there&rsquo;ll be 2 legs between your Revolut accounts and 1 leg in other cases</td>
+<td>Array</td>
+</tr>
+<tr>
+<td>legs[n].leg_id</td>
+<td>the ID of the leg</td>
+<td>UUID</td>
+</tr>
+<tr>
+<td>legs[n].amount</td>
+<td>the transaction amount</td>
+<td>Decimal</td>
+</tr>
+<tr>
+<td>legs[n].currency</td>
+<td>the transaction currency</td>
+<td>Decimal</td>
+</tr>
+<tr>
+<td>legs[n].account_id</td>
+<td>the ID of the account the transaction is associated with</td>
+<td>Decimal</td>
+</tr>
+<tr>
+<td>legs[n].counterparty.id</td>
+<td>the counterparty ID</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>legs[n].counterparty.account_id</td>
+<td>the counterparty account ID</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>legs[n].counterparty.type</td>
+<td>the type of counterparty: <code class="prettyprint">self</code>, <code class="prettyprint">revolut</code>, <code class="prettyprint">external</code></td>
+<td>Text</td>
+</tr>
+<tr>
+<td>legs[n].description</td>
+<td>the transaction description, sometimes referred to as &ldquo;payment reference&rdquo;</td>
+<td>Decimal</td>
+</tr>
+</tbody></table>
+
+<h2 id="cancel-payment">Cancel Payment</h2>
+<pre class="highlight shell tab-shell"><code>curl -X DELETE http://test-b2b.revolut.com/api/1.0/transaction/62b61a4f-fb09-4e87-b0ab-b66c85f5485c
+  -H <span class="s2">"Authorization: Bearer &lt;your auth token&gt;"</span>
+</code></pre>
+<blockquote>
+<p>Response:
+<code class="prettyprint">
+204 No Content
+</code></p>
+</blockquote>
+
+<p>This endpoint allows to cancel a &ldquo;pending&rdquo; transaction that was initiated by you, via UI or API.</p>
+
+<h3 id="request">Request</h3>
+
+<p><code class="prettyprint">DELETE http://test-b2b.revolut.com/api/1.0/transaction/&lt;id&gt;</code></p>
+
+<h4 id="url-parameters">URL Parameters</h4>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>the ID of the payment/transaction to cancel</td>
+<td>UUID</td>
+</tr>
+</tbody></table>
+
+<h2 id="get-transactions">Get Transactions</h2>
+<pre class="highlight shell tab-shell"><code>curl http://test-b2b.revolut.com/api/1.0/transactions? <span class="se">\</span>
+  <span class="nv">counterparty</span><span class="o">=</span>5138z40d1-05bb-49c0-b130-75e8cf2f7693 <span class="se">\</span>
+  &amp;from<span class="o">=</span>2017-06-01 <span class="se">\</span>
+  &amp;to<span class="o">=</span>2017-06-10 <span class="se">\</span>
+  &amp;count <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer &lt;your auth token&gt;"</span>
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"62b61a4f-fb09-4e87-b0ab-b66c85f5485c"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"transfer"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"request_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e0cbf84637264ee082a848b"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"completed"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-10T12:00:00Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-10T12:00:10Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"completed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-10T12:00:10Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"legs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"leg_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0485605a-6062-4820-981d-1736f4be0b2c"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bdab1c20-8d8c-430d-b967-87ac01af060c"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"counterparty"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5138z40d1-05bb-49c0-b130-75e8cf2f7693"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"revolut"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bdab1c20-8d8c-430d-b967-87ac01af060c"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+        </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">-123.11</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EUR"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Payment for Blows &amp; Wistles Co."</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"62b61a4f-fb09-4e87-b0ab-b66c85f5485c"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"transfer"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"request_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e0cbf84637264ee082a848b"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"completed"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-10T12:00:00Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-10T12:00:10Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"completed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-10T12:00:10Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"legs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"leg_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0485605a-6062-4820-981d-1736f4be0b2c"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bdab1c20-8d8c-430d-b967-87ac01af060c"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"counterparty"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5138z40d1-05bb-49c0-b130-75e8cf2f7693"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"revolut"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bdab1c20-8d8c-430d-b967-87ac01af060c"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+        </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">-500.00</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EUR"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Payment for Blows &amp; Wistles Co."</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"45e8730a-cb70-47fe-8944-0fed870d9586"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"transfer"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"request_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e0cbf84637264ee082a848b"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-10T12:00:00Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-10T12:00:00Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"scheduled_for"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-15T10:00:00Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"legs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"leg_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"704ef03d-4cb3-4027-a7c5-d42f3b60395f"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bdab1c20-8d8c-430d-b967-87ac01af060c"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"counterparty"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5138z40d1-05bb-49c0-b130-75e8cf2f7693"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"revolut"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bdab1c20-8d8c-430d-b967-87ac01af060c"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+        </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">-43.12</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EUR"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Payment for Blows &amp; Wistles Co."</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves historical transactions based on the provided query criteria.</p>
+
+<h3 id="request">Request</h3>
+
+<p><code class="prettyprint">GET http://test-b2b.revolut.com/api/1.0/transactions</code></p>
+
+<h4 id="url-parameters">URL Parameters</h4>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>from</td>
+<td>an optional timestamp to query from</td>
+<td>ISO date/time</td>
+</tr>
+<tr>
+<td>to</td>
+<td>a optional timestamp to query to, default is now</td>
+<td>ISO date/time</td>
+</tr>
+<tr>
+<td>counterparty</td>
+<td>an optional counterparty id</td>
+<td>UUID</td>
+</tr>
+<tr>
+<td>count</td>
+<td>an optional number of records to return, default is 100</td>
+<td>Number</td>
+</tr>
+<tr>
+<td>type</td>
+<td>an optional transaction type</td>
+<td>Text</td>
+</tr>
+</tbody></table>
+
+<p>All filters are optional.</p>
+
+<h3 id="response">Response</h3>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>the ID of transaction</td>
+<td>UUID</td>
+</tr>
+<tr>
+<td>type</td>
+<td>the type of transaction</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>request_id</td>
+<td>the client provided request ID</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>state</td>
+<td>the transction state: <code class="prettyprint">pending</code>, <code class="prettyprint">completed</code>, <code class="prettyprint">declined</code> or <code class="prettyprint">failed</code></td>
+<td>Text</td>
+</tr>
+<tr>
+<td>reason</td>
+<td>an optional reason code for <code class="prettyprint">declined</code> or <code class="prettyprint">failed</code> transaction state</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>the instant when the transaction was created</td>
+<td>ISO date/time</td>
+</tr>
+<tr>
+<td>updated_at</td>
+<td>the instant when the transaction was last updated</td>
+<td>ISO date/time</td>
+</tr>
+<tr>
+<td>completed_at</td>
+<td>the instant when the transaction was completed, mandatory for <code class="prettyprint">completed</code> state only</td>
+<td>ISO date/time</td>
+</tr>
+<tr>
+<td>scheduled_for</td>
+<td>an optional instant when the transaction was scheduled for</td>
+<td>ISO date/time</td>
+</tr>
+<tr>
+<td>legs[n].leg_id</td>
+<td>the ID of the leg</td>
+<td>UUID</td>
+</tr>
+<tr>
+<td>legs[n].amount</td>
+<td>the transaction amount</td>
+<td>Decimal</td>
+</tr>
+<tr>
+<td>legs[n].currency</td>
+<td>the transaction currency</td>
+<td>Decimal</td>
+</tr>
+<tr>
+<td>legs[n].account_id</td>
+<td>the ID of the account the transaction is associated with</td>
+<td>Decimal</td>
+</tr>
+<tr>
+<td>legs[n].counterparty.id</td>
+<td>the counterparty ID</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>legs[n].counterparty.account_id</td>
+<td>the counterparty account ID</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>legs[n].counterparty.type</td>
+<td>the type of counterparty: <code class="prettyprint">self</code>, <code class="prettyprint">revolut</code>, <code class="prettyprint">external</code></td>
+<td>Text</td>
+</tr>
+<tr>
+<td>legs[n].description</td>
+<td>the transaction description, sometimes referred to as &ldquo;payment reference&rdquo;</td>
+<td>Decimal</td>
+</tr>
+</tbody></table>
+
+<h1 id="web-hooks">Web-hooks</h1>
+
+<p>Coming soon&hellip;</p>
+
+          <h1 id="errors">Errors</h1>
+
+<p>The Revolut API uses the following error codes:</p>
+
+<table><thead>
+<tr>
+<th>Error Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>Bad Request &ndash; Your request is well-formatted but contains invalid pramaters/values</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized &ndash; Your API credentials are wrong</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden &ndash; Access to the requested API or resource is forbidden</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not Found &ndash; The specified resource could not be found</td>
+</tr>
+<tr>
+<td>405</td>
+<td>Method Not Allowed &ndash; You tried to access a resource with an invalid method</td>
+</tr>
+<tr>
+<td>406</td>
+<td>Not Acceptable &ndash; You requested a format that isn&rsquo;t json</td>
+</tr>
+<tr>
+<td>429</td>
+<td>Too Many Requests &ndash; You&rsquo;ve performed too many requests and breached request rate limit.</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error &ndash; We had a problem with our server. Try again later.</td>
+</tr>
+<tr>
+<td>503</td>
+<td>Service Unavailable &ndash; We&rsquo;re temporarily offline for maintenance. Please try again later.</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="shell">shell</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
