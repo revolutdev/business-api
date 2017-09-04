@@ -1041,7 +1041,7 @@
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d56dd396-523b-4613-8cc7-54974c17bcac"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"created"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-01T10:10:10.0Z"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -1149,10 +1149,11 @@
   </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EUR"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invoice payment #123"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"webhook"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://mega.company.com/transaction/e0cbf84637264ee082a848b"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"schedule_for"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-10T12:00:00Z"</span><span class="w">
+  </span><span class="s2">"schedule_for"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-10"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>It is possible to schedule payments for minimum 6 hours and up to 30 days ahead. 
+<p>It is possible to schedule payments for up to 30 days ahead.
+Scheduled payment must be in currency of the account to pay from.
 To schedule a future payment, as opposed to immediate execution, just pass an additional field in the <code class="prettyprint">POST /pay</code> request:</p>
 
 <table><thead>
@@ -1330,8 +1331,8 @@ To schedule a future payment, as opposed to immediate execution, just pass an ad
 </tr>
 <tr>
 <td>scheduled_for</td>
-<td>an optional instant when the transaction was scheduled for</td>
-<td>ISO date/time</td>
+<td>an optional date when the transaction was scheduled for</td>
+<td>ISO date</td>
 </tr>
 <tr>
 <td>webhook</td>
@@ -1483,7 +1484,7 @@ To schedule a future payment, as opposed to immediate execution, just pass an ad
     </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-10T12:00:00Z"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-10T12:00:00Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"scheduled_for"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-15T10:00:00Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"scheduled_for"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-15"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"legs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
         </span><span class="s2">"leg_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"704ef03d-4cb3-4027-a7c5-d42f3b60395f"</span><span class="p">,</span><span class="w">
@@ -1596,8 +1597,8 @@ To schedule a future payment, as opposed to immediate execution, just pass an ad
 </tr>
 <tr>
 <td>scheduled_for</td>
-<td>an optional instant when the transaction was scheduled for</td>
-<td>ISO date/time</td>
+<td>an optional date when the transaction was scheduled for</td>
+<td>ISO date</td>
 </tr>
 <tr>
 <td>legs[n].leg_id</td>
