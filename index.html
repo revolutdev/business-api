@@ -498,8 +498,8 @@
 
 <h1 id="counterpaties">Counterpaties</h1>
 
-<h2 id="add-counterparty">Add Counterparty</h2>
-<pre class="highlight shell tab-shell"><code>curl -X POST http://test-b2b.revolut.com/api/1.0/counterparty
+<h2 id="add-internal-counterparty">Add Internal Counterparty</h2>
+<pre class="highlight shell tab-shell"><code>curl -X POST http://test-b2b.revolut.com/api/1.0/counterparty/revolut
   -H <span class="s2">"Authorization: Bearer &lt;your auth token&gt;"</span>
 
 <span class="o">{</span>
@@ -538,7 +538,7 @@
 
 <h3 id="request">Request</h3>
 
-<p><code class="prettyprint">POST http://test-b2b.revolut.com/api/1.0/counterparty</code></p>
+<p><code class="prettyprint">POST http://test-b2b.revolut.com/api/1.0/counterparty/internal</code></p>
 
 <h4 id="request-fields">Request fields</h4>
 
@@ -561,7 +561,7 @@
 </tr>
 <tr>
 <td>phone</td>
-<td>a valid phone number of the counterparty. It can be a phone number that identifies them uniquely as a Revolut user</td>
+<td>an optional valid phone number of the counterparty. Provide it for profile_type = <code class="prettyprint">personal</code>. It can be a phone number that identifies them uniquely as a Revolut user</td>
 <td>A valid international phone number, starting with <code class="prettyprint">+</code></td>
 </tr>
 <tr>
@@ -642,6 +642,224 @@
 </tr>
 </tbody></table>
 
+<h2 id="add-external-counterparty">Add External Counterparty</h2>
+<pre class="highlight shell tab-shell"><code>curl -X POST http://test-b2b.revolut.com/api/1.0/counterparty/external
+  -H <span class="s2">"Authorization: Bearer &lt;your auth token&gt;"</span>
+
+<span class="o">{</span>
+  <span class="s2">"name"</span>: <span class="s2">"John Smith Co."</span>,
+  <span class="s2">"country"</span>: <span class="s2">"GB"</span>,
+  <span class="s2">"currency"</span>: <span class="s2">"GBP"</span>,
+  <span class="s2">"account_no"</span>: <span class="s2">"12345678"</span>,
+  <span class="s2">"sort_code"</span>: <span class="s2">"223344"</span>,
+  <span class="s2">"email"</span>: <span class="s2">"john@smith.co"</span>,
+  <span class="s2">"address"</span>: <span class="o">{</span>
+    <span class="s2">"street_line1"</span>: <span class="s2">"1 Canada Square"</span>, 
+    <span class="s2">"street_line2"</span>: <span class="s2">"Canary Wharf"</span>, 
+    <span class="s2">"region"</span>: <span class="s2">"East End"</span>, 
+    <span class="s2">"postcode"</span>: <span class="s2">"E115AB"</span>, 
+    <span class="s2">"city"</span>: <span class="s2">"London"</span>, 
+    <span class="s2">"country"</span>: <span class="s2">"GB"</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6b3c696e-7c3d-464a-8dbe-fc70e183d42e"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Smith"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"beneficiary_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"45dde477-0d57-4e59-8999-803e4973dbab"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345678"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"base_currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GBP"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GB"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"created"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"account_no"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345678"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"routing_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123456789"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"external"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-01T11:11:11.0Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-01T11:11:11.0Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"beneficiary_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GB"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Before a transaction or payment can be made, you need to add counterparties which you intend to transact with.</p>
+
+<h3 id="request">Request</h3>
+
+<p><code class="prettyprint">POST http://test-b2b.revolut.com/api/1.0/counterparty/external</code></p>
+
+<h4 id="request-fields">Request fields</h4>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>a name of the counterparty</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>company_name</td>
+<td>a name of the company</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>individual_name.first_name</td>
+<td>first name of the individual beneficiar</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>individual_name.last_name</td>
+<td>last name of the individual beneficiar</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>country</td>
+<td>the country where the counterparty resides</td>
+<td>2-letter ISO code</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>the currency of a counterparty&rsquo;s account</td>
+<td>3-letter ISO currency code</td>
+</tr>
+<tr>
+<td>account_no</td>
+<td>optional bank account number</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>routing_number</td>
+<td>optional routing transit number</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>sort_code</td>
+<td>optional sort code</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>bic</td>
+<td>optional BIC</td>
+<td>optional BIC</td>
+</tr>
+<tr>
+<td>email</td>
+<td>an optional valid email address of the counterparty</td>
+<td>Email</td>
+</tr>
+<tr>
+<td>address.street_line1</td>
+<td>Optional address line 1 of the counterparty</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>address.street_line2</td>
+<td>Optional address line 2 of the counterparty</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>address.region</td>
+<td>optional region of the counterparty</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>address.city</td>
+<td>optional city of the counterparty</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>address.country</td>
+<td>optional the country of the counterparty</td>
+<td>2-letter ISO code</td>
+</tr>
+<tr>
+<td>address.postcode</td>
+<td>optional postal code of the counterparty</td>
+<td>Text</td>
+</tr>
+</tbody></table>
+
+<h3 id="response">Response</h3>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>the ID of the counterparty</td>
+<td>UUID</td>
+</tr>
+<tr>
+<td>name</td>
+<td>the name of the counterparty</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>beneficiary_id</td>
+<td>the ID of the beneficiary</td>
+<td>UUID</td>
+</tr>
+<tr>
+<td>reference</td>
+<td>the reference code of the beneficiary</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>base_currency</td>
+<td>the base currency of a counterparty&rsquo;s account</td>
+<td>3-letter ISO currency code</td>
+</tr>
+<tr>
+<td>country</td>
+<td>the country where the counterparty resides</td>
+<td>2-letter ISO code</td>
+</tr>
+<tr>
+<td>state</td>
+<td>the state of the counterparty, one of <code class="prettyprint">created</code>, <code class="prettyprint">deleted</code></td>
+<td>Text</td>
+</tr>
+<tr>
+<td>account_no</td>
+<td>optional bank account number</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>bic</td>
+<td>optional BIC</td>
+<td>optional BIC</td>
+</tr>
+<tr>
+<td>type</td>
+<td>the type of counterparty, <code class="prettyprint">revolut</code> or <code class="prettyprint">external</code></td>
+<td>Text</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>the instant when the counterparty was created</td>
+<td>ISO date/time</td>
+</tr>
+<tr>
+<td>updated_at</td>
+<td>the instant when the counterparty was last updated</td>
+<td>ISO date/time</td>
+</tr>
+<tr>
+<td>beneficiary_type</td>
+<td>the type of the beneficiary</td>
+<td>Text</td>
+</tr>
+</tbody></table>
+
 <h2 id="delete-counterparty">Delete Counterparty</h2>
 <pre class="highlight shell tab-shell"><code>curl -X DELETE http://test-b2b.revolut.com/api/1.0/counterparty/6b3c696e-7c3d-464a-8dbe-fc70e183d42e
   -H <span class="s2">"Authorization: Bearer &lt;your auth token&gt;"</span>
@@ -674,11 +892,11 @@
 </tbody></table>
 
 <h2 id="get-counterparty">Get Counterparty</h2>
-<pre class="highlight shell tab-shell"><code>curl http://test-b2b.revolut.com/api/1.0/counterparties
+<pre class="highlight shell tab-shell"><code>curl http://test-b2b.revolut.com/api/1.0/counterparty/6b3c696e-7c3d-464a-8dbe-fc70e183d42e
   -H <span class="s2">"Authorization: Bearer &lt;your auth token&gt;"</span>
 </code></pre>
 <blockquote>
-<p>Response:</p>
+<p>Response for Revolut counterparty:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6b3c696e-7c3d-464a-8dbe-fc70e183d42e"</span><span class="p">,</span><span class="w">
@@ -689,6 +907,25 @@
   </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GB"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-01T11:11:11.0Z"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-01T11:11:11.0Z"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Example response for external counterparty:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6b3c696e-7c3d-464a-8dbe-fc70e183d42e"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Smith"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"beneficiary_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"45dde477-0d57-4e59-8999-803e4973dbab"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345678"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"base_currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GBP"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GB"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"created"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"account_no"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345678"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"routing_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123456789"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"external"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-01T11:11:11.0Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-01T11:11:11.0Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"beneficiary_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GB"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a counterparty by ID.</p>
@@ -804,14 +1041,21 @@
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e0cbf846-3726-4ee0-82a8-48be0bc28efd"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"revolut"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"external"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+44723111111"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"profile_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"business"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bolts &amp; Wistles Ltd"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GB"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"beneficiary_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"45dde477-0d57-4e59-8999-803e4973dbab"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345678"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"base_currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GBP"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"created"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"account_no"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345678"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"routing_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123456789"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"beneficiary_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-21T11:22:11.0Z"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-21T11:22:11.0Z"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
+  </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all your counterparties.</p>
@@ -1019,7 +1263,7 @@
   </span><span class="s2">"receiver"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">"counterparty_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5138z40d1-05bb-49c0-b130-75e8cf2f7693"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"db7c73d3-b0df-4e0e-8a9a-f42aa99f52ab"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
   </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">123.11</span><span class="p">,</span><span class="w">
   </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EUR"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invoice payment #123"</span><span class="p">,</span><span class="w">
@@ -1079,7 +1323,7 @@
 </tr>
 <tr>
 <td>receiver.account_id</td>
-<td>the ID of the receiving counterparty&rsquo;s account, can be own account</td>
+<td>an optional ID of the receiving counterparty&rsquo;s account, can be own account (only for internal counterparties)</td>
 <td>UUID</td>
 </tr>
 <tr>
@@ -1144,7 +1388,7 @@
   </span><span class="s2">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bdab1c20-8d8c-430d-b967-87ac01af060c"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"receiver"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">"counterparty_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5138z40d1-05bb-49c0-b130-75e8cf2f7693"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
   </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">123.11</span><span class="p">,</span><span class="w">
   </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EUR"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invoice payment #123"</span><span class="p">,</span><span class="w">
@@ -1206,7 +1450,7 @@ To schedule a future payment, as opposed to immediate execution, just pass an ad
       </span><span class="s2">"counterparty"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"self"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bdab1c20-8d8c-430d-b967-87ac01af060c"</span><span class="w">
-      </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
       </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">123.11</span><span class="p">,</span><span class="w">
       </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EUR"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Expenses funding"</span><span class="w">
@@ -1233,7 +1477,32 @@ To schedule a future payment, as opposed to immediate execution, just pass an ad
         </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5138z40d1-05bb-49c0-b130-75e8cf2f7693"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"revolut"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bdab1c20-8d8c-430d-b967-87ac01af060c"</span><span class="w">
-      </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">-123.11</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EUR"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Payment for Blows &amp; Wistles Co."</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Example response for a payment to external counterparty: </p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"62b61a4f-fb09-4e87-b0ab-b66c85f5485c"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"transfer"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"request_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e0cbf84637264ee082a848b"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-10T12:00:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-10T12:00:10Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"legs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"leg_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0485605a-6062-4820-981d-1736f4be0b2c"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bdab1c20-8d8c-430d-b967-87ac01af060c"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"counterparty"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a1dd617f-45b5-400b-8dd9-8970429d0a3c"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"external"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
       </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">-123.11</span><span class="p">,</span><span class="w">
       </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EUR"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Payment for Blows &amp; Wistles Co."</span><span class="w">
@@ -1260,7 +1529,7 @@ To schedule a future payment, as opposed to immediate execution, just pass an ad
         </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5138z40d1-05bb-49c0-b130-75e8cf2f7693"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"revolut"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bdab1c20-8d8c-430d-b967-87ac01af060c"</span><span class="w">
-      </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
       </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">-123.11</span><span class="p">,</span><span class="w">
       </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EUR"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Payment for Blows &amp; Wistles Co."</span><span class="w">
@@ -1447,7 +1716,7 @@ To schedule a future payment, as opposed to immediate execution, just pass an ad
           </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5138z40d1-05bb-49c0-b130-75e8cf2f7693"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"revolut"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bdab1c20-8d8c-430d-b967-87ac01af060c"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
         </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">-123.11</span><span class="p">,</span><span class="w">
         </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EUR"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Payment for Blows &amp; Wistles Co."</span><span class="w">
@@ -1470,7 +1739,7 @@ To schedule a future payment, as opposed to immediate execution, just pass an ad
           </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5138z40d1-05bb-49c0-b130-75e8cf2f7693"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"revolut"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bdab1c20-8d8c-430d-b967-87ac01af060c"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
         </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">-500.00</span><span class="p">,</span><span class="w">
         </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EUR"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Payment for Blows &amp; Wistles Co."</span><span class="w">
@@ -1493,7 +1762,7 @@ To schedule a future payment, as opposed to immediate execution, just pass an ad
           </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5138z40d1-05bb-49c0-b130-75e8cf2f7693"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"revolut"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bdab1c20-8d8c-430d-b967-87ac01af060c"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
         </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">-43.12</span><span class="p">,</span><span class="w">
         </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EUR"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Payment for Blows &amp; Wistles Co."</span><span class="w">
