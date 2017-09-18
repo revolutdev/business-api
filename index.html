@@ -239,9 +239,82 @@
 </ul>
 
 <h1 id="getting-started">Getting started</h1>
+
+<blockquote>
+<p>Authentication Request:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl -X POST http://sandbox-b2b.revolut.com/api/1.0/authenticate 
+  --data
+
+  <span class="o">{</span> 
+    <span class="s2">"client_id"</span>: <span class="s2">"&lt;Your Client ID&gt;"</span>, 
+    <span class="s2">"client_secret"</span>: <span class="s2">"&lt;Your Client Secret&gt;"</span> 
+  <span class="o">}</span>
+</code></pre>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"auth_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AFwsf4FDLKFNS4h0hdE4rfrsfdf"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"expires_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-10T10:10:10.0Z"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Pass the generated token in all API requests as</p>
+</blockquote>
 <pre class="highlight shell tab-shell"><code>Authorization: Bearer AFwsf4FDLKFNS4h0hdE4rfrsfdf
 </code></pre>
-<p>Pass your authentication token in all API requests as</p>
+<p>Once you sign up for your Revolut Business account on <a href="https://business.revolut.com/signup">business.revolut.com</a>, you will be issued with two pairs of API credentials, one for sandbox and one for production environment. The sandbox environment is useful for development and allows to play with fake test data. Some of the data will be pre-populated so you can start quickly.</p>
+
+<aside class="warning">Please DO NOT use production environment until you have tested your integration sufficiently and are happy that it works as expected.</aside>
+
+<p>Before you can use any of the APIs, you need to get an auth token by calling <code class="prettyprint">/authenticate</code> endpoint with your Client ID and secret. The generated auth token is expected to be included in all API requests to the server in a <code class="prettyprint">Authorization</code> header. The auth token has expiry time, so you will need to request a new auth token after it expires.</p>
+
+<h3 id="request">Request</h3>
+
+<p><code class="prettyprint">GET http://sandbox-b2b.revolut.com/api/1.0/authenticate</code></p>
+
+<h4 id="request-fields">Request fields</h4>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>client_id</td>
+<td>your API client ID</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>client_secret</td>
+<td>your API secret</td>
+<td>Text</td>
+</tr>
+</tbody></table>
+
+<h3 id="response">Response</h3>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>auth_token</td>
+<td>authentication token to be used for subsequent API calls</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>expires_at</td>
+<td>time when the returned auth token expires</td>
+<td>ISO date/time</td>
+</tr>
+</tbody></table>
 
 <h1 id="accounts">Accounts</h1>
 
