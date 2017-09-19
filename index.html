@@ -513,7 +513,7 @@
 </tr>
 </tbody></table>
 
-<h1 id="counterpaties">Counterpaties</h1>
+<h1 id="counterparties">Counterparties</h1>
 
 <h2 id="add-counterparty">Add Counterparty</h2>
 <pre class="highlight shell tab-shell"><code>curl -X POST http://sandbox-b2b.revolut.com/api/1.0/counterparty
@@ -553,7 +553,9 @@
 </span></code></pre>
 <p>Before a transaction or payment can be made, you need to add counterparties which you intend to transact with.</p>
 
-<h3 id="an-existing-revolut-user">An existing Revolut user</h3>
+<h3 id="revolut-user">Revolut user</h3>
+
+<p>You can create a counterparty for an existing revolut user.</p>
 
 <p><code class="prettyprint">POST http://sandbox-b2b.revolut.com/api/1.0/counterparty</code></p>
 
@@ -658,8 +660,6 @@
 <td>3-letter ISO currency code</td>
 </tr>
 </tbody></table>
-
-<h3 id="external-account">External account</h3>
 <pre class="highlight shell tab-shell"><code>curl -X POST http://sandbox-b2b.revolut.com/api/1.0/counterparty
   -H <span class="s2">"Authorization: Bearer &lt;your auth token&gt;"</span>
 
@@ -699,9 +699,9 @@
   </span><span class="s2">"beneficiary_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GB"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>You can create a counterparty for an external account as well.</p>
+<h3 id="external-account">External account</h3>
 
-<h3 id="request">Request</h3>
+<p>You can create a counterparty for an external account as well.</p>
 
 <p><code class="prettyprint">POST http://sandbox-b2b.revolut.com/api/1.0/counterparty</code></p>
 
