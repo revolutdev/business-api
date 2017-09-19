@@ -219,7 +219,7 @@
       <div id="toc">
       </div>
         <ul class="toc-footer">
-            <li><a href='https://business.revolut.com'>Sign up for Revolut Business</a></li>
+            <li><a href='https://business.revolut.com/signup'>Sign up for Revolut Business</a></li>
             <li><br/>Copyright © 2017 Revolut Ltd</li>
         </ul>
     </div>
@@ -247,8 +247,7 @@
   --data
 
   <span class="o">{</span> 
-    <span class="s2">"client_id"</span>: <span class="s2">"&lt;Your Client ID&gt;"</span>, 
-    <span class="s2">"client_secret"</span>: <span class="s2">"&lt;Your Client Secret&gt;"</span> 
+    <span class="s2">"api_key"</span>: <span class="s2">"&lt;Your API key&gt;"</span> 
   <span class="o">}</span>
 </code></pre>
 <blockquote>
@@ -284,14 +283,9 @@
 </tr>
 </thead><tbody>
 <tr>
-<td>client_id</td>
-<td>your API client ID</td>
-<td>Text</td>
-</tr>
-<tr>
-<td>client_secret</td>
-<td>your API secret</td>
-<td>Text</td>
+<td>api_key</td>
+<td>your API key</td>
+<td>UUID</td>
 </tr>
 </tbody></table>
 
@@ -334,7 +328,8 @@
     </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"public"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
     </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-01T11:11:11.0Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-01T11:11:11.0Z"</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-01T11:11:11.0Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pocket"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"df8d6b20-0725-482e-a29e-fb09631480cf"</span><span class="p">,</span><span class="w">
@@ -344,7 +339,18 @@
     </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"public"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
     </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-01T11:11:11.0Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-01T11:11:11.0Z"</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-01T11:11:11.0Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pocket"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9e815f39-453c-44f9-86dd-433492db5735"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Doe"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GBP"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"public"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-01T21:11:11.0Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-01T21:11:11.0Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"beneficiary"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
@@ -403,6 +409,11 @@
 <td>the instant when the account was last updated</td>
 <td>ISO date/time</td>
 </tr>
+<tr>
+<td>type</td>
+<td>the type of the account, one of <code class="prettyprint">pocket</code>, <code class="prettyprint">beneficiary</code></td>
+<td>Text</td>
+</tr>
 </tbody></table>
 
 <h2 id="get-account">Get Account</h2>
@@ -420,7 +431,8 @@
   </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"public"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
   </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-01T11:11:11.0Z"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-01T11:11:11.0Z"</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-01T11:11:11.0Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pocket"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves one of your accounts by ID.</p>
@@ -494,12 +506,17 @@
 <td>the instant when the account was last updated</td>
 <td>ISO date/time</td>
 </tr>
+<tr>
+<td>type</td>
+<td>the type of the account, one of <code class="prettyprint">pocket</code>, <code class="prettyprint">beneficiary</code></td>
+<td>Text</td>
+</tr>
 </tbody></table>
 
 <h1 id="counterpaties">Counterpaties</h1>
 
-<h2 id="add-internal-counterparty">Add Internal Counterparty</h2>
-<pre class="highlight shell tab-shell"><code>curl -X POST http://sandbox-b2b.revolut.com/api/1.0/counterparty/revolut
+<h2 id="add-counterparty">Add Counterparty</h2>
+<pre class="highlight shell tab-shell"><code>curl -X POST http://sandbox-b2b.revolut.com/api/1.0/counterparty
   -H <span class="s2">"Authorization: Bearer &lt;your auth token&gt;"</span>
 
 <span class="o">{</span>
@@ -536,9 +553,9 @@
 </span></code></pre>
 <p>Before a transaction or payment can be made, you need to add counterparties which you intend to transact with.</p>
 
-<h3 id="request">Request</h3>
+<h3 id="an-existing-revolut-user">An existing Revolut user</h3>
 
-<p><code class="prettyprint">POST http://sandbox-b2b.revolut.com/api/1.0/counterparty/internal</code></p>
+<p><code class="prettyprint">POST http://sandbox-b2b.revolut.com/api/1.0/counterparty</code></p>
 
 <h4 id="request-fields">Request fields</h4>
 
@@ -642,8 +659,8 @@
 </tr>
 </tbody></table>
 
-<h2 id="add-external-counterparty">Add External Counterparty</h2>
-<pre class="highlight shell tab-shell"><code>curl -X POST http://sandbox-b2b.revolut.com/api/1.0/counterparty/external
+<h3 id="external-account">External account</h3>
+<pre class="highlight shell tab-shell"><code>curl -X POST http://sandbox-b2b.revolut.com/api/1.0/counterparty
   -H <span class="s2">"Authorization: Bearer &lt;your auth token&gt;"</span>
 
 <span class="o">{</span>
@@ -682,11 +699,11 @@
   </span><span class="s2">"beneficiary_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GB"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Before a transaction or payment can be made, you need to add counterparties which you intend to transact with.</p>
+<p>You can create a counterparty for an external account as well.</p>
 
 <h3 id="request">Request</h3>
 
-<p><code class="prettyprint">POST http://sandbox-b2b.revolut.com/api/1.0/counterparty/external</code></p>
+<p><code class="prettyprint">POST http://sandbox-b2b.revolut.com/api/1.0/counterparty</code></p>
 
 <h4 id="request-fields">Request fields</h4>
 
