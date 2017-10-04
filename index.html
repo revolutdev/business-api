@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html>
   <head>
@@ -207,8 +208,8 @@
         <img src="images/navbar.png" alt="Navbar" />
       </span>
     </a>
-    <div class="tocify-wrapper">
-      <img src="images/logo.png" alt="Logo" />
+    <div class="toc-wrapper">
+      <img src="images/logo.png" class="logo" alt="Logo" />
         <div class="lang-selector">
               <a href="#" data-language-name="shell">shell</a>
         </div>
@@ -216,7 +217,70 @@
           <input type="text" class="search" id="input-search" placeholder="Search">
         </div>
         <ul class="search-results"></ul>
-      <div id="toc">
+      <div id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#getting-started" class="toc-h1 toc-link" data-title="Getting started">Getting started</a>
+          </li>
+          <li>
+            <a href="#accounts" class="toc-h1 toc-link" data-title="Accounts">Accounts</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-accounts" class="toc-h2 toc-link" data-title="Accounts">Get Accounts</a>
+                  </li>
+                  <li>
+                    <a href="#get-account" class="toc-h2 toc-link" data-title="Accounts">Get Account</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#counterparties" class="toc-h1 toc-link" data-title="Counterparties">Counterparties</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#add-counterparty" class="toc-h2 toc-link" data-title="Counterparties">Add Counterparty</a>
+                  </li>
+                  <li>
+                    <a href="#delete-counterparty" class="toc-h2 toc-link" data-title="Counterparties">Delete Counterparty</a>
+                  </li>
+                  <li>
+                    <a href="#get-counterparty" class="toc-h2 toc-link" data-title="Counterparties">Get Counterparty</a>
+                  </li>
+                  <li>
+                    <a href="#get-counterparties" class="toc-h2 toc-link" data-title="Counterparties">Get Counterparties</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#payments" class="toc-h1 toc-link" data-title="Payments">Payments</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#transfer-between-own-accounts" class="toc-h2 toc-link" data-title="Payments">Transfer between own accounts</a>
+                  </li>
+                  <li>
+                    <a href="#create-payment" class="toc-h2 toc-link" data-title="Payments">Create Payment</a>
+                  </li>
+                  <li>
+                    <a href="#schedule-payment" class="toc-h2 toc-link" data-title="Payments">Schedule Payment</a>
+                  </li>
+                  <li>
+                    <a href="#check-payment-status" class="toc-h2 toc-link" data-title="Payments">Check Payment Status</a>
+                  </li>
+                  <li>
+                    <a href="#cancel-payment" class="toc-h2 toc-link" data-title="Payments">Cancel Payment</a>
+                  </li>
+                  <li>
+                    <a href="#get-transactions" class="toc-h2 toc-link" data-title="Payments">Get Transactions</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#web-hooks" class="toc-h1 toc-link" data-title="Web-hooks">Web-hooks</a>
+          </li>
+          <li>
+            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+          </li>
       </div>
         <ul class="toc-footer">
             <li><a href='https://business.revolut.com/signup'>Sign up for Revolut Business</a></li>
@@ -226,8 +290,7 @@
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id="introduction">Introduction</h1>
-
+        <h1 id='introduction'>Introduction</h1>
 <p>This is Revolut Business API documentation. Here you will find what functionality is available to you to integrate your Revolut business account into your current and future business processes and to automate your business transactions. There are APIs for most of what you can do via your Revolut Business web portal.</p>
 
 <p>To help you navigate, this page is split into 3 vertical sections: </p>
@@ -237,9 +300,7 @@
 <li>the content in the middle,</li>
 <li>and usage examples on the right.</li>
 </ul>
-
-<h1 id="getting-started">Getting started</h1>
-
+<h1 id='getting-started'>Getting started</h1>
 <blockquote>
 <p>Pass your API-key in all API requests as a header</p>
 </blockquote>
@@ -249,11 +310,7 @@
 <p>Once you sign up for your Revolut Business account on <a href="https://business.revolut.com/signup">business.revolut.com</a>, you will be issued with two API-keys, one for sandbox and one for production environment. The sandbox environment is useful for development and allows to play with test data. Some of the data will be pre-populated so you can start quickly.</p>
 
 <aside class="warning">Please DO NOT use production environment until you have tested your integration sufficiently and are happy that it works as expected.</aside>
-
-<h1 id="accounts">Accounts</h1>
-
-<h2 id="get-accounts">Get Accounts</h2>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://sandbox-b2b.revolut.com/api/1.0/accounts"</span> <span class="se">\</span>
+<h1 id='accounts'>Accounts</h1><h2 id='get-accounts'>Get Accounts</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://sandbox-b2b.revolut.com/api/1.0/accounts"</span> <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span>
 </code></pre>
 <blockquote>
@@ -295,13 +352,9 @@
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves your accounts.</p>
-
-<h3 id="request">Request</h3>
-
-<p><code class="prettyprint">GET https://sandbox-b2b.revolut.com/api/1.0/accounts</code></p>
-
-<h3 id="response">Response</h3>
-
+<h3 id='request'>Request</h3>
+<p><code>GET https://sandbox-b2b.revolut.com/api/1.0/accounts</code></p>
+<h3 id='response'>Response</h3>
 <table><thead>
 <tr>
 <th>Field</th>
@@ -331,7 +384,7 @@
 </tr>
 <tr>
 <td>state</td>
-<td>the account state, one of <code class="prettyprint">active</code>, <code class="prettyprint">inactive</code></td>
+<td>the account state, one of <code>active</code>, <code>inactive</code></td>
 <td>Text</td>
 </tr>
 <tr>
@@ -351,13 +404,11 @@
 </tr>
 <tr>
 <td>type</td>
-<td>the type of the account, one of <code class="prettyprint">pocket</code>, <code class="prettyprint">beneficiary</code></td>
+<td>the type of the account, one of <code>pocket</code>, <code>beneficiary</code></td>
 <td>Text</td>
 </tr>
 </tbody></table>
-
-<h2 id="get-account">Get Account</h2>
-<pre class="highlight shell tab-shell"><code>curl https://sandbox-b2b.revolut.com/api/1.0/accounts/df8d6b20-0725-482e-a29e-fb09631480cf <span class="se">\</span>
+<h2 id='get-account'>Get Account</h2><pre class="highlight shell tab-shell"><code>curl https://sandbox-b2b.revolut.com/api/1.0/accounts/df8d6b20-0725-482e-a29e-fb09631480cf <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span>
 </code></pre>
 <blockquote>
@@ -376,13 +427,9 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves one of your accounts by ID.</p>
-
-<h3 id="request">Request</h3>
-
-<p><code class="prettyprint">GET https://sandbox-b2b.revolut.com/api/1.0/accounts/&lt;id&gt;</code></p>
-
-<h4 id="url-parameters">URL Parameters</h4>
-
+<h3 id='request-2'>Request</h3>
+<p><code>GET https://sandbox-b2b.revolut.com/api/1.0/accounts/&lt;id&gt;</code></p>
+<h4 id='url-parameters'>URL Parameters</h4>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -396,9 +443,7 @@
 <td>UUID</td>
 </tr>
 </tbody></table>
-
-<h3 id="response">Response</h3>
-
+<h3 id='response-2'>Response</h3>
 <table><thead>
 <tr>
 <th>Field</th>
@@ -428,7 +473,7 @@
 </tr>
 <tr>
 <td>state</td>
-<td>the account state, one of <code class="prettyprint">active</code>, <code class="prettyprint">inactive</code></td>
+<td>the account state, one of <code>active</code>, <code>inactive</code></td>
 <td>Text</td>
 </tr>
 <tr>
@@ -448,15 +493,11 @@
 </tr>
 <tr>
 <td>type</td>
-<td>the type of the account, one of <code class="prettyprint">pocket</code>, <code class="prettyprint">beneficiary</code></td>
+<td>the type of the account, one of <code>pocket</code>, <code>beneficiary</code></td>
 <td>Text</td>
 </tr>
 </tbody></table>
-
-<h1 id="counterparties">Counterparties</h1>
-
-<h2 id="add-counterparty">Add Counterparty</h2>
-<pre class="highlight shell tab-shell"><code>curl -X POST https://sandbox-b2b.revolut.com/api/1.0/counterparty <span class="se">\</span>
+<h1 id='counterparties'>Counterparties</h1><h2 id='add-counterparty'>Add Counterparty</h2><pre class="highlight shell tab-shell"><code>curl -X POST https://sandbox-b2b.revolut.com/api/1.0/counterparty <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span> <span class="se">\</span>
   --data @- <span class="sh">&lt;&lt; EOF
 </span></code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -493,15 +534,11 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Before a transaction or payment can be made, you need to add counterparties which you intend to transact with.</p>
-
-<h3 id="revolut-user">Revolut user</h3>
-
+<h3 id='revolut-user'>Revolut user</h3>
 <p>You can create a counterparty for an existing revolut user.</p>
 
-<p><code class="prettyprint">POST https://sandbox-b2b.revolut.com/api/1.0/counterparty</code></p>
-
-<h4 id="request-fields">Request fields</h4>
-
+<p><code>POST https://sandbox-b2b.revolut.com/api/1.0/counterparty</code></p>
+<h4 id='request-fields'>Request fields</h4>
 <table><thead>
 <tr>
 <th>Field</th>
@@ -516,13 +553,13 @@
 </tr>
 <tr>
 <td>profile_type</td>
-<td>an optional type of counterparty, <code class="prettyprint">business</code> or <code class="prettyprint">personal</code></td>
+<td>an optional type of counterparty, <code>business</code> or <code>personal</code></td>
 <td>Text</td>
 </tr>
 <tr>
 <td>phone</td>
-<td>an optional valid phone number of the counterparty. Provide it for profile_type = <code class="prettyprint">personal</code>. It can be a phone number that identifies them uniquely as a Revolut user</td>
-<td>A valid international phone number, starting with <code class="prettyprint">+</code></td>
+<td>an optional valid phone number of the counterparty. Provide it for profile_type = <code>personal</code>. It can be a phone number that identifies them uniquely as a Revolut user</td>
+<td>A valid international phone number, starting with <code>+</code></td>
 </tr>
 <tr>
 <td>email</td>
@@ -530,9 +567,7 @@
 <td>Email</td>
 </tr>
 </tbody></table>
-
-<h3 id="response">Response</h3>
-
+<h3 id='response-3'>Response</h3>
 <table><thead>
 <tr>
 <th>Field</th>
@@ -557,7 +592,7 @@
 </tr>
 <tr>
 <td>profile_type</td>
-<td>the type of the Revolut profile, <code class="prettyprint">business</code> or <code class="prettyprint">personal</code></td>
+<td>the type of the Revolut profile, <code>business</code> or <code>personal</code></td>
 <td>Text</td>
 </tr>
 <tr>
@@ -567,12 +602,12 @@
 </tr>
 <tr>
 <td>state</td>
-<td>the state of the counterparty, one of <code class="prettyprint">created</code>, <code class="prettyprint">deleted</code></td>
+<td>the state of the counterparty, one of <code>created</code>, <code>deleted</code></td>
 <td>Text</td>
 </tr>
 <tr>
 <td>type</td>
-<td>the type of counterparty, <code class="prettyprint">revolut</code> or <code class="prettyprint">external</code></td>
+<td>the type of counterparty, <code>revolut</code> or <code>external</code></td>
 <td>Text</td>
 </tr>
 <tr>
@@ -592,12 +627,12 @@
 </tr>
 <tr>
 <td>accounts[n].id</td>
-<td>the ID of a counterparty&rsquo;s account</td>
+<td>the ID of a counterparty&#39;s account</td>
 <td>UUID</td>
 </tr>
 <tr>
 <td>accounts[n].currency</td>
-<td>the currency of a counterparty&rsquo;s account</td>
+<td>the currency of a counterparty&#39;s account</td>
 <td>3-letter ISO currency code</td>
 </tr>
 </tbody></table>
@@ -640,15 +675,11 @@
   </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-01T11:11:11.0Z"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"beneficiary_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GB"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
-<h3 id="external-account">External account</h3>
-
+</span></code></pre><h3 id='external-account'>External account</h3>
 <p>You can create a counterparty for an external account as well.</p>
 
-<p><code class="prettyprint">POST https://sandbox-b2b.revolut.com/api/1.0/counterparty</code></p>
-
-<h4 id="request-fields">Request fields</h4>
-
+<p><code>POST https://sandbox-b2b.revolut.com/api/1.0/counterparty</code></p>
+<h4 id='request-fields-2'>Request fields</h4>
 <table><thead>
 <tr>
 <th>Field</th>
@@ -678,7 +709,7 @@
 </tr>
 <tr>
 <td>currency</td>
-<td>the currency of a counterparty&rsquo;s account</td>
+<td>the currency of a counterparty&#39;s account</td>
 <td>3-letter ISO currency code</td>
 </tr>
 <tr>
@@ -737,9 +768,7 @@
 <td>Text</td>
 </tr>
 </tbody></table>
-
-<h3 id="response">Response</h3>
-
+<h3 id='response-4'>Response</h3>
 <table><thead>
 <tr>
 <th>Field</th>
@@ -769,7 +798,7 @@
 </tr>
 <tr>
 <td>base_currency</td>
-<td>the base currency of a counterparty&rsquo;s account</td>
+<td>the base currency of a counterparty&#39;s account</td>
 <td>3-letter ISO currency code</td>
 </tr>
 <tr>
@@ -779,7 +808,7 @@
 </tr>
 <tr>
 <td>state</td>
-<td>the state of the counterparty, one of <code class="prettyprint">created</code>, <code class="prettyprint">deleted</code></td>
+<td>the state of the counterparty, one of <code>created</code>, <code>deleted</code></td>
 <td>Text</td>
 </tr>
 <tr>
@@ -794,7 +823,7 @@
 </tr>
 <tr>
 <td>type</td>
-<td>the type of counterparty, <code class="prettyprint">revolut</code> or <code class="prettyprint">external</code></td>
+<td>the type of counterparty, <code>revolut</code> or <code>external</code></td>
 <td>Text</td>
 </tr>
 <tr>
@@ -813,9 +842,7 @@
 <td>Text</td>
 </tr>
 </tbody></table>
-
-<h2 id="delete-counterparty">Delete Counterparty</h2>
-<pre class="highlight shell tab-shell"><code>curl -X DELETE https://sandbox-b2b.revolut.com/api/1.0/counterparty/6b3c696e-7c3d-464a-8dbe-fc70e183d42e <span class="se">\</span>
+<h2 id='delete-counterparty'>Delete Counterparty</h2><pre class="highlight shell tab-shell"><code>curl -X DELETE https://sandbox-b2b.revolut.com/api/1.0/counterparty/6b3c696e-7c3d-464a-8dbe-fc70e183d42e <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span>
 </code></pre>
 <blockquote>
@@ -824,13 +851,9 @@
 <pre class="highlight shell tab-shell"><code>204 No Content
 </code></pre>
 <p>This endpoint deletes a counterparty with the given ID. Once a counterparty is deleted no payments can be made with it.</p>
-
-<h3 id="request">Request</h3>
-
-<p><code class="prettyprint">DELETE https://sandbox-b2b.revolut.com/api/1.0/counterparty/&lt;id&gt;</code></p>
-
-<h3 id="url-parameters">URL Parameters</h3>
-
+<h3 id='request-3'>Request</h3>
+<p><code>DELETE https://sandbox-b2b.revolut.com/api/1.0/counterparty/&lt;id&gt;</code></p>
+<h3 id='url-parameters-2'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -844,9 +867,7 @@
 <td>UUID</td>
 </tr>
 </tbody></table>
-
-<h2 id="get-counterparty">Get Counterparty</h2>
-<pre class="highlight shell tab-shell"><code>curl https://sandbox-b2b.revolut.com/api/1.0/counterparty/6b3c696e-7c3d-464a-8dbe-fc70e183d42e <span class="se">\</span>
+<h2 id='get-counterparty'>Get Counterparty</h2><pre class="highlight shell tab-shell"><code>curl https://sandbox-b2b.revolut.com/api/1.0/counterparty/6b3c696e-7c3d-464a-8dbe-fc70e183d42e <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span>
 </code></pre>
 <blockquote>
@@ -883,13 +904,9 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a counterparty by ID.</p>
-
-<h3 id="request">Request</h3>
-
-<p><code class="prettyprint">GET https://sandbox-b2b.revolut.com/api/1.0/counterparty/&lt;id&gt;</code></p>
-
-<h4 id="url-parameters">URL Parameters</h4>
-
+<h3 id='request-4'>Request</h3>
+<p><code>GET https://sandbox-b2b.revolut.com/api/1.0/counterparty/&lt;id&gt;</code></p>
+<h4 id='url-parameters-3'>URL Parameters</h4>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -903,9 +920,7 @@
 <td>UUID</td>
 </tr>
 </tbody></table>
-
-<h3 id="response">Response</h3>
-
+<h3 id='response-5'>Response</h3>
 <table><thead>
 <tr>
 <th>Field</th>
@@ -925,7 +940,7 @@
 </tr>
 <tr>
 <td>type</td>
-<td>the type of counterparty, <code class="prettyprint">revolut</code> or <code class="prettyprint">external</code></td>
+<td>the type of counterparty, <code>revolut</code> or <code>external</code></td>
 <td>Text</td>
 </tr>
 <tr>
@@ -935,7 +950,7 @@
 </tr>
 <tr>
 <td>profile_type</td>
-<td>the type of the Revolut profile, <code class="prettyprint">business</code> or <code class="prettyprint">personal</code></td>
+<td>the type of the Revolut profile, <code>business</code> or <code>personal</code></td>
 <td>Text</td>
 </tr>
 <tr>
@@ -945,7 +960,7 @@
 </tr>
 <tr>
 <td>state</td>
-<td>the state of the counterparty, one of <code class="prettyprint">created</code>, <code class="prettyprint">deleted</code></td>
+<td>the state of the counterparty, one of <code>created</code>, <code>deleted</code></td>
 <td>Text</td>
 </tr>
 <tr>
@@ -965,18 +980,16 @@
 </tr>
 <tr>
 <td>accounts[n].id</td>
-<td>the ID of a counterparty&rsquo;s account</td>
+<td>the ID of a counterparty&#39;s account</td>
 <td>UUID</td>
 </tr>
 <tr>
 <td>accounts[n].currency</td>
-<td>the currency of a counterparty&rsquo;s account</td>
+<td>the currency of a counterparty&#39;s account</td>
 <td>3-letter ISO currency code</td>
 </tr>
 </tbody></table>
-
-<h2 id="get-counterparties">Get Counterparties</h2>
-<pre class="highlight shell tab-shell"><code>curl https://sandbox-b2b.revolut.com/api/1.0/counterparties <span class="se">\</span>
+<h2 id='get-counterparties'>Get Counterparties</h2><pre class="highlight shell tab-shell"><code>curl https://sandbox-b2b.revolut.com/api/1.0/counterparties <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span>
 </code></pre>
 <blockquote>
@@ -1013,13 +1026,9 @@
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all your counterparties.</p>
-
-<h3 id="request">Request</h3>
-
-<p><code class="prettyprint">GET https://sandbox-b2b.revolut.com/api/1.0/counterparties</code></p>
-
-<h3 id="response">Response</h3>
-
+<h3 id='request-5'>Request</h3>
+<p><code>GET https://sandbox-b2b.revolut.com/api/1.0/counterparties</code></p>
+<h3 id='response-6'>Response</h3>
 <table><thead>
 <tr>
 <th>Field</th>
@@ -1039,7 +1048,7 @@
 </tr>
 <tr>
 <td>type</td>
-<td>the type of counterparty, <code class="prettyprint">revolut</code> or <code class="prettyprint">external</code></td>
+<td>the type of counterparty, <code>revolut</code> or <code>external</code></td>
 <td>Text</td>
 </tr>
 <tr>
@@ -1049,7 +1058,7 @@
 </tr>
 <tr>
 <td>profile_type</td>
-<td>the type of the Revolut profile, <code class="prettyprint">business</code> or <code class="prettyprint">personal</code></td>
+<td>the type of the Revolut profile, <code>business</code> or <code>personal</code></td>
 <td>Text</td>
 </tr>
 <tr>
@@ -1074,19 +1083,17 @@
 </tr>
 <tr>
 <td>accounts[n].id</td>
-<td>the ID of a counterparty&rsquo;s account</td>
+<td>the ID of a counterparty&#39;s account</td>
 <td>UUID</td>
 </tr>
 <tr>
 <td>accounts[n].currency</td>
-<td>the currency of a counterparty&rsquo;s account</td>
+<td>the currency of a counterparty&#39;s account</td>
 <td>3-letter ISO currency code</td>
 </tr>
 </tbody></table>
-
-<h1 id="payments">Payments</h1>
-
-<p>All incoming and outgoing payments are represented as transactions and are processed in two stages from the user&rsquo;s perspective: </p>
+<h1 id='payments'>Payments</h1>
+<p>All incoming and outgoing payments are represented as transactions and are processed in two stages from the user&#39;s perspective: </p>
 
 <ol>
 <li>a new transaction is created, </li>
@@ -1098,10 +1105,8 @@
 </ul></li>
 </ol>
 
-<p>A new transaction has <code class="prettyprint">pending</code> state, and processed transaction&rsquo;s state can be one of <code class="prettyprint">completed</code>, <code class="prettyprint">failed</code>, <code class="prettyprint">reverted</code> or <code class="prettyprint">declined</code>.</p>
-
-<h2 id="transfer-between-own-accounts">Transfer between own accounts</h2>
-<pre class="highlight shell tab-shell"><code>curl -X POST https://sandbox-b2b.revolut.com/api/1.0/transfer <span class="se">\</span>
+<p>A new transaction has <code>pending</code> state, and processed transaction&#39;s state can be one of <code>completed</code>, <code>failed</code>, <code>reverted</code> or <code>declined</code>.</p>
+<h2 id='transfer-between-own-accounts'>Transfer between own accounts</h2><pre class="highlight shell tab-shell"><code>curl -X POST https://sandbox-b2b.revolut.com/api/1.0/transfer <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span> <span class="se">\</span>
   --data @- <span class="sh">&lt;&lt; EOF
 </span></code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -1124,16 +1129,12 @@
   </span><span class="s2">"completed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-21T11:22:11.0Z"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint processes transfers between your accounts. Such transfers are normally processed instantly, however, it is possible to provide an optional <code class="prettyprint">webhook</code> in case the transfer processing is delayed. The webhook should be able to process a POST request. If the provided endpoint if not available or fails (responds with 50x HTTP error) for any reason, the call will be retried 3 times with an increasing interval between attempts.</p>
+<p>This endpoint processes transfers between your accounts. Such transfers are normally processed instantly, however, it is possible to provide an optional <code>webhook</code> in case the transfer processing is delayed. The webhook should be able to process a POST request. If the provided endpoint if not available or fails (responds with 50x HTTP error) for any reason, the call will be retried 3 times with an increasing interval between attempts.</p>
 
-<p>The resulting transaction has type &ldquo;transfer&rdquo;.</p>
-
-<h3 id="request">Request</h3>
-
-<p><code class="prettyprint">POST https://sandbox-b2b.revolut.com/api/1.0/transfer</code></p>
-
-<h4 id="request-fields">Request fields</h4>
-
+<p>The resulting transaction has type &quot;transfer&quot;.</p>
+<h3 id='request-6'>Request</h3>
+<p><code>POST https://sandbox-b2b.revolut.com/api/1.0/transfer</code></p>
+<h4 id='request-fields-3'>Request fields</h4>
 <table><thead>
 <tr>
 <th>Field</th>
@@ -1177,9 +1178,7 @@
 <td>URL</td>
 </tr>
 </tbody></table>
-
-<h3 id="response">Response</h3>
-
+<h3 id='response-7'>Response</h3>
 <table><thead>
 <tr>
 <th>Field</th>
@@ -1194,7 +1193,7 @@
 </tr>
 <tr>
 <td>state</td>
-<td>the transction state: <code class="prettyprint">pending</code>, <code class="prettyprint">completed</code>, <code class="prettyprint">declined</code> or <code class="prettyprint">failed</code></td>
+<td>the transction state: <code>pending</code>, <code>completed</code>, <code>declined</code> or <code>failed</code></td>
 <td>Text</td>
 </tr>
 <tr>
@@ -1203,9 +1202,7 @@
 <td>ISO date/time</td>
 </tr>
 </tbody></table>
-
-<h2 id="create-payment">Create Payment</h2>
-
+<h2 id='create-payment'>Create Payment</h2>
 <blockquote>
 <p>Pay a counterparty</p>
 </blockquote>
@@ -1248,13 +1245,9 @@
 <p>This endpoint creates a new payment. If the payment is for another Revolut account, business or personal, the transaction may be processed synchronously.</p>
 
 <aside class="notice">To avoid duplicate payment submission because on an error in your code, we strongly recommend to provide a unique <code>request_id</code> for each submitted payment. The <code>request_id</code> must be previously persisted on your side.</aside>
-
-<h3 id="request">Request</h3>
-
-<p><code class="prettyprint">POST https://sandbox-b2b.revolut.com/api/1.0/pay</code></p>
-
-<h4 id="request-fields">Request fields</h4>
-
+<h3 id='request-7'>Request</h3>
+<p><code>POST https://sandbox-b2b.revolut.com/api/1.0/pay</code></p>
+<h4 id='request-fields-4'>Request fields</h4>
 <table><thead>
 <tr>
 <th>Field</th>
@@ -1279,7 +1272,7 @@
 </tr>
 <tr>
 <td>receiver.account_id</td>
-<td>an optional ID of the receiving counterparty&rsquo;s account, can be own account (only for internal counterparties)</td>
+<td>an optional ID of the receiving counterparty&#39;s account, can be own account (only for internal counterparties)</td>
 <td>UUID</td>
 </tr>
 <tr>
@@ -1303,9 +1296,7 @@
 <td>URL</td>
 </tr>
 </tbody></table>
-
-<h3 id="response">Response</h3>
-
+<h3 id='response-8'>Response</h3>
 <table><thead>
 <tr>
 <th>Field</th>
@@ -1320,12 +1311,12 @@
 </tr>
 <tr>
 <td>state</td>
-<td>the transction state: <code class="prettyprint">pending</code>, <code class="prettyprint">completed</code>, <code class="prettyprint">declined</code> or <code class="prettyprint">failed</code></td>
+<td>the transction state: <code>pending</code>, <code>completed</code>, <code>declined</code> or <code>failed</code></td>
 <td>Text</td>
 </tr>
 <tr>
 <td>reason</td>
-<td>an optional reason code for <code class="prettyprint">declined</code> or <code class="prettyprint">failed</code> transaction state</td>
+<td>an optional reason code for <code>declined</code> or <code>failed</code> transaction state</td>
 <td>Text</td>
 </tr>
 <tr>
@@ -1334,9 +1325,7 @@
 <td>ISO date/time</td>
 </tr>
 </tbody></table>
-
-<h2 id="schedule-payment">Schedule Payment</h2>
-<pre class="highlight shell tab-shell"><code>curl -X POST https://sandbox-b2b.revolut.com/api/1.0/pay <span class="se">\</span>
+<h2 id='schedule-payment'>Schedule Payment</h2><pre class="highlight shell tab-shell"><code>curl -X POST https://sandbox-b2b.revolut.com/api/1.0/pay <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span> <span class="se">\</span>
   --data @- <span class="sh">&lt;&lt; EOF
 </span></code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -1356,7 +1345,7 @@
 <p>It is possible to schedule an internal payments for up to 30 days ahead.
 Scheduling external payments is not supported at the moment.
 Scheduled payment must be in currency of the account to pay from.
-To schedule a future payment, as opposed to immediate execution, just pass an additional field in the <code class="prettyprint">POST /pay</code> request:</p>
+To schedule a future payment, as opposed to immediate execution, just pass an additional field in the <code>POST /pay</code> request:</p>
 
 <table><thead>
 <tr>
@@ -1373,9 +1362,7 @@ To schedule a future payment, as opposed to immediate execution, just pass an ad
 </tbody></table>
 
 <aside class="notice">Payments scheduled for the same time are not guaranteed to be executed all at the same time. As scheduled processor runs every several hours, the payments will be processed in batches, and if you schedule too many payments it will require more time to process all of them.</aside>
-
-<h2 id="check-payment-status">Check Payment Status</h2>
-<pre class="highlight shell tab-shell"><code>curl https://sandbox-b2b.revolut.com/api/1.0/transaction/e0cbf84637264ee082a848b?id_type<span class="o">=</span>request_id <span class="se">\</span>
+<h2 id='check-payment-status'>Check Payment Status</h2><pre class="highlight shell tab-shell"><code>curl https://sandbox-b2b.revolut.com/api/1.0/transaction/e0cbf84637264ee082a848b?id_type<span class="o">=</span>request_id <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span>
 </code></pre>
 <blockquote>
@@ -1496,19 +1483,15 @@ To schedule a future payment, as opposed to immediate execution, just pass an ad
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves transaction details by transaction ID or by request ID.</p>
-
-<h3 id="request">Request</h3>
-
+<h3 id='request-8'>Request</h3>
 <p>To retrieve a transaction by ID:</p>
 
-<p><code class="prettyprint">GET https://sandbox-b2b.revolut.com/api/1.0/transaction/&lt;id&gt;</code></p>
+<p><code>GET https://sandbox-b2b.revolut.com/api/1.0/transaction/&lt;id&gt;</code></p>
 
 <p>To retrieve a transaction by request ID:</p>
 
-<p><code class="prettyprint">GET https://sandbox-b2b.revolut.com/api/1.0/transaction/&lt;request_id&gt;?id_type=request_id</code></p>
-
-<h3 id="response">Response</h3>
-
+<p><code>GET https://sandbox-b2b.revolut.com/api/1.0/transaction/&lt;request_id&gt;?id_type=request_id</code></p>
+<h3 id='response-9'>Response</h3>
 <table><thead>
 <tr>
 <th>Field</th>
@@ -1533,12 +1516,12 @@ To schedule a future payment, as opposed to immediate execution, just pass an ad
 </tr>
 <tr>
 <td>state</td>
-<td>the transction state: <code class="prettyprint">pending</code>, <code class="prettyprint">completed</code>, <code class="prettyprint">declined</code> or <code class="prettyprint">failed</code></td>
+<td>the transction state: <code>pending</code>, <code>completed</code>, <code>declined</code> or <code>failed</code></td>
 <td>Text</td>
 </tr>
 <tr>
 <td>reason</td>
-<td>an optional reason code for <code class="prettyprint">declined</code> or <code class="prettyprint">failed</code> transaction state</td>
+<td>an optional reason code for <code>declined</code> or <code>failed</code> transaction state</td>
 <td>Text</td>
 </tr>
 <tr>
@@ -1553,7 +1536,7 @@ To schedule a future payment, as opposed to immediate execution, just pass an ad
 </tr>
 <tr>
 <td>completed_at</td>
-<td>the instant when the transaction was completed, mandatory for <code class="prettyprint">completed</code> state only</td>
+<td>the instant when the transaction was completed, mandatory for <code>completed</code> state only</td>
 <td>ISO date/time</td>
 </tr>
 <tr>
@@ -1568,7 +1551,7 @@ To schedule a future payment, as opposed to immediate execution, just pass an ad
 </tr>
 <tr>
 <td>legs</td>
-<td>the legs of transaction, there&rsquo;ll be 2 legs between your Revolut accounts and 1 leg in other cases</td>
+<td>the legs of transaction, there&#39;ll be 2 legs between your Revolut accounts and 1 leg in other cases</td>
 <td>Array</td>
 </tr>
 <tr>
@@ -1603,35 +1586,29 @@ To schedule a future payment, as opposed to immediate execution, just pass an ad
 </tr>
 <tr>
 <td>legs[n].counterparty.type</td>
-<td>the type of counterparty: <code class="prettyprint">self</code>, <code class="prettyprint">revolut</code>, <code class="prettyprint">external</code></td>
+<td>the type of counterparty: <code>self</code>, <code>revolut</code>, <code>external</code></td>
 <td>Text</td>
 </tr>
 <tr>
 <td>legs[n].description</td>
-<td>the transaction description, sometimes referred to as &ldquo;payment reference&rdquo;</td>
+<td>the transaction description, sometimes referred to as &quot;payment reference&quot;</td>
 <td>Decimal</td>
 </tr>
 </tbody></table>
-
-<h2 id="cancel-payment">Cancel Payment</h2>
-<pre class="highlight shell tab-shell"><code>curl -X DELETE https://sandbox-b2b.revolut.com/api/1.0/transaction/62b61a4f-fb09-4e87-b0ab-b66c85f5485c <span class="se">\</span>
+<h2 id='cancel-payment'>Cancel Payment</h2><pre class="highlight shell tab-shell"><code>curl -X DELETE https://sandbox-b2b.revolut.com/api/1.0/transaction/62b61a4f-fb09-4e87-b0ab-b66c85f5485c <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span>
 </code></pre>
 <blockquote>
 <p>Response:
-<code class="prettyprint">
+<code>
 204 No Content
 </code></p>
 </blockquote>
 
-<p>This endpoint allows to cancel a &ldquo;pending&rdquo; transaction that was initiated by you, via UI or API.</p>
-
-<h3 id="request">Request</h3>
-
-<p><code class="prettyprint">DELETE https://sandbox-b2b.revolut.com/api/1.0/transaction/&lt;id&gt;</code></p>
-
-<h4 id="url-parameters">URL Parameters</h4>
-
+<p>This endpoint allows to cancel a &quot;pending&quot; transaction that was initiated by you, via UI or API.</p>
+<h3 id='request-9'>Request</h3>
+<p><code>DELETE https://sandbox-b2b.revolut.com/api/1.0/transaction/&lt;id&gt;</code></p>
+<h4 id='url-parameters-4'>URL Parameters</h4>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1645,9 +1622,7 @@ To schedule a future payment, as opposed to immediate execution, just pass an ad
 <td>UUID</td>
 </tr>
 </tbody></table>
-
-<h2 id="get-transactions">Get Transactions</h2>
-<pre class="highlight shell tab-shell"><code>curl https://sandbox-b2b.revolut.com/api/1.0/transactions? <span class="se">\</span>
+<h2 id='get-transactions'>Get Transactions</h2><pre class="highlight shell tab-shell"><code>curl https://sandbox-b2b.revolut.com/api/1.0/transactions? <span class="se">\</span>
   <span class="nv">counterparty</span><span class="o">=</span>5138z40d1-05bb-49c0-b130-75e8cf2f7693 <span class="se">\</span>
   &amp;from<span class="o">=</span>2017-06-01 <span class="se">\</span>
   &amp;to<span class="o">=</span>2017-06-10 <span class="se">\</span>
@@ -1730,13 +1705,9 @@ To schedule a future payment, as opposed to immediate execution, just pass an ad
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves historical transactions based on the provided query criteria.</p>
-
-<h3 id="request">Request</h3>
-
-<p><code class="prettyprint">GET https://sandbox-b2b.revolut.com/api/1.0/transactions</code></p>
-
-<h4 id="url-parameters">URL Parameters</h4>
-
+<h3 id='request-10'>Request</h3>
+<p><code>GET https://sandbox-b2b.revolut.com/api/1.0/transactions</code></p>
+<h4 id='url-parameters-5'>URL Parameters</h4>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1772,9 +1743,7 @@ To schedule a future payment, as opposed to immediate execution, just pass an ad
 </tbody></table>
 
 <p>All filters are optional.</p>
-
-<h3 id="response">Response</h3>
-
+<h3 id='response-10'>Response</h3>
 <table><thead>
 <tr>
 <th>Field</th>
@@ -1799,12 +1768,12 @@ To schedule a future payment, as opposed to immediate execution, just pass an ad
 </tr>
 <tr>
 <td>state</td>
-<td>the transction state: <code class="prettyprint">pending</code>, <code class="prettyprint">completed</code>, <code class="prettyprint">declined</code> or <code class="prettyprint">failed</code></td>
+<td>the transction state: <code>pending</code>, <code>completed</code>, <code>declined</code> or <code>failed</code></td>
 <td>Text</td>
 </tr>
 <tr>
 <td>reason</td>
-<td>an optional reason code for <code class="prettyprint">declined</code> or <code class="prettyprint">failed</code> transaction state</td>
+<td>an optional reason code for <code>declined</code> or <code>failed</code> transaction state</td>
 <td>Text</td>
 </tr>
 <tr>
@@ -1819,7 +1788,7 @@ To schedule a future payment, as opposed to immediate execution, just pass an ad
 </tr>
 <tr>
 <td>completed_at</td>
-<td>the instant when the transaction was completed, mandatory for <code class="prettyprint">completed</code> state only</td>
+<td>the instant when the transaction was completed, mandatory for <code>completed</code> state only</td>
 <td>ISO date/time</td>
 </tr>
 <tr>
@@ -1859,23 +1828,21 @@ To schedule a future payment, as opposed to immediate execution, just pass an ad
 </tr>
 <tr>
 <td>legs[n].counterparty.type</td>
-<td>the type of counterparty: <code class="prettyprint">self</code>, <code class="prettyprint">revolut</code>, <code class="prettyprint">external</code></td>
+<td>the type of counterparty: <code>self</code>, <code>revolut</code>, <code>external</code></td>
 <td>Text</td>
 </tr>
 <tr>
 <td>legs[n].description</td>
-<td>the transaction description, sometimes referred to as &ldquo;payment reference&rdquo;</td>
+<td>the transaction description, sometimes referred to as &quot;payment reference&quot;</td>
 <td>Decimal</td>
 </tr>
 </tbody></table>
+<h1 id='web-hooks'>Web-hooks</h1>
+<p>Coming soon...</p>
+<h1 id='errors'>Errors</h1>
+<aside class="notice">This error section is stored in a separate file in `includes/_errors.md`. Slate allows you to optionally separate out your docs into many files...just save them to the `includes` folder and add them to the top of your `index.md`'s frontmatter. Files are included in the order listed.</aside>
 
-<h1 id="web-hooks">Web-hooks</h1>
-
-<p>Coming soon&hellip;</p>
-
-          <h1 id="errors">Errors</h1>
-
-<p>The Revolut API uses the following error codes:</p>
+<p>The Kittn API uses the following error codes:</p>
 
 <table><thead>
 <tr>
@@ -1885,39 +1852,47 @@ To schedule a future payment, as opposed to immediate execution, just pass an ad
 </thead><tbody>
 <tr>
 <td>400</td>
-<td>Bad Request &ndash; Your request is well-formatted but contains invalid pramaters/values</td>
+<td>Bad Request -- Your request sucks.</td>
 </tr>
 <tr>
 <td>401</td>
-<td>Unauthorized &ndash; Your API credentials are wrong</td>
+<td>Unauthorized -- Your API key is wrong.</td>
 </tr>
 <tr>
 <td>403</td>
-<td>Forbidden &ndash; Access to the requested API or resource is forbidden</td>
+<td>Forbidden -- The kitten requested is hidden for administrators only.</td>
 </tr>
 <tr>
 <td>404</td>
-<td>Not Found &ndash; The specified resource could not be found</td>
+<td>Not Found -- The specified kitten could not be found.</td>
 </tr>
 <tr>
 <td>405</td>
-<td>Method Not Allowed &ndash; You tried to access a resource with an invalid method</td>
+<td>Method Not Allowed -- You tried to access a kitten with an invalid method.</td>
 </tr>
 <tr>
 <td>406</td>
-<td>Not Acceptable &ndash; You requested a format that isn&rsquo;t json</td>
+<td>Not Acceptable -- You requested a format that isn&#39;t json.</td>
+</tr>
+<tr>
+<td>410</td>
+<td>Gone -- The kitten requested has been removed from our servers.</td>
+</tr>
+<tr>
+<td>418</td>
+<td>I&#39;m a teapot.</td>
 </tr>
 <tr>
 <td>429</td>
-<td>Too Many Requests &ndash; You&rsquo;ve performed too many requests and breached request rate limit.</td>
+<td>Too Many Requests -- You&#39;re requesting too many kittens! Slow down!</td>
 </tr>
 <tr>
 <td>500</td>
-<td>Internal Server Error &ndash; We had a problem with our server. Try again later.</td>
+<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
 </tr>
 <tr>
 <td>503</td>
-<td>Service Unavailable &ndash; We&rsquo;re temporarily offline for maintenance. Please try again later.</td>
+<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
 </tr>
 </tbody></table>
 
