@@ -1567,22 +1567,22 @@ To schedule a future payment, as opposed to immediate execution, just pass an ad
 <tr>
 <td>legs[n].currency</td>
 <td>the transaction currency</td>
-<td>Decimal</td>
+<td>3-letter ISO currency code</td>
 </tr>
 <tr>
 <td>legs[n].account_id</td>
 <td>the ID of the account the transaction is associated with</td>
-<td>Decimal</td>
+<td>UUID</td>
 </tr>
 <tr>
 <td>legs[n].counterparty.id</td>
 <td>the counterparty ID</td>
-<td>Text</td>
+<td>UUID</td>
 </tr>
 <tr>
 <td>legs[n].counterparty.account_id</td>
 <td>the counterparty account ID</td>
-<td>Text</td>
+<td>UUID</td>
 </tr>
 <tr>
 <td>legs[n].counterparty.type</td>
@@ -1592,7 +1592,7 @@ To schedule a future payment, as opposed to immediate execution, just pass an ad
 <tr>
 <td>legs[n].description</td>
 <td>the transaction description, sometimes referred to as &quot;payment reference&quot;</td>
-<td>Decimal</td>
+<td>Text</td>
 </tr>
 </tbody></table>
 <h2 id='cancel-payment'>Cancel Payment</h2><pre class="highlight shell tab-shell"><code>curl -X DELETE https://sandbox-b2b.revolut.com/api/1.0/transaction/62b61a4f-fb09-4e87-b0ab-b66c85f5485c <span class="se">\</span>
@@ -1809,22 +1809,22 @@ To schedule a future payment, as opposed to immediate execution, just pass an ad
 <tr>
 <td>legs[n].currency</td>
 <td>the transaction currency</td>
-<td>Decimal</td>
+<td>3-letter ISO currency code</td>
 </tr>
 <tr>
 <td>legs[n].account_id</td>
 <td>the ID of the account the transaction is associated with</td>
-<td>Decimal</td>
+<td>UUID</td>
 </tr>
 <tr>
 <td>legs[n].counterparty.id</td>
 <td>the counterparty ID</td>
-<td>Text</td>
+<td>UUID</td>
 </tr>
 <tr>
 <td>legs[n].counterparty.account_id</td>
 <td>the counterparty account ID</td>
-<td>Text</td>
+<td>UUID</td>
 </tr>
 <tr>
 <td>legs[n].counterparty.type</td>
@@ -1834,7 +1834,7 @@ To schedule a future payment, as opposed to immediate execution, just pass an ad
 <tr>
 <td>legs[n].description</td>
 <td>the transaction description, sometimes referred to as &quot;payment reference&quot;</td>
-<td>Decimal</td>
+<td>Text</td>
 </tr>
 </tbody></table>
 <h1 id='web-hooks'>Web-hooks</h1>
