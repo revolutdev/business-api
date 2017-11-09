@@ -277,6 +277,14 @@
           </li>
           <li>
             <a href="#web-hooks" class="toc-h1 toc-link" data-title="Web-hooks">Web-hooks</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#setting-up-url-for-webhook" class="toc-h2 toc-link" data-title="Web-hooks">Setting up url for webhook</a>
+                  </li>
+                  <li>
+                    <a href="#webhook-entities" class="toc-h2 toc-link" data-title="Web-hooks">Webhook entities</a>
+                  </li>
+              </ul>
           </li>
           <li>
             <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
@@ -1283,7 +1291,7 @@
 <tr>
 <td>currency</td>
 <td>the transaction currency</td>
-<td>Decimal</td>
+<td>3-letter ISO currency code</td>
 </tr>
 <tr>
 <td>description</td>
@@ -1838,7 +1846,32 @@ To schedule a future payment, as opposed to immediate execution, just pass an ad
 </tr>
 </tbody></table>
 <h1 id='web-hooks'>Web-hooks</h1>
-<p>Coming soon...</p>
+<p>A mechanism of receiving updates for your servers. You will receive JSON-serialized object with information what has 
+changed.</p>
+<h2 id='setting-up-url-for-webhook'>Setting up url for webhook</h2><pre class="highlight shell tab-shell"><code>curl -X POST https://sandbox-b2b.revolut.com/api/1.0/webhook <span class="se">\ </span>
+  -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span> <span class="se">\</span>
+  --data @- <span class="sh">&lt;&lt; EOF
+</span></code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"url"</span><span class="p">:</span><span class="s2">"https|http://example.com/example/path"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><pre class="highlight shell tab-shell"><code>EOF
+</code></pre>
+<p>Use this method to specify a url and receive incoming updates via an outgoing webhook.</p>
+<h2 id='webhook-entities'>Webhook entities</h2><h3 id='money-events-with-yours-accounts'>Money events with yours accounts</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"transactionId"</span><span class="p">:</span><span class="s2">"a0d9e5a9-7c9c-45dc-9a16-439d83b5dec3"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"walletFrom"</span><span class="p">:</span><span class="s2">"88888888-4444-4444-4444-121212121212"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"pocketFrom"</span><span class="p">:</span><span class="s2">"88888888-4444-4444-4444-111111111111"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"walletTo"</span><span class="p">:</span><span class="s2">"3de7b480-ca7e-4d3c-b369-d8eff3767d1a"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"pocketTo"</span><span class="p">:</span><span class="s2">"b2f0bac7-0800-4118-83b1-cdf866d23c63"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> 
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"amount"</span><span class="p">:</span><span class="mi">12300</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"currency"</span><span class="p">:</span><span class="s2">"GBP"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"startedAt"</span><span class="p">:</span><span class="mi">1510060125759</span><span class="w">
+</span><span class="p">}</span><span class="w">  
+</span></code></pre>
+<p>Entity will be pushed when transaction related to your account was created.</p>
 <h1 id='errors'>Errors</h1>
 <aside class="notice">This error section is stored in a separate file in `includes/_errors.md`. Slate allows you to optionally separate out your docs into many files...just save them to the `includes` folder and add them to the top of your `index.md`'s frontmatter. Files are included in the order listed.</aside>
 
