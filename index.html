@@ -1846,9 +1846,9 @@ To schedule a future payment, as opposed to immediate execution, just pass an ad
 </tr>
 </tbody></table>
 <h1 id='web-hooks'>Web-hooks</h1>
-<p>A mechanism of receiving updates for your servers. You will receive JSON-serialized object with information what has 
-changed.</p>
-<h2 id='setting-up-url-for-webhook'>Setting up url for webhook</h2><pre class="highlight shell tab-shell"><code>curl -X POST https://sandbox-b2b.revolut.com/api/1.0/webhook <span class="se">\ </span>
+<p>A mechanism to receive updated to your servers. You will receive JSON-serialized object specifying the information 
+that has changed.</p>
+<h2 id='setting-up-url-for-webhook'>Setting up url for webhook</h2><pre class="highlight shell tab-shell"><code>curl -X POST https://sandbox-b2b.revolut.com/api/1.0/webhookUrl <span class="se">\ </span>
   -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span> <span class="se">\</span>
   --data @- <span class="sh">&lt;&lt; EOF
 </span></code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -1856,8 +1856,8 @@ changed.</p>
 </span><span class="p">}</span><span class="w">
 </span></code></pre><pre class="highlight shell tab-shell"><code>EOF
 </code></pre>
-<p>Use this method to specify a url and receive incoming updates via an outgoing webhook.</p>
-<h2 id='webhook-entities'>Webhook entities</h2><h3 id='money-events-with-yours-accounts'>Money events with yours accounts</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+<p>Use this method to specify a URL and receive incoming updates via an outgoing webhook.</p>
+<h2 id='webhook-entities'>Webhook entities</h2><h3 id='money-events-within-your-accounts'>Money events within your accounts</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"transactionId"</span><span class="p">:</span><span class="s2">"a0d9e5a9-7c9c-45dc-9a16-439d83b5dec3"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"walletFrom"</span><span class="p">:</span><span class="s2">"88888888-4444-4444-4444-121212121212"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"pocketFrom"</span><span class="p">:</span><span class="s2">"88888888-4444-4444-4444-111111111111"</span><span class="p">,</span><span class="w">
@@ -1871,7 +1871,7 @@ changed.</p>
   </span><span class="s2">"startedAt"</span><span class="p">:</span><span class="mi">1510060125759</span><span class="w">
 </span><span class="p">}</span><span class="w">  
 </span></code></pre>
-<p>Entity will be pushed when transaction related to your account was created.</p>
+<p>Entity will be pushed when a transaction related to your account was created</p>
 <h1 id='errors'>Errors</h1>
 <aside class="notice">This error section is stored in a separate file in `includes/_errors.md`. Slate allows you to optionally separate out your docs into many files...just save them to the `includes` folder and add them to the top of your `index.md`'s frontmatter. Files are included in the order listed.</aside>
 
