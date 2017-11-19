@@ -279,10 +279,10 @@
             <a href="#web-hooks" class="toc-h1 toc-link" data-title="Web-hooks">Web-hooks</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#setting-up-url-for-webhook" class="toc-h2 toc-link" data-title="Web-hooks">Setting up url for webhook</a>
+                    <a href="#setting-up-a-web-hook" class="toc-h2 toc-link" data-title="Web-hooks">Setting up a web-hook</a>
                   </li>
                   <li>
-                    <a href="#webhook-entities" class="toc-h2 toc-link" data-title="Web-hooks">Webhook entities</a>
+                    <a href="#webhook-events" class="toc-h2 toc-link" data-title="Web-hooks">Webhook events</a>
                   </li>
               </ul>
           </li>
@@ -1846,36 +1846,28 @@ To schedule a future payment, as opposed to immediate execution, just pass an ad
 </tr>
 </tbody></table>
 <h1 id='web-hooks'>Web-hooks</h1>
-<p>A mechanism to receive updated to your servers. You will receive JSON-serialized object specifying the information 
-that has changed.</p>
-<h2 id='setting-up-url-for-webhook'>Setting up url for webhook</h2><pre class="highlight shell tab-shell"><code>curl -X POST https://sandbox-b2b.revolut.com/api/1.0/webhookUrl <span class="se">\ </span>
+<p>Web-hook is a mechanism that allows you to receive updates about your account to a provided by you HTTP(S) endpoint.</p>
+<h2 id='setting-up-a-web-hook'>Setting up a web-hook</h2><pre class="highlight shell tab-shell"><code>curl -X POST https://sandbox-b2b.revolut.com/api/1.0/webhook <span class="se">\ </span>
   -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span> <span class="se">\</span>
   --data @- <span class="sh">&lt;&lt; EOF
 </span></code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"url"</span><span class="p">:</span><span class="s2">"https|http://example.com/example/path"</span><span class="w">
+  </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.com/example/path"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><pre class="highlight shell tab-shell"><code>EOF
 </code></pre>
-<p>Use this method to specify a URL and receive incoming updates via an outgoing webhook.</p>
-<h2 id='webhook-entities'>Webhook entities</h2><h3 id='money-events-within-your-accounts'>Money events within your accounts</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"transactionId"</span><span class="p">:</span><span class="s2">"a0d9e5a9-7c9c-45dc-9a16-439d83b5dec3"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"walletFrom"</span><span class="p">:</span><span class="s2">"88888888-4444-4444-4444-121212121212"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"pocketFrom"</span><span class="p">:</span><span class="s2">"88888888-4444-4444-4444-111111111111"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"walletTo"</span><span class="p">:</span><span class="s2">"3de7b480-ca7e-4d3c-b369-d8eff3767d1a"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"pocketTo"</span><span class="p">:</span><span class="s2">"b2f0bac7-0800-4118-83b1-cdf866d23c63"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> 
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"amount"</span><span class="p">:</span><span class="mi">12300</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"currency"</span><span class="p">:</span><span class="s2">"GBP"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"startedAt"</span><span class="p">:</span><span class="mi">1510060125759</span><span class="w">
+<p>Use this API to create your web-hook endpoint. Only HTTP(S) web-hooks are supported.</p>
+<h2 id='webhook-events'>Webhook events</h2>
+<p>Currently the following events are supported.<br>
+[TBC]</p>
+<h3 id='transaction-created-event'>Transaction Created event</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"event"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TransactionCreated"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-10T12:00:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"62b61a4f-fb09-4e87-b0ab-b66c85f5485c"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">  
-</span></code></pre>
-<p>Entity will be pushed when a transaction related to your account was created</p>
-<h1 id='errors'>Errors</h1>
-<aside class="notice">This error section is stored in a separate file in `includes/_errors.md`. Slate allows you to optionally separate out your docs into many files...just save them to the `includes` folder and add them to the top of your `index.md`'s frontmatter. Files are included in the order listed.</aside>
-
-<p>The Kittn API uses the following error codes:</p>
+</span></code></pre><h1 id='errors'>Errors</h1>
+<p>The API uses the following error codes:</p>
 
 <table><thead>
 <tr>
@@ -1885,7 +1877,7 @@ that has changed.</p>
 </thead><tbody>
 <tr>
 <td>400</td>
-<td>Bad Request -- Your request sucks.</td>
+<td>Bad Request -- Your request is invalid.</td>
 </tr>
 <tr>
 <td>401</td>
@@ -1893,31 +1885,23 @@ that has changed.</p>
 </tr>
 <tr>
 <td>403</td>
-<td>Forbidden -- The kitten requested is hidden for administrators only.</td>
+<td>Forbidden -- Access to the requested resource or action is forbidden.</td>
 </tr>
 <tr>
 <td>404</td>
-<td>Not Found -- The specified kitten could not be found.</td>
+<td>Not Found -- The requested resource could not be found.</td>
 </tr>
 <tr>
 <td>405</td>
-<td>Method Not Allowed -- You tried to access a kitten with an invalid method.</td>
+<td>Method Not Allowed -- You tried to access an endpoint with an invalid method.</td>
 </tr>
 <tr>
 <td>406</td>
-<td>Not Acceptable -- You requested a format that isn&#39;t json.</td>
-</tr>
-<tr>
-<td>410</td>
-<td>Gone -- The kitten requested has been removed from our servers.</td>
-</tr>
-<tr>
-<td>418</td>
-<td>I&#39;m a teapot.</td>
+<td>Not Acceptable -- You requested a format that isn&#39;t JSON.</td>
 </tr>
 <tr>
 <td>429</td>
-<td>Too Many Requests -- You&#39;re requesting too many kittens! Slow down!</td>
+<td>Too Many Requests -- You&#39;re sending too many requests.</td>
 </tr>
 <tr>
 <td>500</td>
