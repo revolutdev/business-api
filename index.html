@@ -201,7 +201,7 @@
       <script src="javascripts/all.js"></script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;]">
+  <body class="index" data-languages="[&quot;shell--sandbox&quot;,&quot;shell--production&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -211,7 +211,8 @@
     <div class="toc-wrapper">
       <img src="images/logo.png" class="logo" alt="Logo" />
         <div class="lang-selector">
-              <a href="#" data-language-name="shell">shell</a>
+              <a href="#" data-language-name="shell--sandbox">sandbox</a>
+              <a href="#" data-language-name="shell--production">production</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -318,7 +319,9 @@
 <p>Once you sign up for your Revolut Business account on <a href="https://business.revolut.com/signup">business.revolut.com</a>, you will be issued with two API-keys, one for sandbox and one for production environment. The sandbox environment is useful for development and allows to play with test data. Some of the data will be pre-populated so you can start quickly.</p>
 
 <aside class="warning">Please DO NOT use production environment until you have tested your integration sufficiently and are happy that it works as expected.</aside>
-<h1 id='accounts'>Accounts</h1><h2 id='get-accounts'>Get Accounts</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://sandbox-b2b.revolut.com/api/1.0/accounts"</span> <span class="se">\</span>
+<h1 id='accounts'>Accounts</h1><h2 id='get-accounts'>Get Accounts</h2><pre class="highlight shell tab-shell--sandbox"><code>curl <span class="s2">"https://sandbox-b2b.revolut.com/api/1.0/accounts"</span> <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span>
+</code></pre><pre class="highlight shell tab-shell--production"><code>curl <span class="s2">"https://b2b.revolut.com/api/1.0/accounts"</span> <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span>
 </code></pre>
 <blockquote>
@@ -361,7 +364,7 @@
 </span></code></pre>
 <p>This endpoint retrieves your accounts.</p>
 <h3 id='request'>Request</h3>
-<p><code>GET https://sandbox-b2b.revolut.com/api/1.0/accounts</code></p>
+<p><code>GET https://b2b.revolut.com/api/1.0/accounts</code></p>
 <h3 id='response'>Response</h3>
 <table><thead>
 <tr>
@@ -416,7 +419,9 @@
 <td>Text</td>
 </tr>
 </tbody></table>
-<h2 id='get-account'>Get Account</h2><pre class="highlight shell tab-shell"><code>curl https://sandbox-b2b.revolut.com/api/1.0/accounts/df8d6b20-0725-482e-a29e-fb09631480cf <span class="se">\</span>
+<h2 id='get-account'>Get Account</h2><pre class="highlight shell tab-shell--sandbox"><code>curl https://sandbox-b2b.revolut.com/api/1.0/accounts/df8d6b20-0725-482e-a29e-fb09631480cf <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span>
+</code></pre><pre class="highlight shell tab-shell--production"><code>curl https://b2b.revolut.com/api/1.0/accounts/df8d6b20-0725-482e-a29e-fb09631480cf <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span>
 </code></pre>
 <blockquote>
@@ -436,7 +441,7 @@
 </span></code></pre>
 <p>This endpoint retrieves one of your accounts by ID.</p>
 <h3 id='request-2'>Request</h3>
-<p><code>GET https://sandbox-b2b.revolut.com/api/1.0/accounts/&lt;id&gt;</code></p>
+<p><code>GET https://b2b.revolut.com/api/1.0/accounts/&lt;id&gt;</code></p>
 <h4 id='url-parameters'>URL Parameters</h4>
 <table><thead>
 <tr>
@@ -505,7 +510,10 @@
 <td>Text</td>
 </tr>
 </tbody></table>
-<h1 id='counterparties'>Counterparties</h1><h2 id='add-counterparty'>Add Counterparty</h2><pre class="highlight shell tab-shell"><code>curl -X POST https://sandbox-b2b.revolut.com/api/1.0/counterparty <span class="se">\</span>
+<h1 id='counterparties'>Counterparties</h1><h2 id='add-counterparty'>Add Counterparty</h2><pre class="highlight shell tab-shell--sandbox"><code>curl -X POST https://sandbox-b2b.revolut.com/api/1.0/counterparty <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span> <span class="se">\</span>
+  --data @- <span class="sh">&lt;&lt; EOF
+</span></code></pre><pre class="highlight shell tab-shell--production"><code>curl -X POST https://b2b.revolut.com/api/1.0/counterparty <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span> <span class="se">\</span>
   --data @- <span class="sh">&lt;&lt; EOF
 </span></code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -545,7 +553,7 @@
 <h3 id='revolut-user'>Revolut user</h3>
 <p>You can create a counterparty for an existing revolut user.</p>
 
-<p><code>POST https://sandbox-b2b.revolut.com/api/1.0/counterparty</code></p>
+<p><code>POST https://b2b.revolut.com/api/1.0/counterparty</code></p>
 <h4 id='request-fields'>Request fields</h4>
 <table><thead>
 <tr>
@@ -644,7 +652,10 @@
 <td>3-letter ISO currency code</td>
 </tr>
 </tbody></table>
-<pre class="highlight shell tab-shell"><code>curl -X POST https://sandbox-b2b.revolut.com/api/1.0/counterparty <span class="se">\</span>
+<pre class="highlight shell tab-shell--sandbox"><code>curl -X POST https://sandbox-b2b.revolut.com/api/1.0/counterparty <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span> <span class="se">\</span>
+  --data @- <span class="sh">&lt;&lt; EOF
+</span></code></pre><pre class="highlight shell tab-shell--production"><code>curl -X POST https://b2b.revolut.com/api/1.0/counterparty <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span> <span class="se">\</span>
   --data @- <span class="sh">&lt;&lt; EOF
 </span></code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -686,7 +697,7 @@
 </span></code></pre><h3 id='external-account'>External account</h3>
 <p>You can create a counterparty for an external account as well.</p>
 
-<p><code>POST https://sandbox-b2b.revolut.com/api/1.0/counterparty</code></p>
+<p><code>POST https://b2b.revolut.com/api/1.0/counterparty</code></p>
 <h4 id='request-fields-2'>Request fields</h4>
 <table><thead>
 <tr>
@@ -850,7 +861,9 @@
 <td>Text</td>
 </tr>
 </tbody></table>
-<h2 id='delete-counterparty'>Delete Counterparty</h2><pre class="highlight shell tab-shell"><code>curl -X DELETE https://sandbox-b2b.revolut.com/api/1.0/counterparty/6b3c696e-7c3d-464a-8dbe-fc70e183d42e <span class="se">\</span>
+<h2 id='delete-counterparty'>Delete Counterparty</h2><pre class="highlight shell tab-shell--sandbox"><code>curl -X DELETE https://sandbox-b2b.revolut.com/api/1.0/counterparty/6b3c696e-7c3d-464a-8dbe-fc70e183d42e <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span>
+</code></pre><pre class="highlight shell tab-shell--production"><code>curl -X DELETE https://b2b.revolut.com/api/1.0/counterparty/6b3c696e-7c3d-464a-8dbe-fc70e183d42e <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span>
 </code></pre>
 <blockquote>
@@ -860,7 +873,7 @@
 </code></pre>
 <p>This endpoint deletes a counterparty with the given ID. Once a counterparty is deleted no payments can be made with it.</p>
 <h3 id='request-3'>Request</h3>
-<p><code>DELETE https://sandbox-b2b.revolut.com/api/1.0/counterparty/&lt;id&gt;</code></p>
+<p><code>DELETE https://b2b.revolut.com/api/1.0/counterparty/&lt;id&gt;</code></p>
 <h3 id='url-parameters-2'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -875,7 +888,9 @@
 <td>UUID</td>
 </tr>
 </tbody></table>
-<h2 id='get-counterparty'>Get Counterparty</h2><pre class="highlight shell tab-shell"><code>curl https://sandbox-b2b.revolut.com/api/1.0/counterparty/6b3c696e-7c3d-464a-8dbe-fc70e183d42e <span class="se">\</span>
+<h2 id='get-counterparty'>Get Counterparty</h2><pre class="highlight shell tab-shell--sandbox"><code>curl https://sandbox-b2b.revolut.com/api/1.0/counterparty/6b3c696e-7c3d-464a-8dbe-fc70e183d42e <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span>
+</code></pre><pre class="highlight shell tab-shell--production"><code>curl https://b2b.revolut.com/api/1.0/counterparty/6b3c696e-7c3d-464a-8dbe-fc70e183d42e <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span>
 </code></pre>
 <blockquote>
@@ -913,7 +928,7 @@
 </span></code></pre>
 <p>This endpoint retrieves a counterparty by ID.</p>
 <h3 id='request-4'>Request</h3>
-<p><code>GET https://sandbox-b2b.revolut.com/api/1.0/counterparty/&lt;id&gt;</code></p>
+<p><code>GET https://b2b.revolut.com/api/1.0/counterparty/&lt;id&gt;</code></p>
 <h4 id='url-parameters-3'>URL Parameters</h4>
 <table><thead>
 <tr>
@@ -997,7 +1012,9 @@
 <td>3-letter ISO currency code</td>
 </tr>
 </tbody></table>
-<h2 id='get-counterparties'>Get Counterparties</h2><pre class="highlight shell tab-shell"><code>curl https://sandbox-b2b.revolut.com/api/1.0/counterparties <span class="se">\</span>
+<h2 id='get-counterparties'>Get Counterparties</h2><pre class="highlight shell tab-shell--sandbox"><code>curl https://sandbox-b2b.revolut.com/api/1.0/counterparties <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span>
+</code></pre><pre class="highlight shell tab-shell--production"><code>curl https://b2b.revolut.com/api/1.0/counterparties <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span>
 </code></pre>
 <blockquote>
@@ -1035,7 +1052,7 @@
 </span></code></pre>
 <p>This endpoint retrieves all your counterparties.</p>
 <h3 id='request-5'>Request</h3>
-<p><code>GET https://sandbox-b2b.revolut.com/api/1.0/counterparties</code></p>
+<p><code>GET https://b2b.revolut.com/api/1.0/counterparties</code></p>
 <h3 id='response-6'>Response</h3>
 <table><thead>
 <tr>
@@ -1114,7 +1131,10 @@
 </ol>
 
 <p>A new transaction has <code>pending</code> state, and processed transaction&#39;s state can be one of <code>completed</code>, <code>failed</code>, <code>reverted</code> or <code>declined</code>.</p>
-<h2 id='transfer-between-own-accounts'>Transfer between own accounts</h2><pre class="highlight shell tab-shell"><code>curl -X POST https://sandbox-b2b.revolut.com/api/1.0/transfer <span class="se">\</span>
+<h2 id='transfer-between-own-accounts'>Transfer between own accounts</h2><pre class="highlight shell tab-shell--sandbox"><code>curl -X POST https://sandbox-b2b.revolut.com/api/1.0/transfer <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span> <span class="se">\</span>
+  --data @- <span class="sh">&lt;&lt; EOF
+</span></code></pre><pre class="highlight shell tab-shell--production"><code>curl -X POST https://b2b.revolut.com/api/1.0/transfer <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span> <span class="se">\</span>
   --data @- <span class="sh">&lt;&lt; EOF
 </span></code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -1141,7 +1161,7 @@
 
 <p>The resulting transaction has type &quot;transfer&quot;.</p>
 <h3 id='request-6'>Request</h3>
-<p><code>POST https://sandbox-b2b.revolut.com/api/1.0/transfer</code></p>
+<p><code>POST https://b2b.revolut.com/api/1.0/transfer</code></p>
 <h4 id='request-fields-3'>Request fields</h4>
 <table><thead>
 <tr>
@@ -1214,7 +1234,10 @@
 <blockquote>
 <p>Pay a counterparty</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl -X POST https://sandbox-b2b.revolut.com/api/1.0/pay <span class="se">\ </span>
+<pre class="highlight shell tab-shell--sandbox"><code>curl -X POST https://sandbox-b2b.revolut.com/api/1.0/pay <span class="se">\ </span>
+  -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span> <span class="se">\</span>
+  --data @- <span class="sh">&lt;&lt; EOF
+</span></code></pre><pre class="highlight shell tab-shell--production"><code>curl -X POST https://b2b.revolut.com/api/1.0/pay <span class="se">\ </span>
   -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span> <span class="se">\</span>
   --data @- <span class="sh">&lt;&lt; EOF
 </span></code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -1254,7 +1277,7 @@
 
 <aside class="notice">To avoid duplicate payment submission because on an error in your code, we strongly recommend to provide a unique <code>request_id</code> for each submitted payment. The <code>request_id</code> must be previously persisted on your side.</aside>
 <h3 id='request-7'>Request</h3>
-<p><code>POST https://sandbox-b2b.revolut.com/api/1.0/pay</code></p>
+<p><code>POST https://b2b.revolut.com/api/1.0/pay</code></p>
 <h4 id='request-fields-4'>Request fields</h4>
 <table><thead>
 <tr>
@@ -1333,7 +1356,10 @@
 <td>ISO date/time</td>
 </tr>
 </tbody></table>
-<h2 id='schedule-payment'>Schedule Payment</h2><pre class="highlight shell tab-shell"><code>curl -X POST https://sandbox-b2b.revolut.com/api/1.0/pay <span class="se">\</span>
+<h2 id='schedule-payment'>Schedule Payment</h2><pre class="highlight shell tab-shell--sandbox"><code>curl -X POST https://sandbox-b2b.revolut.com/api/1.0/pay <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span> <span class="se">\</span>
+  --data @- <span class="sh">&lt;&lt; EOF
+</span></code></pre><pre class="highlight shell tab-shell--production"><code>curl -X POST https://b2b.revolut.com/api/1.0/pay <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span> <span class="se">\</span>
   --data @- <span class="sh">&lt;&lt; EOF
 </span></code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -1370,7 +1396,9 @@ To schedule a future payment, as opposed to immediate execution, just pass an ad
 </tbody></table>
 
 <aside class="notice">Payments scheduled for the same time are not guaranteed to be executed all at the same time. As scheduled processor runs every several hours, the payments will be processed in batches, and if you schedule too many payments it will require more time to process all of them.</aside>
-<h2 id='check-payment-status'>Check Payment Status</h2><pre class="highlight shell tab-shell"><code>curl https://sandbox-b2b.revolut.com/api/1.0/transaction/e0cbf84637264ee082a848b?id_type<span class="o">=</span>request_id <span class="se">\</span>
+<h2 id='check-payment-status'>Check Payment Status</h2><pre class="highlight shell tab-shell--sandbox"><code>curl https://sandbox-b2b.revolut.com/api/1.0/transaction/e0cbf84637264ee082a848b?id_type<span class="o">=</span>request_id <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span>
+</code></pre><pre class="highlight shell tab-shell--production"><code>curl https://b2b.revolut.com/api/1.0/transaction/e0cbf84637264ee082a848b?id_type<span class="o">=</span>request_id <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span>
 </code></pre>
 <blockquote>
@@ -1494,11 +1522,11 @@ To schedule a future payment, as opposed to immediate execution, just pass an ad
 <h3 id='request-8'>Request</h3>
 <p>To retrieve a transaction by ID:</p>
 
-<p><code>GET https://sandbox-b2b.revolut.com/api/1.0/transaction/&lt;id&gt;</code></p>
+<p><code>GET https://b2b.revolut.com/api/1.0/transaction/&lt;id&gt;</code></p>
 
 <p>To retrieve a transaction by request ID:</p>
 
-<p><code>GET https://sandbox-b2b.revolut.com/api/1.0/transaction/&lt;request_id&gt;?id_type=request_id</code></p>
+<p><code>GET https://b2b.revolut.com/api/1.0/transaction/&lt;request_id&gt;?id_type=request_id</code></p>
 <h3 id='response-9'>Response</h3>
 <table><thead>
 <tr>
@@ -1603,7 +1631,9 @@ To schedule a future payment, as opposed to immediate execution, just pass an ad
 <td>Text</td>
 </tr>
 </tbody></table>
-<h2 id='cancel-payment'>Cancel Payment</h2><pre class="highlight shell tab-shell"><code>curl -X DELETE https://sandbox-b2b.revolut.com/api/1.0/transaction/62b61a4f-fb09-4e87-b0ab-b66c85f5485c <span class="se">\</span>
+<h2 id='cancel-payment'>Cancel Payment</h2><pre class="highlight shell tab-shell--sandbox"><code>curl -X DELETE https://sandbox-b2b.revolut.com/api/1.0/transaction/62b61a4f-fb09-4e87-b0ab-b66c85f5485c <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span>
+</code></pre><pre class="highlight shell tab-shell--production"><code>curl -X DELETE https://b2b.revolut.com/api/1.0/transaction/62b61a4f-fb09-4e87-b0ab-b66c85f5485c <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span>
 </code></pre>
 <blockquote>
@@ -1615,7 +1645,7 @@ To schedule a future payment, as opposed to immediate execution, just pass an ad
 
 <p>This endpoint allows to cancel a &quot;pending&quot; transaction that was initiated by you, via UI or API.</p>
 <h3 id='request-9'>Request</h3>
-<p><code>DELETE https://sandbox-b2b.revolut.com/api/1.0/transaction/&lt;id&gt;</code></p>
+<p><code>DELETE https://b2b.revolut.com/api/1.0/transaction/&lt;id&gt;</code></p>
 <h4 id='url-parameters-4'>URL Parameters</h4>
 <table><thead>
 <tr>
@@ -1630,7 +1660,13 @@ To schedule a future payment, as opposed to immediate execution, just pass an ad
 <td>UUID</td>
 </tr>
 </tbody></table>
-<h2 id='get-transactions'>Get Transactions</h2><pre class="highlight shell tab-shell"><code>curl https://sandbox-b2b.revolut.com/api/1.0/transactions? <span class="se">\</span>
+<h2 id='get-transactions'>Get Transactions</h2><pre class="highlight shell tab-shell--sandbox"><code>curl https://sandbox-b2b.revolut.com/api/1.0/transactions? <span class="se">\</span>
+  <span class="nv">counterparty</span><span class="o">=</span>5138z40d1-05bb-49c0-b130-75e8cf2f7693 <span class="se">\</span>
+  &amp;from<span class="o">=</span>2017-06-01 <span class="se">\</span>
+  &amp;to<span class="o">=</span>2017-06-10 <span class="se">\</span>
+  &amp;count <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span>
+</code></pre><pre class="highlight shell tab-shell--production"><code>curl https://b2b.revolut.com/api/1.0/transactions? <span class="se">\</span>
   <span class="nv">counterparty</span><span class="o">=</span>5138z40d1-05bb-49c0-b130-75e8cf2f7693 <span class="se">\</span>
   &amp;from<span class="o">=</span>2017-06-01 <span class="se">\</span>
   &amp;to<span class="o">=</span>2017-06-10 <span class="se">\</span>
@@ -1714,7 +1750,7 @@ To schedule a future payment, as opposed to immediate execution, just pass an ad
 </span></code></pre>
 <p>This endpoint retrieves historical transactions based on the provided query criteria.</p>
 <h3 id='request-10'>Request</h3>
-<p><code>GET https://sandbox-b2b.revolut.com/api/1.0/transactions</code></p>
+<p><code>GET https://b2b.revolut.com/api/1.0/transactions</code></p>
 <h4 id='url-parameters-5'>URL Parameters</h4>
 <table><thead>
 <tr>
@@ -1847,7 +1883,10 @@ To schedule a future payment, as opposed to immediate execution, just pass an ad
 </tbody></table>
 <h1 id='web-hooks'>Web-hooks</h1>
 <p>Web-hook is a mechanism that allows you to receive updates about your account to a provided by you HTTP(S) endpoint.</p>
-<h2 id='setting-up-a-web-hook'>Setting up a web-hook</h2><pre class="highlight shell tab-shell"><code>curl -X POST https://sandbox-b2b.revolut.com/api/1.0/webhook <span class="se">\ </span>
+<h2 id='setting-up-a-web-hook'>Setting up a web-hook</h2><pre class="highlight shell tab-shell--sandbox"><code>curl -X POST https://sandbox-b2b.revolut.com/api/1.0/webhook <span class="se">\ </span>
+  -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span> <span class="se">\</span>
+  --data @- <span class="sh">&lt;&lt; EOF
+</span></code></pre><pre class="highlight shell tab-shell--production"><code>curl -X POST https://b2b.revolut.com/api/1.0/webhook <span class="se">\ </span>
   -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span> <span class="se">\</span>
   --data @- <span class="sh">&lt;&lt; EOF
 </span></code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -1916,7 +1955,8 @@ To schedule a future payment, as opposed to immediate execution, just pass an ad
       </div>
       <div class="dark-box">
           <div class="lang-selector">
-                <a href="#" data-language-name="shell">shell</a>
+                <a href="#" data-language-name="shell--sandbox">sandbox</a>
+                <a href="#" data-language-name="shell--production">production</a>
           </div>
       </div>
     </div>
