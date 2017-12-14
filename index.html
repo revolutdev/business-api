@@ -897,7 +897,7 @@
 <tr>
 <td>bic</td>
 <td>optional BIC</td>
-<td>optional BIC</td>
+<td>Text</td>
 </tr>
 <tr>
 <td>type</td>
@@ -1189,7 +1189,7 @@
 </ul></li>
 </ol>
 
-<p>A new transaction has <code>pending</code> state, and processed transaction&#39;s state can be one of <code>completed</code>, <code>failed</code>, <code>reverted</code> or <code>declined</code>.</p>
+<p>A new transaction has <code>pending</code> state, and a processed transaction&#39;s state can be one of <code>completed</code>, <code>failed</code>, <code>reverted</code> or <code>declined</code>.</p>
 <h2 id='transfer-between-own-accounts-in-the-same-currency'>Transfer between own accounts in the same currency</h2><pre class="highlight shell tab-shell--sandbox"><code>curl -X POST https://sandbox-b2b.revolut.com/api/1.0/transfer <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span> <span class="se">\</span>
   --data @- <span class="sh">&lt;&lt; EOF
@@ -1792,17 +1792,17 @@ It also allows you to find out more about the transaction, such as cardholder de
 </tr>
 <tr>
 <td>card.first_name</td>
-<td>the cardholder first name</td>
+<td>the cardholder&#39;s first name</td>
 <td>Text</td>
 </tr>
 <tr>
 <td>card.last_name</td>
-<td>the cardholder last name</td>
+<td>the cardholder&#39;s last name</td>
 <td>Text</td>
 </tr>
 <tr>
 <td>card.phone</td>
-<td>the cardholder phone number</td>
+<td>the cardholder&#39;s phone number</td>
 <td>Text</td>
 </tr>
 </tbody></table>
