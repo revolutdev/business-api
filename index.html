@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>API Reference</title>
+    <title>API Reference v1.0</title>
 
     <style>
       .highlight table td { padding: 5px; }
@@ -220,7 +220,7 @@
         <ul class="search-results"></ul>
       <div id="toc" class="toc-list-h1">
           <li>
-            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+            <a href="#api-v1-0-introduction" class="toc-h1 toc-link" data-title="API v1.0 introduction">API v1.0 introduction</a>
           </li>
           <li>
             <a href="#getting-started" class="toc-h1 toc-link" data-title="Getting started">Getting started</a>
@@ -240,7 +240,10 @@
             <a href="#counterparties" class="toc-h1 toc-link" data-title="Counterparties">Counterparties</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#add-counterparty" class="toc-h2 toc-link" data-title="Counterparties">Add Counterparty</a>
+                    <a href="#add-revolut-counterparty" class="toc-h2 toc-link" data-title="Counterparties">Add Revolut Counterparty</a>
+                  </li>
+                  <li>
+                    <a href="#add-non-revolut-counterparty" class="toc-h2 toc-link" data-title="Counterparties">Add non-Revolut Counterparty</a>
                   </li>
                   <li>
                     <a href="#delete-counterparty" class="toc-h2 toc-link" data-title="Counterparties">Delete Counterparty</a>
@@ -257,7 +260,7 @@
             <a href="#payments" class="toc-h1 toc-link" data-title="Payments">Payments</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#transfer-between-own-accounts-in-the-same-currency" class="toc-h2 toc-link" data-title="Payments">Transfer between own accounts in the same currency</a>
+                    <a href="#transfer" class="toc-h2 toc-link" data-title="Payments">Transfer</a>
                   </li>
                   <li>
                     <a href="#create-payment" class="toc-h2 toc-link" data-title="Payments">Create Payment</a>
@@ -302,7 +305,7 @@
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='introduction'>Introduction</h1>
+        <h1 id='api-v1-0-introduction'>API v1.0 introduction</h1>
 <p>This is the Revolut for Business Open API documentation. Here you can find out about the functionality available through the Open API, and how you can integrate your Revolut for Business account into your current and future business processes. This is designed to allow you to automate your business account operations.</p>
 
 <p>To help you navigate, this page is split into 3 vertical sections: </p>
@@ -338,9 +341,8 @@
     </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GBP"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"public"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-01T11:11:11.0Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-01T11:11:11.0Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pocket"</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-01T11:11:11.1Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-01T11:11:11.1Z"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"df8d6b20-0725-482e-a29e-fb09631480cf"</span><span class="p">,</span><span class="w">
@@ -349,19 +351,8 @@
     </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EUR"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"public"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-01T11:11:11.0Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-01T11:11:11.0Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pocket"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9e815f39-453c-44f9-86dd-433492db5735"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Doe"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GBP"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"public"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-01T21:11:11.0Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-01T21:11:11.0Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"beneficiary"</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-01T11:11:11.1Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-01T11:11:11.1Z"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
@@ -388,7 +379,7 @@
 </tr>
 <tr>
 <td>balance</td>
-<td>the account balance</td>
+<td>the available balance</td>
 <td>Decimal</td>
 </tr>
 <tr>
@@ -416,11 +407,6 @@
 <td>the instant when the account was last updated</td>
 <td>ISO date/time</td>
 </tr>
-<tr>
-<td>type</td>
-<td>the type of the account, one of <code>pocket</code>, <code>beneficiary</code></td>
-<td>Text</td>
-</tr>
 </tbody></table>
 <h2 id='get-account'>Get Account</h2><pre class="highlight shell tab-shell--sandbox"><code>curl https://sandbox-b2b.revolut.com/api/1.0/accounts/df8d6b20-0725-482e-a29e-fb09631480cf <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span>
@@ -437,9 +423,8 @@
   </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EUR"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"public"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-01T11:11:11.0Z"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-01T11:11:11.0Z"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pocket"</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-01T11:11:11.1Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-01T11:11:11.1Z"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves one of your accounts by ID.</p>
@@ -479,7 +464,7 @@
 </tr>
 <tr>
 <td>balance</td>
-<td>the account balance</td>
+<td>the available balance</td>
 <td>Decimal</td>
 </tr>
 <tr>
@@ -507,22 +492,63 @@
 <td>the instant when the account was last updated</td>
 <td>ISO date/time</td>
 </tr>
-<tr>
-<td>type</td>
-<td>the type of the account, one of <code>pocket</code>, <code>beneficiary</code></td>
-<td>Text</td>
-</tr>
 </tbody></table>
-<h1 id='counterparties'>Counterparties</h1><h2 id='add-counterparty'>Add Counterparty</h2><pre class="highlight shell tab-shell--sandbox"><code>curl -X POST https://sandbox-b2b.revolut.com/api/1.0/counterparty <span class="se">\</span>
+<h1 id='counterparties'>Counterparties</h1>
+<p>Before a transfer or payment can be made, you need to add counterparties which you intend to transact with.</p>
+<h2 id='add-revolut-counterparty'>Add Revolut Counterparty</h2>
+<blockquote>
+<p>Add an individual Revolut user as counterparty</p>
+</blockquote>
+<pre class="highlight shell tab-shell--sandbox"><code>curl -X POST https://sandbox-b2b.revolut.com/api/1.0/counterparty <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span> <span class="se">\</span>
   --data @- <span class="sh">&lt;&lt; EOF
 </span></code></pre><pre class="highlight shell tab-shell--production"><code>curl -X POST https://b2b.revolut.com/api/1.0/counterparty <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span> <span class="se">\</span>
   --data @- <span class="sh">&lt;&lt; EOF
 </span></code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Smith Co."</span><span class="p">,</span><span class="w">
   </span><span class="s2">"profile_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"personal"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Smith"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+44723456789"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><pre class="highlight shell tab-shell"><code>EOF
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"830e79d9-7b0a-45d3-a2a3-c0b291be3bf7"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Smith"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+44723456789"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"profile_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"personal"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GB"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"created"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-12-19T15:58:34.485Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-12-19T15:58:34.485Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"accounts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7a39e16d-41a6-460f-a7d7-341575037c9d"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GBP"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"revolut"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"50de976a-6704-4424-8998-9efc4ef0abf5"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EUR"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"revolut"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Add a business Revolut user as counterparty</p>
+</blockquote>
+<pre class="highlight shell tab-shell--sandbox"><code>curl -X POST https://sandbox-b2b.revolut.com/api/1.0/counterparty <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span> <span class="se">\</span>
+  --data @- <span class="sh">&lt;&lt; EOF
+</span></code></pre><pre class="highlight shell tab-shell--production"><code>curl -X POST https://b2b.revolut.com/api/1.0/counterparty <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span> <span class="se">\</span>
+  --data @- <span class="sh">&lt;&lt; EOF
+</span></code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"profile_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"business"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john@smith.co"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><pre class="highlight shell tab-shell"><code>EOF
@@ -531,29 +557,27 @@
 <p>Response:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6b3c696e-7c3d-464a-8dbe-fc70e183d42e"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"business"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+44723456789"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"profile_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"revolut"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Smith Co."</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"830e79d9-7b0a-45d3-a2a3-c0b291be3bf7"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Smith Limited"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"profile_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"business"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GB"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"created"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-01T11:11:11.0Z"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-01T11:11:11.0Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-12-19T15:58:34.485Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-12-19T15:58:34.485Z"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"accounts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e183d42e-7c3d-8dbe-464a-fc706b3c696e"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GBP"</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7a39e16d-41a6-460f-a7d7-341575037c9d"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GBP"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"revolut"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e183d42e-7c3d-8dbe-464a-fc706b3c696e"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EUR"</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"50de976a-6704-4424-8998-9efc4ef0abf5"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EUR"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"revolut"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Before a transaction or payment can be made, you need to add counterparties which you intend to transact with.</p>
-<h3 id='revolut-user'>Revolut user</h3>
 <p>You can create a counterparty for an existing Revolut user.</p>
 
 <p><code>POST https://b2b.revolut.com/api/1.0/counterparty</code></p>
@@ -566,23 +590,28 @@
 </tr>
 </thead><tbody>
 <tr>
-<td>name</td>
-<td>a name of the counterparty</td>
+<td>profile_type</td>
+<td>the type of the Revolut profile, <code>business</code> or <code>personal</code></td>
 <td>Text</td>
 </tr>
 <tr>
-<td>profile_type</td>
-<td>type of Revolut counterparty, <code>business</code> or <code>personal</code></td>
+<td>name</td>
+<td>only need when <code>phone</code> is provided</td>
 <td>Text</td>
 </tr>
 <tr>
 <td>phone</td>
-<td>an optional valid phone number of the counterparty. Provide it for profile_type = <code>personal</code>. It can be a phone number that identifies them uniquely as a Revolut user</td>
-<td>A valid international phone number, starting with <code>+</code></td>
+<td>an optional phone number of the counterparty. Provide only with <code>personal</code> profile_type.</td>
+<td>International phone number, starting with <code>+</code></td>
 </tr>
 <tr>
 <td>email</td>
-<td>an optional valid email address of a business admin of in Revolut. Provide it for profile_type = <code>business</code>. This will link the business of the admin when business has public profile</td>
+<td>an optional email address of an admin of a public Revolut Business account. Provide only with <code>business</code> profile_type.</td>
+<td>Email</td>
+</tr>
+<tr>
+<td>email</td>
+<td>an optional email address of an admin of a public Revolut Business account. Provide only with <code>business</code> profile_type.</td>
 <td>Email</td>
 </tr>
 </tbody></table>
@@ -625,11 +654,6 @@
 <td>Text</td>
 </tr>
 <tr>
-<td>type</td>
-<td>the type of counterparty, <code>revolut</code> or <code>external</code></td>
-<td>Text</td>
-</tr>
-<tr>
 <td>created_at</td>
 <td>the instant when the counterparty was created</td>
 <td>ISO date/time</td>
@@ -641,7 +665,7 @@
 </tr>
 <tr>
 <td>accounts</td>
-<td>the list of pulic accounts of this counterparty</td>
+<td>the list of public accounts of this counterparty</td>
 <td>JSON array</td>
 </tr>
 <tr>
@@ -654,8 +678,13 @@
 <td>the currency of a counterparty&#39;s account</td>
 <td>3-letter ISO currency code</td>
 </tr>
+<tr>
+<td>accounts[n].type</td>
+<td>the type of account, <code>revolut</code> or <code>external</code></td>
+<td>Text</td>
+</tr>
 </tbody></table>
-<pre class="highlight shell tab-shell--sandbox"><code>curl -X POST https://sandbox-b2b.revolut.com/api/1.0/counterparty <span class="se">\</span>
+<h2 id='add-non-revolut-counterparty'>Add non-Revolut Counterparty</h2><pre class="highlight shell tab-shell--sandbox"><code>curl -X POST https://sandbox-b2b.revolut.com/api/1.0/counterparty <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span> <span class="se">\</span>
   --data @- <span class="sh">&lt;&lt; EOF
 </span></code></pre><pre class="highlight shell tab-shell--production"><code>curl -X POST https://b2b.revolut.com/api/1.0/counterparty <span class="se">\</span>
@@ -663,11 +692,12 @@
   --data @- <span class="sh">&lt;&lt; EOF
 </span></code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Smith Co."</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GB"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"bank_country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GB"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GBP"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"account_no"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345678"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"sort_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"223344"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john@smith.co"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+447771234455"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">"street_line1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1 Canada Square"</span><span class="p">,</span><span class="w"> 
     </span><span class="s2">"street_line2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Canary Wharf"</span><span class="p">,</span><span class="w"> 
@@ -683,22 +713,27 @@
 <p>Response:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6b3c696e-7c3d-464a-8dbe-fc70e183d42e"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Smith"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"beneficiary_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"45dde477-0d57-4e59-8999-803e4973dbab"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345678"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"base_currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GBP"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GB"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"97380d65-0478-4673-9e79-21918b4ae93a"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"company_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Acme Corp."</span><span class="p">,</span><span class="w">
   </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"created"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"account_no"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345678"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"routing_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123456789"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"external"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-01T11:11:11.0Z"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-01T11:11:11.0Z"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"beneficiary_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GB"</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-12-19T16:17:05.141Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-12-19T16:17:05.141Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"accounts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4e32d331-68aa-4e4b-a295-3e3d7625819b"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GBP"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"external"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"account_no"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345678"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"sort_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"223344"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"acm@me.ccq"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Acme Corp."</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"bank_country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GB"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"recipient_charges"</span><span class="p">:</span><span class="w"> </span><span class="s2">"free"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='bank-account'>Bank account</h3>
-<p>You can create a counterparty for an external bank account as well.</p>
+</span></code></pre>
+<p>You can create a counterparty for an non-Revolut bank account.</p>
 
 <p><code>POST https://b2b.revolut.com/api/1.0/counterparty</code></p>
 <h4 id='common-request-fields'>Common request fields</h4>
@@ -711,17 +746,17 @@
 </thead><tbody>
 <tr>
 <td>company_name</td>
-<td>a name of the company</td>
+<td>an optional name of the external company counterparty, this field must exist when individual_name does not</td>
 <td>Text</td>
 </tr>
 <tr>
 <td>individual_name.first_name</td>
-<td>first name of the individual beneficiar</td>
+<td>an optional first name of the external individual counterparty, this field must exist when <code>company_name</code> does not</td>
 <td>Text</td>
 </tr>
 <tr>
 <td>individual_name.last_name</td>
-<td>last name of the individual beneficiar</td>
+<td>an optional last name of the external individual counterparty, this field must exist when <code>company_name</code> does not</td>
 <td>Text</td>
 </tr>
 <tr>
@@ -736,41 +771,46 @@
 </tr>
 <tr>
 <td>email</td>
-<td>a valid email address of the beneficiary</td>
+<td>an optional email address of the beneficiary</td>
 <td>Email</td>
 </tr>
 <tr>
+<td>phone</td>
+<td>an optional phone number of the beneficiary</td>
+<td>An international phone number, starting with <code>+</code></td>
+</tr>
+<tr>
 <td>address.street_line1</td>
-<td>optional address line 1 of the counterparty</td>
+<td>an optional address line 1 of the counterparty</td>
 <td>Text</td>
 </tr>
 <tr>
 <td>address.street_line2</td>
-<td>optional address line 2 of the counterparty</td>
+<td>an optional address line 2 of the counterparty</td>
 <td>Text</td>
 </tr>
 <tr>
 <td>address.region</td>
-<td>optional region of the counterparty</td>
+<td>an optional region of the counterparty</td>
 <td>Text</td>
 </tr>
 <tr>
 <td>address.city</td>
-<td>optional city of the counterparty</td>
+<td>an optional city of the counterparty</td>
 <td>Text</td>
 </tr>
 <tr>
 <td>address.country</td>
-<td>optional the country of the counterparty</td>
+<td>an optional the country of the counterparty</td>
 <td>2-letter ISO code</td>
 </tr>
 <tr>
 <td>address.postcode</td>
-<td>optional postal code of the counterparty</td>
+<td>an optional postal code of the counterparty</td>
 <td>Text</td>
 </tr>
 </tbody></table>
-<h4 id='required-fields-for-uk-payments-in-gbp'>Required fields for UK payments in GBP:</h4>
+<h4 id='required-fields-for-uk-gbp-accounts'>Required fields for UK GBP accounts:</h4>
 <table><thead>
 <tr>
 <th>Field</th>
@@ -789,7 +829,7 @@
 <td>Text</td>
 </tr>
 </tbody></table>
-<h4 id='required-fields-for-us-payments-in-usd'>Required fields for US payments in USD:</h4>
+<h4 id='required-fields-for-us-usd-accounts'>Required fields for US USD accounts:</h4>
 <table><thead>
 <tr>
 <th>Field</th>
@@ -808,7 +848,7 @@
 <td>Text</td>
 </tr>
 </tbody></table>
-<h4 id='required-fields-for-sepa-payments-in-eur'>Required fields for SEPA payments in EUR:</h4>
+<h4 id='required-fields-for-iban-countries'>Required fields for IBAN countries:</h4>
 <table><thead>
 <tr>
 <th>Field</th>
@@ -817,7 +857,7 @@
 </tr>
 </thead><tbody>
 <tr>
-<td>account_no</td>
+<td>iban</td>
 <td>IBAN</td>
 <td>Text</td>
 </tr>
@@ -827,7 +867,7 @@
 <td>Text</td>
 </tr>
 </tbody></table>
-<h4 id='required-fields-for-other-payments'>Required fields for other payments:</h4>
+<h4 id='required-fields-for-swift'>Required fields for SWIFT:</h4>
 <table><thead>
 <tr>
 <th>Field</th>
@@ -865,43 +905,8 @@
 <td>Text</td>
 </tr>
 <tr>
-<td>beneficiary_id</td>
-<td>the ID of the beneficiary</td>
-<td>UUID</td>
-</tr>
-<tr>
-<td>reference</td>
-<td>the reference code of the beneficiary</td>
-<td>Text</td>
-</tr>
-<tr>
-<td>base_currency</td>
-<td>the base currency of a counterparty&#39;s account</td>
-<td>3-letter ISO currency code</td>
-</tr>
-<tr>
-<td>country</td>
-<td>the country where the counterparty resides</td>
-<td>2-letter ISO code</td>
-</tr>
-<tr>
 <td>state</td>
 <td>the state of the counterparty, one of <code>created</code>, <code>deleted</code></td>
-<td>Text</td>
-</tr>
-<tr>
-<td>account_no</td>
-<td>optional bank account number</td>
-<td>Text</td>
-</tr>
-<tr>
-<td>bic</td>
-<td>optional BIC</td>
-<td>Text</td>
-</tr>
-<tr>
-<td>type</td>
-<td>the type of counterparty, <code>revolut</code> or <code>external</code></td>
 <td>Text</td>
 </tr>
 <tr>
@@ -915,8 +920,53 @@
 <td>ISO date/time</td>
 </tr>
 <tr>
-<td>beneficiary_type</td>
-<td>the type of the beneficiary</td>
+<td>accounts</td>
+<td>the list of public accounts of this counterparty</td>
+<td>JSON array</td>
+</tr>
+<tr>
+<td>accounts[n].id</td>
+<td>the ID of a counterparty&#39;s account</td>
+<td>UUID</td>
+</tr>
+<tr>
+<td>accounts[n].currency</td>
+<td>the currency of a counterparty&#39;s account</td>
+<td>3-letter ISO currency code</td>
+</tr>
+<tr>
+<td>accounts[n].type</td>
+<td>the type of account, <code>revolut</code> or <code>external</code></td>
+<td>Text</td>
+</tr>
+<tr>
+<td>accounts[n].account_no</td>
+<td>bank account number</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>accounts[n].iban</td>
+<td>IBAN</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>accounts[n].sort_code</td>
+<td>sort code</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>accounts[n].routing_number</td>
+<td>routing transit number</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>accounts[n].bic</td>
+<td>BIC</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>accounts[n].recipient_charges</td>
+<td>indicates the possibility of the recipient charges: <code>no</code> or <code>expected</code></td>
 <td>Text</td>
 </tr>
 </tbody></table>
@@ -930,7 +980,7 @@
 </blockquote>
 <pre class="highlight shell tab-shell"><code>204 No Content
 </code></pre>
-<p>This endpoint deletes a counterparty with the given ID. Once a counterparty is deleted no payments can be made with it.</p>
+<p>This endpoint deletes a counterparty with the given ID. Once a counterparty is deleted no payments can be made to it.</p>
 <h3 id='request-3'>Request</h3>
 <p><code>DELETE https://b2b.revolut.com/api/1.0/counterparty/&lt;id&gt;</code></p>
 <h3 id='url-parameters-2'>URL Parameters</h3>
@@ -956,33 +1006,37 @@
 <p>Response for Revolut counterparty:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6b3c696e-7c3d-464a-8dbe-fc70e183d42e"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"revolut"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+44723456789"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ce851ec3-e018-47e8-894d-089fe8c6b6c8"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Smith"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+441234958298"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"profile_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"personal"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Smith"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GB"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-01T11:11:11.0Z"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-01T11:11:11.0Z"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<blockquote>
-<p>Example response for external counterparty:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6b3c696e-7c3d-464a-8dbe-fc70e183d42e"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Smith"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"beneficiary_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"45dde477-0d57-4e59-8999-803e4973dbab"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345678"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"base_currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GBP"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GB"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"created"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"account_no"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345678"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"routing_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123456789"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"external"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-01T11:11:11.0Z"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-01T11:11:11.0Z"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"beneficiary_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GB"</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-12-19T18:34:47.348Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-12-19T18:34:47.348Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"accounts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3342e60b-70c5-4170-b00f-73fee46c93c9"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GBP"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"revolut"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aa70d9be-c851-44ac-abb8-f80ac06bbe37"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"revolut"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4e32d331-68aa-4e4b-a295-3e3d7625819b"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GBP"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"external"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"account_no"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345678"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"sort_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"223344"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"acm@me.ccq"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Acme Corp."</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"bank_country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GB"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"recipient_charges"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a counterparty by ID.</p>
@@ -1021,8 +1075,165 @@
 <td>Text</td>
 </tr>
 <tr>
-<td>type</td>
-<td>the type of counterparty, <code>revolut</code> or <code>external</code></td>
+<td>phone</td>
+<td>the phone number of the counterparty</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>profile_type</td>
+<td>the type of the Revolut profile, <code>business</code> or <code>personal</code></td>
+<td>Text</td>
+</tr>
+<tr>
+<td>country</td>
+<td>the country where the counterparty resides/is registered</td>
+<td>2-letter ISO code</td>
+</tr>
+<tr>
+<td>state</td>
+<td>the state of the counterparty, one of <code>created</code>, <code>deleted</code></td>
+<td>Text</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>the instant when the counterparty was created</td>
+<td>ISO date/time</td>
+</tr>
+<tr>
+<td>updated_at</td>
+<td>the instant when the counterparty was last updated</td>
+<td>ISO date/time</td>
+</tr>
+<tr>
+<td>accounts</td>
+<td>the list of public accounts of this counterparty</td>
+<td>JSON array</td>
+</tr>
+<tr>
+<td>accounts[n].id</td>
+<td>the ID of a counterparty&#39;s account</td>
+<td>UUID</td>
+</tr>
+<tr>
+<td>accounts[n].currency</td>
+<td>the currency of a counterparty&#39;s account</td>
+<td>3-letter ISO currency code</td>
+</tr>
+<tr>
+<td>accounts[n].type</td>
+<td>the type of account, <code>revolut</code> or <code>external</code></td>
+<td>Text</td>
+</tr>
+<tr>
+<td>accounts[n].account_no</td>
+<td>bank account number</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>accounts[n].iban</td>
+<td>IBAN</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>accounts[n].sort_code</td>
+<td>sort code</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>accounts[n].routing_number</td>
+<td>routing transit number</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>accounts[n].bic</td>
+<td>BIC</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>accounts[n].recipient_charges</td>
+<td>indicates the possibility of the recipient charges: <code>no</code> or <code>expected</code></td>
+<td>Text</td>
+</tr>
+</tbody></table>
+<h2 id='get-counterparties'>Get Counterparties</h2><pre class="highlight shell tab-shell--sandbox"><code>curl https://sandbox-b2b.revolut.com/api/1.0/counterparties <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span>
+</code></pre><pre class="highlight shell tab-shell--production"><code>curl https://b2b.revolut.com/api/1.0/counterparties <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span>
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ce851ec3-e018-47e8-894d-089fe8c6b6c8"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Smith"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+441234958298"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"profile_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"personal"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GB"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"created"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-12-19T18:34:47.348Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-12-19T18:34:47.348Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"accounts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3342e60b-70c5-4170-b00f-73fee46c93c9"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GBP"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"revolut"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aa70d9be-c851-44ac-abb8-f80ac06bbe37"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"revolut"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4e32d331-68aa-4e4b-a295-3e3d7625819b"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GBP"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"external"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"account_no"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345678"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sort_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"223344"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"acm@me.ccq"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Acme Corp."</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"bank_country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GB"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"recipient_charges"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ffff1ec3-e018-47e8-894d-089fe8c6b6c8"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Anderson Co."</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"profile_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"business"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GB"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"created"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-29T18:34:47.348Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-29T18:34:47.348Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"accounts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9988e60b-70c5-4170-b00f-73fee46c93c9"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GBP"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"revolut"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all your counterparties.</p>
+<h3 id='request-5'>Request</h3>
+<p><code>GET https://b2b.revolut.com/api/1.0/counterparties</code></p>
+<h3 id='response-6'>Response</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>the ID of the counterparty</td>
+<td>UUID</td>
+</tr>
+<tr>
+<td>name</td>
+<td>the name of the counterparty</td>
 <td>Text</td>
 </tr>
 <tr>
@@ -1057,7 +1268,7 @@
 </tr>
 <tr>
 <td>accounts</td>
-<td>the list of pulic accounts of this counterparty</td>
+<td>the list of public accounts of this counterparty</td>
 <td>JSON array</td>
 </tr>
 <tr>
@@ -1070,110 +1281,40 @@
 <td>the currency of a counterparty&#39;s account</td>
 <td>3-letter ISO currency code</td>
 </tr>
-</tbody></table>
-<h2 id='get-counterparties'>Get Counterparties</h2><pre class="highlight shell tab-shell--sandbox"><code>curl https://sandbox-b2b.revolut.com/api/1.0/counterparties <span class="se">\</span>
-  -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span>
-</code></pre><pre class="highlight shell tab-shell--production"><code>curl https://b2b.revolut.com/api/1.0/counterparties <span class="se">\</span>
-  -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span>
-</code></pre>
-<blockquote>
-<p>Response:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6b3c696e-7c3d-464a-8dbe-fc70e183d42e"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"revolut"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+44723456789"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"profile_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"personal"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Joe Smith"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GB"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-01T11:11:11.0Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-01T11:11:11.0Z"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e0cbf846-3726-4ee0-82a8-48be0bc28efd"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"external"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+44723111111"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"profile_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"business"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bolts &amp; Wistles Ltd"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GB"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"beneficiary_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"45dde477-0d57-4e59-8999-803e4973dbab"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345678"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"base_currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GBP"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"created"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"account_no"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345678"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"routing_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123456789"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"beneficiary_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-21T11:22:11.0Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-21T11:22:11.0Z"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre>
-<p>This endpoint retrieves all your counterparties.</p>
-<h3 id='request-5'>Request</h3>
-<p><code>GET https://b2b.revolut.com/api/1.0/counterparties</code></p>
-<h3 id='response-6'>Response</h3>
-<table><thead>
 <tr>
-<th>Field</th>
-<th>Description</th>
-<th>Format</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>id</td>
-<td>the ID of the counterparty</td>
-<td>UUID</td>
-</tr>
-<tr>
-<td>name</td>
-<td>the name of the counterparty</td>
+<td>accounts[n].type</td>
+<td>the type of account, <code>revolut</code> or <code>external</code></td>
 <td>Text</td>
 </tr>
 <tr>
-<td>type</td>
-<td>the type of counterparty, <code>revolut</code> or <code>external</code></td>
+<td>accounts[n].account_no</td>
+<td>bank account number</td>
 <td>Text</td>
 </tr>
 <tr>
-<td>phone</td>
-<td>the phone number of the counterparty</td>
+<td>accounts[n].iban</td>
+<td>IBAN</td>
 <td>Text</td>
 </tr>
 <tr>
-<td>profile_type</td>
-<td>the type of the Revolut profile, <code>business</code> or <code>personal</code></td>
+<td>accounts[n].sort_code</td>
+<td>sort code</td>
 <td>Text</td>
 </tr>
 <tr>
-<td>country</td>
-<td>the country where the counterparty resides</td>
-<td>2-letter ISO code</td>
+<td>accounts[n].routing_number</td>
+<td>routing transit number</td>
+<td>Text</td>
 </tr>
 <tr>
-<td>created_at</td>
-<td>the instant when the counterparty was created</td>
-<td>ISO date/time</td>
+<td>accounts[n].bic</td>
+<td>BIC</td>
+<td>Text</td>
 </tr>
 <tr>
-<td>updated_at</td>
-<td>the instant when the counterparty was last updated</td>
-<td>ISO date/time</td>
-</tr>
-<tr>
-<td>accounts</td>
-<td>the list of pulic accounts of this counterparty</td>
-<td>JSON array</td>
-</tr>
-<tr>
-<td>accounts[n].id</td>
-<td>the ID of a counterparty&#39;s account</td>
-<td>UUID</td>
-</tr>
-<tr>
-<td>accounts[n].currency</td>
-<td>the currency of a counterparty&#39;s account</td>
-<td>3-letter ISO currency code</td>
+<td>accounts[n].recipient_charges</td>
+<td>indicates the possibility of the recipient charges: <code>no</code> or <code>expected</code></td>
+<td>Text</td>
 </tr>
 </tbody></table>
 <h1 id='payments'>Payments</h1>
@@ -1190,7 +1331,7 @@
 </ol>
 
 <p>A new transaction has <code>pending</code> state, and a processed transaction&#39;s state can be one of <code>completed</code>, <code>failed</code>, <code>reverted</code> or <code>declined</code>.</p>
-<h2 id='transfer-between-own-accounts-in-the-same-currency'>Transfer between own accounts in the same currency</h2><pre class="highlight shell tab-shell--sandbox"><code>curl -X POST https://sandbox-b2b.revolut.com/api/1.0/transfer <span class="se">\</span>
+<h2 id='transfer'>Transfer</h2><pre class="highlight shell tab-shell--sandbox"><code>curl -X POST https://sandbox-b2b.revolut.com/api/1.0/transfer <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span> <span class="se">\</span>
   --data @- <span class="sh">&lt;&lt; EOF
 </span></code></pre><pre class="highlight shell tab-shell--production"><code>curl -X POST https://b2b.revolut.com/api/1.0/transfer <span class="se">\</span>
@@ -1212,11 +1353,11 @@
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"62b61a4f-fb09-4e87-b0ab-b66c85f5485c"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"completed"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-21T11:22:11.0Z"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"completed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-21T11:22:11.0Z"</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-21T11:22:11.1Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"completed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-21T11:22:11.1Z"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint processes transfers between your accounts.</p>
+<p>This endpoint processes transfers between accounts of the business with the same currency.</p>
 
 <p>The resulting transaction has type &quot;transfer&quot;.</p>
 <h3 id='request-6'>Request</h3>
@@ -1246,7 +1387,7 @@
 </tr>
 <tr>
 <td>amount</td>
-<td>a amount to transfer</td>
+<td>n to transfer</td>
 <td>Decimal</td>
 </tr>
 <tr>
@@ -1281,6 +1422,11 @@
 <tr>
 <td>created_at</td>
 <td>the instant when the transaction was created</td>
+<td>ISO date/time</td>
+</tr>
+<tr>
+<td>completed_at</td>
+<td>the instant when the transaction was completed</td>
 <td>ISO date/time</td>
 </tr>
 </tbody></table>
@@ -1318,7 +1464,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
-<p>Response for a payment that is processed asynchonously or is scheduled for processing in the future:</p>
+<p>Response for a payment that is processed asynchronously or is scheduled for processing in the future:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d56dd396-523b-4613-8cc7-54974c17bcac"</span><span class="p">,</span><span class="w">
@@ -1328,7 +1474,7 @@
 </span></code></pre>
 <p>This endpoint creates a new payment. If the payment is for another Revolut account, business or personal, the transaction may be processed synchronously.</p>
 
-<aside class="notice">To avoid duplicate payment submission because on an error in your code, <code>request_id</code> must be unique for each submitted payment. The <code>request_id</code> must be previously persisted on your side.</aside>
+<aside class="notice">To avoid duplicate payment submission because of an error in your code, <code>request_id</code> must be unique for each submitted payment. The <code>request_id</code> must be previously persisted on your side.</aside>
 <h3 id='request-7'>Request</h3>
 <p><code>POST https://b2b.revolut.com/api/1.0/pay</code></p>
 <h4 id='request-fields-3'>Request fields</h4>
@@ -1370,7 +1516,7 @@
 <td>3-letter ISO currency code</td>
 </tr>
 <tr>
-<td>description</td>
+<td>reference</td>
 <td>an optional textual reference shown on the transaction</td>
 <td>Text</td>
 </tr>
@@ -1390,17 +1536,22 @@
 </tr>
 <tr>
 <td>state</td>
-<td>the transction state: <code>pending</code>, <code>completed</code>, <code>declined</code> or <code>failed</code></td>
+<td>the transaction state: <code>pending</code>, <code>completed</code>, <code>declined</code> or <code>failed</code></td>
 <td>Text</td>
 </tr>
 <tr>
-<td>reason</td>
-<td>an optional reason code for <code>declined</code> or <code>failed</code> transaction state</td>
+<td>reason_code</td>
+<td>reason code for <code>declined</code> or <code>failed</code> transaction state</td>
 <td>Text</td>
 </tr>
 <tr>
 <td>created_at</td>
 <td>the instant when the transaction was created</td>
+<td>ISO date/time</td>
+</tr>
+<tr>
+<td>completed_at</td>
+<td>the instant when the transaction was completed</td>
 <td>ISO date/time</td>
 </tr>
 </tbody></table>
@@ -1414,11 +1565,12 @@
   </span><span class="s2">"request_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e0cbf84637264ee082a848b"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bdab1c20-8d8c-430d-b967-87ac01af060c"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"receiver"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"counterparty_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5138z40d1-05bb-49c0-b130-75e8cf2f7693"</span><span class="w">
+    </span><span class="s2">"counterparty_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5138z40d1-05bb-49c0-b130-75e8cf2f7693"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"db7c73d3-b0df-4e0e-8a9a-f42aa99f52ab"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">123.11</span><span class="p">,</span><span class="w">
   </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EUR"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invoice payment #123"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invoice payment #123"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"schedule_for"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-10"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><pre class="highlight shell tab-shell"><code>EOF
@@ -1459,6 +1611,7 @@ To schedule a future payment, as opposed to immediate execution, just pass an ad
   </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-10T12:00:00Z"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-10T12:00:10Z"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"completed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-10T12:00:10Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Expenses funding"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"legs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"leg_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8bf591b9-e802-4e37-a5bb-f870603d8207"</span><span class="p">,</span><span class="w">
@@ -1469,8 +1622,7 @@ To schedule a future payment, as opposed to immediate execution, just pass an ad
       </span><span class="p">},</span><span class="w">
       </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">-123.11</span><span class="p">,</span><span class="w">
       </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EUR"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"explanation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"From EUR source"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Expenses funding"</span><span class="w">
+      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"From EUR source"</span><span class="p">,</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"leg_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"516b9146-9264-4bb5-936f-497469b5c44e"</span><span class="p">,</span><span class="w">
@@ -1481,7 +1633,7 @@ To schedule a future payment, as opposed to immediate execution, just pass an ad
       </span><span class="p">},</span><span class="w">
       </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">123.11</span><span class="p">,</span><span class="w">
       </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EUR"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"explanation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"To EUR target"</span><span class="w">
+      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"To EUR target"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -1497,6 +1649,7 @@ To schedule a future payment, as opposed to immediate execution, just pass an ad
   </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-10T12:00:00Z"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-10T12:00:10Z"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"completed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-10T12:00:10Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Payment for Blows &amp; Wistles Co."</span><span class="p">,</span><span class="w">
   </span><span class="s2">"legs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"leg_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0485605a-6062-4820-981d-1736f4be0b2c"</span><span class="p">,</span><span class="w">
@@ -1507,8 +1660,7 @@ To schedule a future payment, as opposed to immediate execution, just pass an ad
         </span><span class="s2">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bdab1c20-8d8c-430d-b967-87ac01af060c"</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">-123.11</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EUR"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Payment for Blows &amp; Wistles Co."</span><span class="w">
+      </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EUR"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -1524,6 +1676,7 @@ To schedule a future payment, as opposed to immediate execution, just pass an ad
   </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-10T12:00:00Z"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-10T12:00:10Z"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"completed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-10T12:00:10Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Payment for Blows &amp; Wistles Co."</span><span class="p">,</span><span class="w">
   </span><span class="s2">"legs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"leg_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0485605a-6062-4820-981d-1736f4be0b2c"</span><span class="p">,</span><span class="w">
@@ -1536,8 +1689,7 @@ To schedule a future payment, as opposed to immediate execution, just pass an ad
       </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">-123.11</span><span class="p">,</span><span class="w">
       </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EUR"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"bill_amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">-108.51</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"bill_currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GBP"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Payment for Blows &amp; Wistles Co."</span><span class="w">
+      </span><span class="s2">"bill_currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GBP"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -1552,18 +1704,19 @@ To schedule a future payment, as opposed to immediate execution, just pass an ad
   </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-10T12:00:00Z"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-10T12:00:10Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Payment for Blows &amp; Wistles Co."</span><span class="p">,</span><span class="w">
   </span><span class="s2">"legs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"leg_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0485605a-6062-4820-981d-1736f4be0b2c"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bdab1c20-8d8c-430d-b967-87ac01af060c"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"counterparty"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a1dd617f-45b5-400b-8dd9-8970429d0a3c"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"external"</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"external"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8057d02f-cd46-49b6-be8c-4ee045c24591"</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">-123.11</span><span class="p">,</span><span class="w">
       </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EUR"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"explanation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"To Blows &amp; Wistles Co."</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Payment for Blows &amp; Wistles Co."</span><span class="w">
+      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"To Blows &amp; Wistles Co."</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -1576,9 +1729,10 @@ To schedule a future payment, as opposed to immediate execution, just pass an ad
   </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"transfer"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"request_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e0cbf84637264ee082a848b"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"failed"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Account does not exist"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"reason_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Account does not exist"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-10T12:00:00Z"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-10T12:00:10Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Payment for Blows &amp; Wistles Co."</span><span class="p">,</span><span class="w">
   </span><span class="s2">"legs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"leg_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0485605a-6062-4820-981d-1736f4be0b2c"</span><span class="p">,</span><span class="w">
@@ -1590,8 +1744,7 @@ To schedule a future payment, as opposed to immediate execution, just pass an ad
       </span><span class="p">},</span><span class="w">
       </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">-123.11</span><span class="p">,</span><span class="w">
       </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EUR"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"explanation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"To Blows &amp; Wistles Co."</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Payment for Blows &amp; Wistles Co."</span><span class="w">
+      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"To Blows &amp; Wistles Co."</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -1616,10 +1769,6 @@ To schedule a future payment, as opposed to immediate execution, just pass an ad
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"leg_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cea14fa4-4256-4873-ac2f-c916bf4acce1"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"60879a43-5ad9-497f-a6bc-eb604365c463"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"counterparty"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"revolut"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"82ef2d8c-5fa5-46d6-a954-31865077f096"</span><span class="w">
-      </span><span class="p">},</span><span class="w">
       </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w">
       </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GBP"</span><span class="w">
     </span><span class="p">}</span><span class="w">
@@ -1657,7 +1806,7 @@ It also allows you to find out more about the transaction, such as cardholder de
 </tr>
 <tr>
 <td>type</td>
-<td>the type of transaction</td>
+<td>the transaction type, one of <code>atm</code>, <code>card_payment</code>, <code>card_refund</code>, <code>card_chargeback</code>, <code>card_credit</code>, <code>exchange</code>, <code>transfer</code>, <code>loan</code>, <code>fee</code>, <code>refund</code>, <code>topup</code>, <code>topup_return</code>, <code>tax</code>, <code>tax_refund</code></td>
 <td>Text</td>
 </tr>
 <tr>
@@ -1671,8 +1820,8 @@ It also allows you to find out more about the transaction, such as cardholder de
 <td>Text</td>
 </tr>
 <tr>
-<td>reason</td>
-<td>an optional reason code for <code>declined</code> or <code>failed</code> transaction state</td>
+<td>reason_code</td>
+<td>reason code for <code>declined</code> or <code>failed</code> transaction state</td>
 <td>Text</td>
 </tr>
 <tr>
@@ -1718,6 +1867,11 @@ It also allows you to find out more about the transaction, such as cardholder de
 <tr>
 <td>merchant.country</td>
 <td>3-letter ISO country code</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>reference</td>
+<td>a user provided payment reference</td>
 <td>Text</td>
 </tr>
 <tr>
@@ -1767,16 +1921,11 @@ It also allows you to find out more about the transaction, such as cardholder de
 </tr>
 <tr>
 <td>legs[n].counterparty.type</td>
-<td>the type of counterparty: <code>self</code>, <code>revolut</code>, <code>external</code></td>
+<td>the type of account: <code>self</code>, <code>revolut</code>, <code>external</code></td>
 <td>Text</td>
 </tr>
 <tr>
 <td>legs[n].description</td>
-<td>a textual reference shown on the transaction</td>
-<td>Text</td>
-</tr>
-<tr>
-<td>legs[n].explanation</td>
 <td>the transaction leg purpose</td>
 <td>Text</td>
 </tr>
@@ -1860,6 +2009,7 @@ It also allows you to find out more about the transaction, such as cardholder de
     </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-10T12:00:00Z"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-10T12:00:10Z"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"completed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-10T12:00:10Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Payment for Blows &amp; Wistles Co."</span><span class="p">,</span><span class="w">
     </span><span class="s2">"legs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
         </span><span class="s2">"leg_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0485605a-6062-4820-981d-1736f4be0b2c"</span><span class="p">,</span><span class="w">
@@ -1871,8 +2021,7 @@ It also allows you to find out more about the transaction, such as cardholder de
         </span><span class="p">},</span><span class="w">
         </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">-123.11</span><span class="p">,</span><span class="w">
         </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EUR"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"explanation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"To Blows &amp; Wistles Co."</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Payment for Blows &amp; Wistles Co."</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"To Blows &amp; Wistles Co."</span><span class="w">        
       </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
   </span><span class="p">},</span><span class="w">
@@ -1884,6 +2033,7 @@ It also allows you to find out more about the transaction, such as cardholder de
     </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-10T12:00:00Z"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-10T12:00:10Z"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"completed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-10T12:00:10Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Payment for Blows &amp; Wistles Co."</span><span class="p">,</span><span class="w">
     </span><span class="s2">"legs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
         </span><span class="s2">"leg_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0485605a-6062-4820-981d-1736f4be0b2c"</span><span class="p">,</span><span class="w">
@@ -1895,8 +2045,7 @@ It also allows you to find out more about the transaction, such as cardholder de
         </span><span class="p">},</span><span class="w">
         </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">-500.00</span><span class="p">,</span><span class="w">
         </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EUR"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"explanation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"To Blows &amp; Wistles Co."</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Payment for Blows &amp; Wistles Co."</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"To Blows &amp; Wistles Co."</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
   </span><span class="p">},</span><span class="w">
@@ -1908,6 +2057,7 @@ It also allows you to find out more about the transaction, such as cardholder de
     </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-10T12:00:00Z"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-10T12:00:00Z"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"scheduled_for"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-15"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Payment for Blows &amp; Wistles Co."</span><span class="p">,</span><span class="w">
     </span><span class="s2">"legs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
         </span><span class="s2">"leg_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"704ef03d-4cb3-4027-a7c5-d42f3b60395f"</span><span class="p">,</span><span class="w">
@@ -1919,8 +2069,7 @@ It also allows you to find out more about the transaction, such as cardholder de
         </span><span class="p">},</span><span class="w">
         </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">-43.12</span><span class="p">,</span><span class="w">
         </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EUR"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"explanation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"To Blows &amp; Wistles Co."</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Payment for Blows &amp; Wistles Co."</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"To Blows &amp; Wistles Co."</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
   </span><span class="p">}</span><span class="w">
@@ -1959,7 +2108,7 @@ It also allows you to find out more about the transaction, such as cardholder de
 </tr>
 <tr>
 <td>type</td>
-<td>an optional transaction type</td>
+<td>the transaction type, one of <code>atm</code>, <code>card_payment</code>, <code>card_refund</code>, <code>card_chargeback</code>, <code>card_credit</code>, <code>exchange</code>, <code>transfer</code>, <code>loan</code>, <code>fee</code>, <code>refund</code>, <code>topup</code>, <code>topup_return</code>, <code>tax</code>, <code>tax_refund</code></td>
 <td>Text</td>
 </tr>
 </tbody></table>
@@ -1994,8 +2143,8 @@ It also allows you to find out more about the transaction, such as cardholder de
 <td>Text</td>
 </tr>
 <tr>
-<td>reason</td>
-<td>an optional reason code for <code>declined</code> or <code>failed</code> transaction state</td>
+<td>reason_code</td>
+<td>reason code for <code>declined</code> or <code>failed</code> transaction state</td>
 <td>Text</td>
 </tr>
 <tr>
@@ -2017,6 +2166,16 @@ It also allows you to find out more about the transaction, such as cardholder de
 <td>scheduled_for</td>
 <td>an optional date when the transaction was scheduled for</td>
 <td>ISO date</td>
+</tr>
+<tr>
+<td>reference</td>
+<td>a user provided payment reference</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>legs</td>
+<td>the legs of transaction, there&#39;ll be 2 legs between your Revolut accounts and 1 leg in other cases</td>
+<td>Array</td>
 </tr>
 <tr>
 <td>legs[n].leg_id</td>
@@ -2059,23 +2218,18 @@ It also allows you to find out more about the transaction, such as cardholder de
 <td>UUID</td>
 </tr>
 <tr>
-<td>legs[n].counterparty.type</td>
-<td>the type of counterparty: <code>self</code>, <code>revolut</code>, <code>external</code></td>
-<td>Text</td>
-</tr>
-<tr>
-<td>legs[n].explanation</td>
-<td>the transaction leg purpose</td>
+<td>legs[n].counterparty.account_type</td>
+<td>the type of counterparty account: <code>self</code>, <code>revolut</code>, <code>external</code></td>
 <td>Text</td>
 </tr>
 <tr>
 <td>legs[n].description</td>
-<td>a textual reference shown on the transaction</td>
+<td>the transaction leg purpose</td>
 <td>Text</td>
 </tr>
 </tbody></table>
 <h1 id='web-hooks'>Web-hooks</h1>
-<p>Web-hook is a mechanism that allows you to receive updates about your account to an HTTP(S) endpoint provided by you. 
+<p>Web-hook is a mechanism that allows you to receive updates about your account to an HTTPS endpoint provided by you. 
 When a supported event occurs, a notification will be posted, via HTTP POST method, to the specified endpoint. 
 If the receiver returns an HTTP error response, there will be two more consequent attempts for delivery.</p>
 
@@ -2095,21 +2249,38 @@ If the receiver returns an HTTP error response, there will be two more consequen
   </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.com/example/path"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><pre class="highlight shell tab-shell"><code>EOF
-</code></pre>
-<p>Use this API to create your web-hook endpoint. Only HTTP(S) web-hooks are supported.</p>
+</code></pre><h3 id='request-11'>Request</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>url</td>
+<td>call back endpoint of the client system, <code>https</code> is the supported protocol</td>
+<td>URL</td>
+</tr>
+</tbody></table>
+
+<p>Use this API to create your web-hook endpoint. Only HTTPS web-hooks are supported.</p>
 <h2 id='transaction-created-event'>Transaction Created event</h2>
 <blockquote>
 <p>The example of payload</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TransactionCreated"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"event"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TransactionCreated"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-12-06T12:21:49.865Z"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20ed4029-1af8-405d-b515-0ee5e020a850"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"transfer"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"request_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e0cbf84637264ee082a848b"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"completed"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-12-06T12:21:48.865Z"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-12-06T12:21:48.865Z"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"completed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-12-06T12:21:48.865Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Payment for Blows &amp; Wistles Co."</span><span class="p">,</span><span class="w">
     </span><span class="s2">"legs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
         </span><span class="s2">"leg_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e2fdd0e2-3881-4804-8a8c-6573a97488fa"</span><span class="p">,</span><span class="w">
@@ -2119,23 +2290,139 @@ If the receiver returns an HTTP error response, there will be two more consequen
           </span><span class="s2">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"54c0150f-64de-4653-93e5-af89d21385a0"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">-120.0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GBP"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"explanation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Payment for Blows &amp; Wistles Co."</span><span class="w">
+        </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GBP"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>Data is returned in the same format as the <a href="#check-payment-status">Check Payment Status</a> request.</p>
+</span></code></pre><h3 id='response-11'>Response</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>event</td>
+<td>the event name</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>the event time</td>
+<td>ISO date/time</td>
+</tr>
+<tr>
+<td>data.id</td>
+<td>the ID of transaction</td>
+<td>UUID</td>
+</tr>
+<tr>
+<td>data.request_id</td>
+<td>the client provided request ID</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>data.state</td>
+<td>the transction state: <code>pending</code>, <code>completed</code>, <code>declined</code> or <code>failed</code></td>
+<td>Text</td>
+</tr>
+<tr>
+<td>data.reason_code</td>
+<td>an optional reason code for <code>declined</code> or <code>failed</code> transaction state</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>data.created_at</td>
+<td>the instant when the transaction was created</td>
+<td>ISO date/time</td>
+</tr>
+<tr>
+<td>data.updated_at</td>
+<td>the instant when the transaction was last updated</td>
+<td>ISO date/time</td>
+</tr>
+<tr>
+<td>data.completed_at</td>
+<td>the instant when the transaction was completed, mandatory for <code>completed</code> state only</td>
+<td>ISO date/time</td>
+</tr>
+<tr>
+<td>data.scheduled_for</td>
+<td>an optional date when the transaction was scheduled for</td>
+<td>ISO date</td>
+</tr>
+<tr>
+<td>data.reference</td>
+<td>a user provided payment reference</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>data.legs</td>
+<td>the legs of transaction, there&#39;ll be 2 legs between your Revolut accounts and 1 leg in other cases</td>
+<td>Array</td>
+</tr>
+<tr>
+<td>data.legs[n].leg_id</td>
+<td>the ID of the leg</td>
+<td>UUID</td>
+</tr>
+<tr>
+<td>data.legs[n].amount</td>
+<td>the transaction amount</td>
+<td>Decimal</td>
+</tr>
+<tr>
+<td>data.legs[n].currency</td>
+<td>the transaction currency</td>
+<td>3-letter ISO currency code</td>
+</tr>
+<tr>
+<td>data.legs[n].bill_amount</td>
+<td>the billing amount for cross-currency payments</td>
+<td>Decimal</td>
+</tr>
+<tr>
+<td>data.legs[n].bill_currency</td>
+<td>the billing currency for cross-currency payments</td>
+<td>3-letter ISO currency code</td>
+</tr>
+<tr>
+<td>data.legs[n].account_id</td>
+<td>the ID of the account the transaction is associated with</td>
+<td>UUID</td>
+</tr>
+<tr>
+<td>data.legs[n].counterparty.id</td>
+<td>the counterparty ID</td>
+<td>UUID</td>
+</tr>
+<tr>
+<td>data.legs[n].counterparty.account_id</td>
+<td>the counterparty account ID</td>
+<td>UUID</td>
+</tr>
+<tr>
+<td>data.legs[n].counterparty.account_type</td>
+<td>the type of counterparty account: <code>self</code>, <code>revolut</code>, <code>external</code></td>
+<td>Text</td>
+</tr>
+<tr>
+<td>data.legs[n].description</td>
+<td>the transaction leg purpose</td>
+<td>Text</td>
+</tr>
+</tbody></table>
 <h2 id='transaction-state-changed-event'>Transaction State Changed event</h2>
 <blockquote>
 <p>The example of payload</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TransactionStateChanged"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"event"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TransactionStateChanged"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-12-06T12:21:49.865Z"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-12-06T12:21:48.865Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"transaction_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9a6434d8-3581-4faa-988b-48875e785be7"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9a6434d8-3581-4faa-988b-48875e785be7"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"old_state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"new_state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reverted"</span><span class="w">
   </span><span class="p">}</span><span class="w">
@@ -2149,22 +2436,27 @@ If the receiver returns an HTTP error response, there will be two more consequen
 </tr>
 </thead><tbody>
 <tr>
-<td>date</td>
-<td>the instant when the transaction state has changed</td>
+<td>event</td>
+<td>the event name</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>the event time</td>
 <td>ISO date/time</td>
 </tr>
 <tr>
-<td>transaction_id</td>
+<td>data.id</td>
 <td>the ID of the transaction</td>
 <td>UUID</td>
 </tr>
 <tr>
-<td>old_state</td>
+<td>data.old_state</td>
 <td>previous state of the transaction</td>
 <td>Text</td>
 </tr>
 <tr>
-<td>new_state</td>
+<td>data.new_state</td>
 <td>new state of the transaction</td>
 <td>Text</td>
 </tr>
@@ -2174,7 +2466,7 @@ If the receiver returns an HTTP error response, there will be two more consequen
 
 <table><thead>
 <tr>
-<th>Error Code</th>
+<th>Code</th>
 <th>Meaning</th>
 </tr>
 </thead><tbody>
