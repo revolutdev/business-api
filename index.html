@@ -322,7 +322,7 @@
 <pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">/api/1.0/accounts</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Authorization</span><span class="p">:</span> <span class="s">Bearer &lt;your api-key&gt;</span>
 </code></pre>
-<p>Once you sign up for your Revolut Business account on <a href="https://business.revolut.com/signup">business.revolut.com</a>, you will be issued with two API-keys, one for sandbox and one for production environment. The sandbox environment is useful for development and allows you to play with test data. Some of the data will be pre-populated so you can start quickly.</p>
+<p>Once you sign up for your Revolut Business account on <a href="https://business.revolut.com/signup">business.revolut.com</a>, you will be issued with two API-keys, one for sandbox and one for production environment. Account owners can find these keys in the &quot;settings&quot; section of the web interface. The sandbox environment is useful for development and allows you to play with test data. Some of the data will be pre-populated so you can start quickly.</p>
 
 <aside class="warning">Please DO NOT use production environment until you have tested your integration sufficiently and are happy that it works as expected.</aside>
 <h1 id='accounts'>Accounts</h1><h2 id='get-accounts'>Get Accounts</h2><pre class="highlight shell tab-shell--sandbox"><code>curl <span class="s2">"https://sandbox-b2b.revolut.com/api/1.0/accounts"</span> <span class="se">\</span>
@@ -394,7 +394,7 @@
 </tr>
 <tr>
 <td>public</td>
-<td>determines if the account is visible to other Businesses on Revolut</td>
+<td>determines if the account is visible to other businesses on Revolut</td>
 <td>Boolean</td>
 </tr>
 <tr>
@@ -494,7 +494,7 @@
 </tr>
 </tbody></table>
 <h1 id='counterparties'>Counterparties</h1>
-<p>Before a transfer or payment can be made, you need to add counterparties which you intend to transact with.</p>
+<p>Before a transfer or payment can be made, you need to add the counterparties with which you intend to transact with.</p>
 <h2 id='add-revolut-counterparty'>Add Revolut Counterparty</h2>
 <blockquote>
 <p>Add an individual Revolut user as counterparty</p>
@@ -603,11 +603,6 @@
 <td>phone</td>
 <td>an optional phone number of the counterparty. Provide only with <code>personal</code> profile_type.</td>
 <td>International phone number, starting with <code>+</code></td>
-</tr>
-<tr>
-<td>email</td>
-<td>an optional email address of an admin of a public Revolut Business account. Provide only with <code>business</code> profile_type.</td>
-<td>Email</td>
 </tr>
 <tr>
 <td>email</td>
@@ -1387,12 +1382,12 @@
 </tr>
 <tr>
 <td>amount</td>
-<td>n to transfer</td>
+<td>the transaction amount</td>
 <td>Decimal</td>
 </tr>
 <tr>
 <td>currency</td>
-<td>a currency to transfer, both source and target accounts should be in this currency</td>
+<td>the transaction currency, both source and target accounts should be in this currency</td>
 <td>3-letter ISO currency code</td>
 </tr>
 <tr>
