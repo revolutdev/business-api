@@ -596,7 +596,7 @@
 </tr>
 <tr>
 <td>name</td>
-<td>only need when <code>phone</code> is provided</td>
+<td>an optional name. Provide only with <code>personal</code> profile_type</td>
 <td>Text</td>
 </tr>
 <tr>
@@ -741,7 +741,7 @@
 </thead><tbody>
 <tr>
 <td>company_name</td>
-<td>an optional name of the external company counterparty, this field must exist when individual_name does not</td>
+<td>an optional name of the external company counterparty, this field must exist when <code>individual_name</code> does not</td>
 <td>Text</td>
 </tr>
 <tr>
@@ -1391,7 +1391,7 @@
 <td>3-letter ISO currency code</td>
 </tr>
 <tr>
-<td>description</td>
+<td>reference</td>
 <td>an optional textual reference shown on the transaction</td>
 <td>Text</td>
 </tr>
@@ -1444,7 +1444,7 @@
   </span><span class="p">},</span><span class="w">
   </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">123.11</span><span class="p">,</span><span class="w">
   </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EUR"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invoice payment #123"</span><span class="w">
+  </span><span class="s2">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invoice payment #123"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><pre class="highlight shell tab-shell"><code>EOF
 </code></pre>
