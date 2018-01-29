@@ -324,6 +324,8 @@
 </code></pre>
 <p>Once you sign up for your Revolut Business account on <a href="https://business.revolut.com/signup">business.revolut.com</a>, you will be issued with two API-keys, one for sandbox and one for production environment. Account owners can find these keys in the &quot;settings&quot; section of the web interface. The sandbox environment is useful for development and allows you to play with test data. Some of the data will be pre-populated so you can start quickly.</p>
 
+<p>For additional security you can add an optional IP address whitelist for the API. The account owner can do this within the <a href="https://business.revolut.com/r/settings">settings</a> section of the Revolut Business portal.</p>
+
 <aside class="warning">Please DO NOT use production environment until you have tested your integration sufficiently and are happy that it works as expected.</aside>
 <h1 id='accounts'>Accounts</h1><h2 id='get-accounts'>Get Accounts</h2><pre class="highlight shell tab-shell--sandbox"><code>curl <span class="s2">"https://sandbox-b2b.revolut.com/api/1.0/accounts"</span> <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span>
