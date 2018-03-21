@@ -650,7 +650,7 @@
 </tr>
 <tr>
 <td>bank_country</td>
-<td>the country where the counterparty resides</td>
+<td>the country of the bank</td>
 <td>2-letter ISO code</td>
 </tr>
 <tr>
@@ -765,8 +765,8 @@
 <td>Text</td>
 </tr>
 <tr>
-<td>country</td>
-<td>the country where the counterparty resides</td>
+<td>bank_country</td>
+<td>the country of the bank</td>
 <td>2-letter ISO code</td>
 </tr>
 <tr>
@@ -806,7 +806,7 @@
 </tr>
 <tr>
 <td>address.country</td>
-<td>an optional the country of the counterparty</td>
+<td>an optional the bankCountry of the counterparty</td>
 <td>2-letter ISO code</td>
 </tr>
 <tr>
@@ -1091,7 +1091,7 @@
 </tr>
 <tr>
 <td>country</td>
-<td>the country where the counterparty resides/is registered</td>
+<td>the bankCountry where the counterparty resides/is registered</td>
 <td>2-letter ISO code</td>
 </tr>
 <tr>
@@ -1253,7 +1253,7 @@
 </tr>
 <tr>
 <td>country</td>
-<td>the country where the counterparty resides</td>
+<td>the bankCountry where the counterparty resides</td>
 <td>2-letter ISO code</td>
 </tr>
 <tr>
@@ -1871,7 +1871,7 @@ It also allows you to find out more about the transaction, such as cardholder de
 </tr>
 <tr>
 <td>merchant.country</td>
-<td>3-letter ISO country code</td>
+<td>3-letter ISO bankCountry code</td>
 <td>Text</td>
 </tr>
 <tr>
@@ -1972,7 +1972,7 @@ It also allows you to find out more about the transaction, such as cardholder de
 </code></p>
 </blockquote>
 
-<p>This endpoint allows to cancel a &quot;pending&quot; transaction that was initiated by you, via UI or API.</p>
+<p>This endpoint allows to cancel a scheduled transaction that was initiated by you, via API.</p>
 <h3 id='request-9'>Request</h3>
 <p><code>DELETE https://b2b.revolut.com/api/1.0/transaction/&lt;id&gt;</code></p>
 <h4 id='url-parameters-4'>URL Parameters</h4>
