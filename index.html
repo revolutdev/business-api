@@ -234,6 +234,9 @@
                   <li>
                     <a href="#get-account" class="toc-h2 toc-link" data-title="Accounts">Get Account</a>
                   </li>
+                  <li>
+                    <a href="#get-account-details" class="toc-h2 toc-link" data-title="Accounts">Get Account Details</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -495,6 +498,172 @@
 <td>ISO date/time</td>
 </tr>
 </tbody></table>
+<h2 id='get-account-details'>Get Account Details</h2><pre class="highlight shell tab-shell--sandbox"><code>curl <span class="s2">"https://sandbox-b2b.revolut.com/api/1.0/accounts/df8d6b20-0725-482e-a29e-fb09631480cf/address"</span> <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span>
+</code></pre><pre class="highlight shell tab-shell--production"><code>curl <span class="s2">"https://b2b.revolut.com/api/1.0/accounts/df8d6b20-0725-482e-a29e-fb09631480cf/address"</span> <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span>
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"account_no"</span><span class="p">:</span><span class="w"> </span><span class="s2">"74931241"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sort_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"344950"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"beneficiary"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Good Co."</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"beneficiary_address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"street_line1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sesame Street"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"street_line2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1 Canada Square"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"London"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GB"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"postcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"E14 5AB"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"bank_country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GB"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"schemas"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">"chaps"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"bacs"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"faster_payments"</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"pooled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"estimated_time"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hours"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"min"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"max"</span><span class="p">:</span><span class="w"> </span><span class="mi">24</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"iban"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GB73 BARC 2036 4759 2458 33"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"bic"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BARCGB22"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"beneficiary"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Revolut LTD"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"beneficiary_address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"street_line1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Revolut LTD, Level39"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"street_line2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1 Canada Square"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"London"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GB"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"postcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"E14 5AB"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"bank_country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GB"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"pooled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"unique_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"28960536"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"schemes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">"sepa"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"swift"</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"estimated_time"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"days"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"min"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"max"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves individual account details.</p>
+<h3 id='request-3'>Request</h3>
+<p><code>GET https://b2b.revolut.com/api/1.0/accounts/&lt;id&gt;/bank-details</code></p>
+<h3 id='response-3'>Response</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>iban</td>
+<td>IBAN</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>bic</td>
+<td>BIC</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>account_no</td>
+<td>the account number</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>sort_code</td>
+<td>the sort code</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>routing_number</td>
+<td>the routing number</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>beneficiary</td>
+<td>the beneficiary name</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>beneficiary_address.street_line1</td>
+<td>the address line 1 of the beneficiary</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>beneficiary_address.street_line2</td>
+<td>the address line 2 of the beneficiary</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>beneficiary_address.region</td>
+<td>the region of the beneficiary</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>beneficiary_address.city</td>
+<td>the city of the beneficiary</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>beneficiary_address.country</td>
+<td>the country of the beneficiary</td>
+<td>2-letter ISO code</td>
+</tr>
+<tr>
+<td>beneficiary_address.postcode</td>
+<td>the postal code of the beneficiary</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>bank_country</td>
+<td>the country of the bank</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>pooled</td>
+<td>determines if this account address is pooled or unique</td>
+<td>Boolean</td>
+</tr>
+<tr>
+<td>unique_reference</td>
+<td>the reference of the pooled account</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>schemes</td>
+<td>the list of supported schemes, possible values: <code>chaps</code>, <code>bacs</code>, <code>faster_payments</code>, <code>sepa</code>, <code>swift</code>, <code>ach</code></td>
+<td>Text</td>
+</tr>
+<tr>
+<td>estimated_time.unit</td>
+<td>the unit of the inbound transfer time estimate, possible values: <code>days</code>, <code>hours</code></td>
+<td>Text</td>
+</tr>
+<tr>
+<td>estimated_time.max</td>
+<td>the maximum estimate</td>
+<td>Decimal</td>
+</tr>
+<tr>
+<td>estimated_time.min</td>
+<td>the minimum estimate</td>
+<td>Decimal</td>
+</tr>
+</tbody></table>
 <h1 id='counterparties'>Counterparties</h1>
 <p>Before a transfer or payment can be made, you need to add the counterparties with which you intend to transact with.</p>
 
@@ -620,7 +789,7 @@
 <td>Email</td>
 </tr>
 </tbody></table>
-<h3 id='response-3'>Response</h3>
+<h3 id='response-4'>Response</h3>
 <table><thead>
 <tr>
 <th>Field</th>
@@ -891,7 +1060,7 @@
 <td>Text</td>
 </tr>
 </tbody></table>
-<h3 id='response-4'>Response</h3>
+<h3 id='response-5'>Response</h3>
 <table><thead>
 <tr>
 <th>Field</th>
@@ -986,7 +1155,7 @@
 <pre class="highlight shell tab-shell"><code>204 No Content
 </code></pre>
 <p>This endpoint deletes a counterparty with the given ID. Once a counterparty is deleted no payments can be made to it.</p>
-<h3 id='request-3'>Request</h3>
+<h3 id='request-4'>Request</h3>
 <p><code>DELETE https://b2b.revolut.com/api/1.0/counterparty/&lt;id&gt;</code></p>
 <h3 id='url-parameters-2'>URL Parameters</h3>
 <table><thead>
@@ -1045,7 +1214,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a counterparty by ID.</p>
-<h3 id='request-4'>Request</h3>
+<h3 id='request-5'>Request</h3>
 <p><code>GET https://b2b.revolut.com/api/1.0/counterparty/&lt;id&gt;</code></p>
 <h4 id='url-parameters-3'>URL Parameters</h4>
 <table><thead>
@@ -1061,7 +1230,7 @@
 <td>UUID</td>
 </tr>
 </tbody></table>
-<h3 id='response-5'>Response</h3>
+<h3 id='response-6'>Response</h3>
 <table><thead>
 <tr>
 <th>Field</th>
@@ -1221,9 +1390,9 @@
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all your counterparties.</p>
-<h3 id='request-5'>Request</h3>
+<h3 id='request-6'>Request</h3>
 <p><code>GET https://b2b.revolut.com/api/1.0/counterparties</code></p>
-<h3 id='response-6'>Response</h3>
+<h3 id='response-7'>Response</h3>
 <table><thead>
 <tr>
 <th>Field</th>
@@ -1365,7 +1534,7 @@
 <p>This endpoint processes transfers between accounts of the business with the same currency.</p>
 
 <p>The resulting transaction has type &quot;transfer&quot;.</p>
-<h3 id='request-6'>Request</h3>
+<h3 id='request-7'>Request</h3>
 <p><code>POST https://b2b.revolut.com/api/1.0/transfer</code></p>
 <h4 id='request-fields-2'>Request fields</h4>
 <table><thead>
@@ -1406,7 +1575,7 @@
 <td>Text</td>
 </tr>
 </tbody></table>
-<h3 id='response-7'>Response</h3>
+<h3 id='response-8'>Response</h3>
 <table><thead>
 <tr>
 <th>Field</th>
@@ -1480,7 +1649,7 @@
 <p>This endpoint creates a new payment. If the payment is for another Revolut account, business or personal, the transaction may be processed synchronously.</p>
 
 <aside class="notice">To avoid duplicate payment submission because of an error in your code, <code>request_id</code> must be unique for each submitted payment. The <code>request_id</code> must be previously persisted on your side.</aside>
-<h3 id='request-7'>Request</h3>
+<h3 id='request-8'>Request</h3>
 <p><code>POST https://b2b.revolut.com/api/1.0/pay</code></p>
 <h4 id='request-fields-3'>Request fields</h4>
 <table><thead>
@@ -1526,7 +1695,7 @@
 <td>Text</td>
 </tr>
 </tbody></table>
-<h3 id='response-8'>Response</h3>
+<h3 id='response-9'>Response</h3>
 <table><thead>
 <tr>
 <th>Field</th>
@@ -1788,7 +1957,7 @@ To schedule a future payment, as opposed to immediate execution, just pass an ad
 </span></code></pre>
 <p>This endpoint retrieves transaction details by transaction ID or by request ID.
 It also allows you to find out more about the transaction, such as cardholder details for card payments.</p>
-<h3 id='request-8'>Request</h3>
+<h3 id='request-9'>Request</h3>
 <p>To retrieve a transaction by ID:</p>
 
 <p><code>GET https://b2b.revolut.com/api/1.0/transaction/&lt;id&gt;</code></p>
@@ -1796,7 +1965,7 @@ It also allows you to find out more about the transaction, such as cardholder de
 <p>To retrieve a transaction by request ID:</p>
 
 <p><code>GET https://b2b.revolut.com/api/1.0/transaction/&lt;request_id&gt;?id_type=request_id</code></p>
-<h3 id='response-9'>Response</h3>
+<h3 id='response-10'>Response</h3>
 <table><thead>
 <tr>
 <th>Field</th>
@@ -1973,7 +2142,7 @@ It also allows you to find out more about the transaction, such as cardholder de
 </blockquote>
 
 <p>This endpoint allows to cancel a scheduled transaction that was initiated by you, via API.</p>
-<h3 id='request-9'>Request</h3>
+<h3 id='request-10'>Request</h3>
 <p><code>DELETE https://b2b.revolut.com/api/1.0/transaction/&lt;id&gt;</code></p>
 <h4 id='url-parameters-4'>URL Parameters</h4>
 <table><thead>
@@ -2081,7 +2250,7 @@ It also allows you to find out more about the transaction, such as cardholder de
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves historical transactions based on the provided query criteria.</p>
-<h3 id='request-10'>Request</h3>
+<h3 id='request-11'>Request</h3>
 <p><code>GET https://b2b.revolut.com/api/1.0/transactions</code></p>
 <h4 id='url-parameters-5'>URL Parameters</h4>
 <table><thead>
@@ -2119,7 +2288,7 @@ It also allows you to find out more about the transaction, such as cardholder de
 </tbody></table>
 
 <p>All filters are optional.</p>
-<h3 id='response-10'>Response</h3>
+<h3 id='response-11'>Response</h3>
 <table><thead>
 <tr>
 <th>Field</th>
@@ -2254,7 +2423,7 @@ If the receiver returns an HTTP error response, there will be two more consequen
   </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.com/example/path"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><pre class="highlight shell tab-shell"><code>EOF
-</code></pre><h3 id='request-11'>Request</h3>
+</code></pre><h3 id='request-12'>Request</h3>
 <table><thead>
 <tr>
 <th>Field</th>
@@ -2300,7 +2469,7 @@ If the receiver returns an HTTP error response, there will be two more consequen
     </span><span class="p">]</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='response-11'>Response</h3>
+</span></code></pre><h3 id='response-12'>Response</h3>
 <table><thead>
 <tr>
 <th>Field</th>
