@@ -220,10 +220,63 @@
         <ul class="search-results"></ul>
       <div id="toc" class="toc-list-h1">
           <li>
-            <a href="#api-v1-0-introduction" class="toc-h1 toc-link" data-title="API v1.0 introduction">API v1.0 introduction</a>
+            <a href="#getting-started" class="toc-h1 toc-link" data-title="Getting started">Getting started</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#introduction" class="toc-h2 toc-link" data-title="Getting started">Introduction</a>
+                  </li>
+                  <li>
+                    <a href="#usage-and-limits" class="toc-h2 toc-link" data-title="Getting started">Usage and limits</a>
+                  </li>
+                  <li>
+                    <a href="#demo-account" class="toc-h2 toc-link" data-title="Getting started">Demo account</a>
+                  </li>
+              </ul>
           </li>
           <li>
-            <a href="#getting-started" class="toc-h1 toc-link" data-title="Getting started">Getting started</a>
+            <a href="#the-developer-portal" class="toc-h1 toc-link" data-title="The Developer Portal">The Developer Portal</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#what-is-the-developer-portal" class="toc-h2 toc-link" data-title="The Developer Portal">What is the Developer Portal?</a>
+                  </li>
+                  <li>
+                    <a href="#getting-started-2" class="toc-h2 toc-link" data-title="The Developer Portal">Getting started</a>
+                  </li>
+                  <li>
+                    <a href="#how-do-apps-work" class="toc-h2 toc-link" data-title="The Developer Portal">How do apps work?</a>
+                  </li>
+                  <li>
+                    <a href="#publishing-an-app-on-revolut-connect" class="toc-h2 toc-link" data-title="The Developer Portal">Publishing an app on Revolut Connect</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#oauth-2-0-vs-api-key" class="toc-h2 toc-link" data-title="Authentication">OAuth 2.0 vs API Key</a>
+                  </li>
+                  <li>
+                    <a href="#api-keys" class="toc-h2 toc-link" data-title="Authentication">API-keys</a>
+                  </li>
+                  <li>
+                    <a href="#oauth-authorisation-flow" class="toc-h2 toc-link" data-title="Authentication">OAuth authorisation flow</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#oauth" class="toc-h1 toc-link" data-title="OAuth">OAuth</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-authorisation-code" class="toc-h2 toc-link" data-title="OAuth">Get authorisation code</a>
+                  </li>
+                  <li>
+                    <a href="#exchange-authorisation-code" class="toc-h2 toc-link" data-title="OAuth">Exchange Authorisation Code</a>
+                  </li>
+                  <li>
+                    <a href="#refresh-access-token" class="toc-h2 toc-link" data-title="OAuth">Refresh Access Token</a>
+                  </li>
+              </ul>
           </li>
           <li>
             <a href="#accounts" class="toc-h1 toc-link" data-title="Accounts">Accounts</a>
@@ -260,11 +313,16 @@
               </ul>
           </li>
           <li>
-            <a href="#payments" class="toc-h1 toc-link" data-title="Payments">Payments</a>
+            <a href="#transfers" class="toc-h1 toc-link" data-title="Transfers">Transfers</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#transfer" class="toc-h2 toc-link" data-title="Payments">Transfer</a>
+                    <a href="#create-transfer" class="toc-h2 toc-link" data-title="Transfers">Create transfer</a>
                   </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#payments" class="toc-h1 toc-link" data-title="Payments">Payments</a>
+              <ul class="toc-list-h2">
                   <li>
                     <a href="#create-payment" class="toc-h2 toc-link" data-title="Payments">Create Payment</a>
                   </li>
@@ -272,7 +330,7 @@
                     <a href="#schedule-payment" class="toc-h2 toc-link" data-title="Payments">Schedule Payment</a>
                   </li>
                   <li>
-                    <a href="#check-payment-status" class="toc-h2 toc-link" data-title="Payments">Check Payment Status</a>
+                    <a href="#get-transaction" class="toc-h2 toc-link" data-title="Payments">Get Transaction</a>
                   </li>
                   <li>
                     <a href="#cancel-payment" class="toc-h2 toc-link" data-title="Payments">Cancel Payment</a>
@@ -283,10 +341,30 @@
               </ul>
           </li>
           <li>
+            <a href="#payment-drafts" class="toc-h1 toc-link" data-title="Payment Drafts">Payment Drafts</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#create-payment-draft" class="toc-h2 toc-link" data-title="Payment Drafts">Create Payment Draft</a>
+                  </li>
+                  <li>
+                    <a href="#get-payment-drafts" class="toc-h2 toc-link" data-title="Payment Drafts">Get Payment Drafts</a>
+                  </li>
+                  <li>
+                    <a href="#get-payment-draft-by-id" class="toc-h2 toc-link" data-title="Payment Drafts">Get Payment Draft by ID</a>
+                  </li>
+                  <li>
+                    <a href="#delete-payment-draft" class="toc-h2 toc-link" data-title="Payment Drafts">Delete Payment Draft</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#web-hooks" class="toc-h1 toc-link" data-title="Web-hooks">Web-hooks</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#setting-up-a-web-hook" class="toc-h2 toc-link" data-title="Web-hooks">Setting up a web-hook</a>
+                  </li>
+                  <li>
+                    <a href="#deleting-a-web-hook" class="toc-h2 toc-link" data-title="Web-hooks">Deleting a web-hook</a>
                   </li>
                   <li>
                     <a href="#transaction-created-event" class="toc-h2 toc-link" data-title="Web-hooks">Transaction Created event</a>
@@ -302,47 +380,378 @@
       </div>
         <ul class="toc-footer">
             <li><a href='https://business.revolut.com/signup'>Sign up for Revolut Business</a></li>
-            <li><br/>Copyright © 2017 Revolut Ltd</li>
+            <li><br/>Copyright © 2018 Revolut Ltd</li>
         </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='api-v1-0-introduction'>API v1.0 introduction</h1>
-<p>This is the Revolut for Business Open API documentation. Here you can find out about the functionality available through the Open API, and how you can integrate your Revolut for Business account into your current and future business processes. This is designed to allow you to automate your business account operations.</p>
+        <h1 id='getting-started'>Getting started</h1><h2 id='introduction'>Introduction</h2>
+<p>Welcome to the Revolut Business Open API!<br>
+Here you will find all the information to get started with our API. We&#39;re building a future beyond banking, we&#39;re excited to have you onboard.</p>
 
-<p>To help you navigate, this page is split into 3 vertical sections: </p>
+<p>To help you navigate the docs, this page is split into 3 vertical sections:</p>
 
 <ul>
 <li>the navigation menu and search on the left,</li>
 <li>the content in the middle,</li>
 <li>and usage examples on the right.</li>
 </ul>
-<h1 id='getting-started'>Getting started</h1>
+<h2 id='usage-and-limits'>Usage and limits</h2>
+<p>You can use the Open API to:</p>
+
+<ul>
+<li>Automate your own business financial operations</li>
+<li>Build integrations between Revolut for Business and your apps and publish them on Revolut Connect</li>
+</ul>
+
+<p>In order to ensure safe and fair resource sharing, we define the following usage limits:</p>
+
+<ul>
+<li>Maximum 60 requests per minute for a given business</li>
+<li>Maximum 120 requests per minute per application</li>
+</ul>
+<h2 id='demo-account'>Demo account</h2>
+<p>In order to make it easier for you to start working with the API, we&#39;ve created a sandbox: a test account that replicates the same functionalities as a real business account, but with fake data. This means you don&#39;t need to open a business account to start using the API and, more importantly, you won&#39;t risk accidentally transferring real money to the wrong person.<br>
+Sign up for a demo account here: <a href="https://sandbox-business.revolut.com">https://sandbox-business.revolut.com</a></p>
+<h1 id='the-developer-portal'>The Developer Portal</h1><h2 id='what-is-the-developer-portal'>What is the Developer Portal?</h2>
+<p>If you are building a great app or a new product/feature based on Revolut Business, then the Developer Portal is for you.<br>
+The Developer Portal allows you to easily create, manage and distribute apps.<br>
+Apps allow you to ask Revolut users to give you permission to use their account on their behalf. Once you will feel confident enough in your integration, the Developer Portal will allow you to submit and publish your apps and integrations on Revolut Connect. </p>
+<h2 id='getting-started-2'>Getting started</h2>
+<p>You don&#39;t need to have a Revolut for Business account in order to start using our API. Simple steps to follow are:</p>
+
+<ul>
+<li>Sign up for a Developer account here: <a href="https://developers.revolut.codes">https://developers.revolut.com</a></li>
+<li>Sign up for a Sandbox account here: <a href="https://sandbox-business.revolut.com">https://sandbox-business.revolut.com</a></li>
+<li>Create your first app here: <a href="https://developers.revolut.com/apps/new">https://developers.revolut.com/apps/new</a></li>
+</ul>
+<h2 id='how-do-apps-work'>How do apps work?</h2>
+<p>If you have used any public API in the past two years, chances are this will be very familiar to you.</p>
+
+<p>An app, at it&#39;s core, is composed of:</p>
+
+<ul>
+<li>An identifier (client_id)</li>
+<li>A secret (client_secret)</li>
+<li>An OAuth redirect link</li>
+<li>A set of permission scopes</li>
+</ul>
+
+<p>In order to access a Revolut user account, you&#39;ll need to provide your App client_id, App client_secret and a user access token. In this way, we know who you are and that you have users&#39; authorisation to do access their data. (See Authorisation flows below)</p>
+
+<p>In order to receive authorisation for your app, you will need to redirect users to a specific page on the Revolut website, so that we can safely collect their response. After this step, we will redirect the user back to your app, to a url of your choice. This is what the OAuth redirect link is for.</p>
+
+<p>Permission scopes define what data on the user account your app needs to access. This is important so that users can make an informed choice about whether to authorise your app or not.</p>
+<h2 id='publishing-an-app-on-revolut-connect'>Publishing an app on Revolut Connect</h2>
+<p>In order to ensure a healthy developer ecosystem and to safeguard our customers, we defined a staged release process:</p>
+
+<ul>
+<li><strong>Private</strong>: When you create a new app in the Developer Portal, we consider it to be &quot;private&quot;. Private apps have full access to the API for Demo accounts, but only limited access to production accounts. Production-enabled endpoints are: get transactions, get transaction, get accounts, get account.</li>
+<li><strong>Beta</strong>: When you have tested your app sufficiently and want to start testing it on real accounts. After passing our review, your app will get full production access to our API, but on a limited number of accounts (50).</li>
+<li><strong>Published</strong>: Your app has been fully tested and reviewed by our team and is published on Revolut Connect. All Revolut Business users can install and use it.</li>
+</ul>
+
+<p>When you feel ready to go to the next step, contact us at business-partners@revolut.com.</p>
+<h1 id='authentication'>Authentication</h1><h2 id='oauth-2-0-vs-api-key'>OAuth 2.0 vs API Key</h2>
+<p>As it&#39;s often the case, you will need to authenticate in order to access the API, so we know you are allowed to access the account you are targeting.<br>
+We currently support two ways of using the API: the API-key (to access your own account) and OAuth (for both private and public use). In this guide, we will explain the differences between the two systems and how to set them up.</p>
+
+<p>One important note though is that no matter what authentication method you choose, the API remains (mostly) the same. In the following sections, whenever you see the mention <code>&lt;your access token&gt;</code>, this means that:</p>
+
+<ul>
+<li>If you are using the API key, then you should provide your API-Key (Production or Sandbox, depending on which environment you are targeting)</li>
+<li>If you are using OAuth, then you should provide the user access token received after completing the authorisation flow (see the Authentication section below)</li>
+</ul>
+
+<p>You can create a Sandbox account here: <a href="https://sandbox-business.revolut.com/">https://sandbox-business.revolut.com</a></p>
+<h2 id='api-keys'>API-keys</h2>
 <blockquote>
 <p>Pass your API-key in all API requests as a header</p>
 </blockquote>
 <pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">/api/1.0/accounts</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-<span class="na">Authorization</span><span class="p">:</span> <span class="s">Bearer &lt;your api-key&gt;</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">Bearer &lt;your API-key&gt;</span>
 </code></pre>
-<p>Once you sign up for your Revolut Business account on <a href="https://business.revolut.com/signup">business.revolut.com</a>, you will be issued with two API-keys, one for sandbox and one for production environment. Account owners can find these keys in the &quot;settings&quot; section of the web interface. The sandbox environment is useful for development and allows you to play with test data. Some of the data will be pre-populated so you can start quickly.</p>
+<p>If you are planning to use the API only to access your own account, you can alternatively use the API Keys authentication system. In this case, you don&#39;t need to sign up to the Developer Portal and don&#39;t need to create an app.</p>
+
+<p>Although API keys are slightly simpler to start with, they expose you to potential risks. Accidentally sharing or leaking your production account API key means that anyone with the key can access your account and transfer money out of it.</p>
+
+<p>Moreover, although we still currently support API keys, these will be deprecated at some point in the future. We therefore recommend using the Developer Portal.</p>
+
+<p>Once you sign up for your Revolut Business account on <a href="https://business.revolut.com/signup">business.revolut.com</a>, you will be issued with a production API-key. Account owners can find these keys in the &quot;settings&quot; section of the web interface. When creating a Demo account on <a href="https://sandbox-business.revolut.com/signup">sandbox-business.revolut.com</a>, you will be issued with a sandbox API-key. </p>
 
 <aside class="warning">Please <b>keep your production API key private.</b> Sharing it allows third parties to make payments from your accounts.</aside>
 
-<p>In order to view sandbox transactions in the web interface, you can <a href="https://sandbox-business.revolut.com/r/signin">login to the sandbox account</a> using the following details:</p>
-
-<ul>
-<li>Email: <code>&lt;The address you signed up with&gt;</code></li>
-<li>Password: <code>123456</code></li>
-</ul>
-
-<p>For additional security you can add an optional IP address whitelist for the API. The account owner can do this within the <a href="https://business.revolut.com/r/settings">settings</a> section of the Revolut Business portal.</p>
+<p>For additional security you can add an optional IP address whitelist for the API. The account owner can do this within the <a href="https://business.revolut.com/settings">settings</a> section of the Revolut Business portal.</p>
 
 <aside class="warning">Please DO NOT use production environment until you have tested your integration sufficiently and are happy that it works as expected.</aside>
-<h1 id='accounts'>Accounts</h1><h2 id='get-accounts'>Get Accounts</h2><pre class="highlight shell tab-shell--sandbox"><code>curl <span class="s2">"https://sandbox-b2b.revolut.com/api/1.0/accounts"</span> <span class="se">\</span>
-  -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span>
-</code></pre><pre class="highlight shell tab-shell--production"><code>curl <span class="s2">"https://b2b.revolut.com/api/1.0/accounts"</span> <span class="se">\</span>
-  -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span>
+<h2 id='oauth-authorisation-flow'>OAuth authorisation flow</h2>
+<p>The Open API allows you to programmatically access users business account information.</p>
+
+<p>For security reasons, we require apps to ask and be granted permission to access any given business account (even if it&#39;s your own). This is done using the industry-standard protocol called <a href="https://www.varonis.com/blog/what-is-oauth/">OAuth 2.0</a>.</p>
+
+<p>This is how our authorisation flow works:
+<img src="http://2b69bc96ac7df2c79540-acfb5f255a481ec8320b645eb6d799c4.r68.cf3.rackcdn.com/business_app/developer_portal/Oauth%20flow.png" alt="OAuth authorisation flow" /></p>
+<h3 id='step-1-2-redirect-user-to-connect'>Step 1-2: Redirect user to Connect</h3>
+<blockquote>
+<p>Example of an authorisation url:</p>
+</blockquote>
+<pre class="highlight shell tab-shell--sandbox"><code>https://sandbox-business.revolut.com/app-confirm?client_id<span class="o">=</span>rmPBoIc-LR3ObABUn-NKHq6WyEoCr6Lh__DFohuMRVM&amp;redirect_uri<span class="o">=</span>https://myapp.com/authresp
+</code></pre><pre class="highlight shell tab-shell--production"><code>https://business.revolut.com/app-confirm?client_id<span class="o">=</span>rmPBoIc-LR3ObABUn-NKHq6WyEoCr6Lh__DFohuMRVM&amp;redirect_uri<span class="o">=</span>https://myapp.com/authresp
+</code></pre>
+<p>In order to get authorization from the user to use your app, you need to redirect them to a special authorisation page on Revolut&#39;s website, through a button or link on your app/website. The authorisation url is unique to each app.</p>
+
+<p>For example, as the user clicks on the &quot;Connect&quot; button on your app page, she is redirected to the url on the right.</p>
+
+<p><a href="#get-authorisation-code">See the next section for more information on authentication endpoints and parameters.</a></p>
+<h3 id='step-3-4-user-authorisation'>Step 3-4: User authorisation</h3>
+<p>This is what users will see when you app asks for authorisation to access their accounts.</p>
+
+<p><img src="http://2b69bc96ac7df2c79540-acfb5f255a481ec8320b645eb6d799c4.r68.cf3.rackcdn.com/business_app/developer_portal/authorization.png" alt="App authorization popup" /></p>
+
+<p>The user will be informed of all the access scopes required by your app and will authorise it (or not).</p>
+
+<p>Upon completion, we will redirect the user to the redirect_uri you provided. For security, the redirect URI must match one of the redirect URIs you have specified while creating your app. The redirect url will have attached the result of the authorisation and (if successful) an authorisation code.</p>
+<h3 id='step-5-request-a-reusable-access-token'>Step 5: Request a reusable access token</h3>
+<blockquote>
+<p>Exchanging an authorisation code for an access token</p>
+</blockquote>
+
+<p>Once you have received the authorisation code, you can exchange it for a long-term reusable access token. This process is invisible to the user and happens via the API call on the right.</p>
+
+<p><a href="#exchange-authorisation-code">See more here about token exchange endpoint and its parameters</a></p>
+<h3 id='step-6-you-are-ready-to-go'>Step 6: You are ready to go!</h3>
+<p>Once you have the access token, you can use any of the API endpoints described below (according to the permissions granted to your app), applying the access token everywhere you see the mention <code>&lt;your access token&gt;</code>. Please make sure you store access tokens somewhere secure.</p>
+<h3 id='step-7-refreshing-the-access-token'>Step 7*: Refreshing the access token</h3>
+<p>You may refresh your access token after it&#39;s expiration using your <code>refresh_token</code> obtained on a previous step.</p>
+
+<p><a href="#refresh-access-token">Check the corresponding endpoint documentation</a></p>
+<h1 id='oauth'>OAuth</h1><h2 id='get-authorisation-code'>Get authorisation code</h2><pre class="highlight shell tab-shell--sandbox"><code><span class="c"># Example URL:</span>
+https://sandbox-business.revolut.com/app-confirm?client_id<span class="o">=</span>rmPBoIc-LR3ObABUn-NKHq6WyEoCr6Lh__DFohuMRVM&amp;redirect_uri<span class="o">=</span>https://myapp.com/authresp
+</code></pre><pre class="highlight shell tab-shell--production"><code><span class="c"># Example URL:</span>
+https://business.revolut.com/app-confirm?client_id<span class="o">=</span>rmPBoIc-LR3ObABUn-NKHq6WyEoCr6Lh__DFohuMRVM&amp;redirect_uri<span class="o">=</span>https://myapp.com/authresp
+</code></pre>
+<p>Navigate the user to this address to request an authorisation code</p>
+<h3 id='request'>Request</h3>
+<p><code>GET https://business.revolut.com/app-confirm</code></p>
+<h4 id='get-parameters'>GET parameters</h4>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>client_id</td>
+<td>your app ID</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>response_type</td>
+<td>&quot;code&quot; indicates we expect to receive a request token in the response</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>redirect_uri</td>
+<td>the url to redirect to after the user has provided authorisation. For security reasons, this has to match one of the redirect urls specified while creating the app</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>scope</td>
+<td>one or more of READ and WRITE. For security reasons, these must be among those requested during app creation.</td>
+<td>Text</td>
+</tr>
+</tbody></table>
+<h3 id='response'>Response</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>the account ID</td>
+<td>UUID</td>
+</tr>
+<tr>
+<td>code</td>
+<td>the user authorisation code (if granted)</td>
+<td>Text</td>
+</tr>
+</tbody></table>
+<h2 id='exchange-authorisation-code'>Exchange Authorisation Code</h2><pre class="highlight shell tab-shell--sandbox"><code>curl https://sandbox-b2b.revolut.com/api/1.0/auth/token <span class="se">\</span>
+  -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span><span class="se">\</span>
+  --data <span class="s2">"grant_type=authorization_code"</span><span class="se">\</span>
+  --data <span class="s2">"code=oa_sand_gg-_wDV66wYfKKpnF4RIrpOZs2oPTwNp4TXOra5pS0g"</span><span class="se">\</span>
+  --data <span class="s2">"client_id=rmPBoIc-LR3ObABUn-NKHq6WyEoCr6Lh__DFohuMRVM"</span><span class="se">\</span>
+  --data <span class="s2">"client_secret=lCnrXpymR5kty4AGcsFA_pTqF9tayfRDLQ-Cbq37Qwg"</span>
+</code></pre><pre class="highlight shell tab-shell--production"><code>curl https://b2b.revolut.com/api/1.0/auth/token <span class="se">\</span>
+  -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span><span class="se">\</span>
+  --data <span class="s2">"grant_type=authorization_code"</span><span class="se">\</span>
+  --data <span class="s2">"code=oa_prod_gg-_wDV66wYfKKpnF4RIrpOZs2oPTwNp4TXOra5pS0g"</span><span class="se">\</span>
+  --data <span class="s2">"client_id=rmPBoIc-LR3ObABUn-NKHq6WyEoCr6Lh__DFohuMRVM"</span><span class="se">\</span>
+  --data <span class="s2">"client_secret=lCnrXpymR5kty4AGcsFA_pTqF9tayfRDLQ-Cbq37Qwg"</span>
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"oa_sand_rPo9OmbMAuguhQffR6RLR4nvmzpx4NJtpdyvGKkrS3U"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"token_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bearer"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"expires_in"</span><span class="p">:</span><span class="w"> </span><span class="mi">604800</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"refresh_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"oa_prod_hQacSGnwx-luIfj3dlVByrytVV9rWAnyHkpJTwG_Tr8"</span><span class="p">,</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint is used to exchange an authorisation code with an access token.</p>
+
+<aside class="notice">
+    Each app currently has a limit of 60 API requests per minute, regardless of the number of active access tokens.
+</aside>
+<h3 id='request-2'>Request</h3>
+<p><code>POST https://b2b.revolut.com/api/1.0/auth/token</code></p>
+<h4 id='request-fields-url-encoded'>Request fields (URL-encoded)</h4>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>grant_type</td>
+<td>&quot;authorization_code&quot;</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>code</td>
+<td>an authorisation code</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>client_id</td>
+<td>your app ID</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>client_secret</td>
+<td>your app secret</td>
+<td>Text</td>
+</tr>
+</tbody></table>
+<h3 id='response-2'>Response</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>access_token</td>
+<td>the access token</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>token_type</td>
+<td>&quot;bearer&quot; means that this token is valid to access the API</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>expires_in</td>
+<td>token expiration time in seconds</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>refresh_token</td>
+<td>A token to be used to request a new access token</td>
+<td>Text</td>
+</tr>
+</tbody></table>
+<h2 id='refresh-access-token'>Refresh Access Token</h2><pre class="highlight shell tab-shell--sandbox"><code>curl https://sandbox-b2b.revolut.com/api/1.0/auth/token <span class="se">\</span>
+  -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span><span class="se">\</span>
+  --data <span class="s2">"grant_type=refresh_token"</span><span class="se">\</span>
+  --data <span class="s2">"refresh_token=oa_sand_gg-_wDV66wYfKKpnF4RIrpOZs2oPTwNp4TXOra5pS0g"</span><span class="se">\</span>
+  --data <span class="s2">"client_id=rmPBoIc-LR3ObABUn-NKHq6WyEoCr6Lh__DFohuMRVM"</span><span class="se">\</span>
+  --data <span class="s2">"client_secret=lCnrXpymR5kty4AGcsFA_pTqF9tayfRDLQ-Cbq37Qwg"</span>
+</code></pre><pre class="highlight shell tab-shell--production"><code>curl https://b2b.revolut.com/api/1.0/auth/token <span class="se">\</span>
+  -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span><span class="se">\</span>
+  --data <span class="s2">"grant_type=refresh_token"</span><span class="se">\</span>
+  --data <span class="s2">"refresh_token=oa_prod_gg-_wDV66wYfKKpnF4RIrpOZs2oPTwNp4TXOra5pS0g"</span><span class="se">\</span>
+  --data <span class="s2">"client_id=rmPBoIc-LR3ObABUn-NKHq6WyEoCr6Lh__DFohuMRVM"</span><span class="se">\</span>
+  --data <span class="s2">"client_secret=lCnrXpymR5kty4AGcsFA_pTqF9tayfRDLQ-Cbq37Qwg"</span>
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"access_token"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"oa_prod_rPo9OmbMAuguhQffR6RLR4nvmzpx4NJtpdyvGKkrS3U"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"token_type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"bearer"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"expires_in"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">604800</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint is used to request a new user access token after the expiration date.</p>
+<h3 id='request-3'>Request</h3>
+<p><code>POST https://b2b.revolut.com/api/1.0/auth/token</code></p>
+<h4 id='request-fields-url-encoded-2'>Request fields (URL-encoded)</h4>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>grant_type</td>
+<td>&quot;refresh_token&quot;</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>refresh_token</td>
+<td>a refresh token</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>client_id</td>
+<td>your app ID</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>client_secret</td>
+<td>your app secret</td>
+<td>Text</td>
+</tr>
+</tbody></table>
+<h3 id='response-3'>Response</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>access_token</td>
+<td>the access token</td>
+<td>UUID</td>
+</tr>
+<tr>
+<td>token_type</td>
+<td>&quot;bearer&quot; means that this token is valid to access the API</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>expires_in</td>
+<td>token expiration time in seconds</td>
+<td>Integer</td>
+</tr>
+</tbody></table>
+<h1 id='accounts'>Accounts</h1><h2 id='get-accounts'>Get Accounts</h2><pre class="highlight shell tab-shell--sandbox"><code>curl https://sandbox-b2b.revolut.com/api/1.0/accounts <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer &lt;your access token&gt;"</span>
+</code></pre><pre class="highlight shell tab-shell--production"><code>curl https://b2b.revolut.com/api/1.0/accounts <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer &lt;your access token&gt;"</span>
 </code></pre>
 <blockquote>
 <p>Response:</p>
@@ -371,9 +780,9 @@
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves your accounts.</p>
-<h3 id='request'>Request</h3>
+<h3 id='request-4'>Request</h3>
 <p><code>GET https://b2b.revolut.com/api/1.0/accounts</code></p>
-<h3 id='response'>Response</h3>
+<h3 id='response-4'>Response</h3>
 <table><thead>
 <tr>
 <th>Field</th>
@@ -423,9 +832,9 @@
 </tr>
 </tbody></table>
 <h2 id='get-account'>Get Account</h2><pre class="highlight shell tab-shell--sandbox"><code>curl https://sandbox-b2b.revolut.com/api/1.0/accounts/df8d6b20-0725-482e-a29e-fb09631480cf <span class="se">\</span>
-  -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span>
+  -H <span class="s2">"Authorization: Bearer &lt;your access token&gt;"</span>
 </code></pre><pre class="highlight shell tab-shell--production"><code>curl https://b2b.revolut.com/api/1.0/accounts/df8d6b20-0725-482e-a29e-fb09631480cf <span class="se">\</span>
-  -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span>
+  -H <span class="s2">"Authorization: Bearer &lt;your access token&gt;"</span>
 </code></pre>
 <blockquote>
 <p>Response:</p>
@@ -442,7 +851,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves one of your accounts by ID.</p>
-<h3 id='request-2'>Request</h3>
+<h3 id='request-5'>Request</h3>
 <p><code>GET https://b2b.revolut.com/api/1.0/accounts/&lt;id&gt;</code></p>
 <h4 id='url-parameters'>URL Parameters</h4>
 <table><thead>
@@ -458,7 +867,7 @@
 <td>UUID</td>
 </tr>
 </tbody></table>
-<h3 id='response-2'>Response</h3>
+<h3 id='response-5'>Response</h3>
 <table><thead>
 <tr>
 <th>Field</th>
@@ -508,9 +917,9 @@
 </tr>
 </tbody></table>
 <h2 id='get-account-details'>Get Account Details</h2><pre class="highlight shell tab-shell--sandbox"><code>curl <span class="s2">"https://sandbox-b2b.revolut.com/api/1.0/accounts/df8d6b20-0725-482e-a29e-fb09631480cf/address"</span> <span class="se">\</span>
-  -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span>
+  -H <span class="s2">"Authorization: Bearer &lt;your access token&gt;"</span>
 </code></pre><pre class="highlight shell tab-shell--production"><code>curl <span class="s2">"https://b2b.revolut.com/api/1.0/accounts/df8d6b20-0725-482e-a29e-fb09631480cf/address"</span> <span class="se">\</span>
-  -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span>
+  -H <span class="s2">"Authorization: Bearer &lt;your access token&gt;"</span>
 </code></pre>
 <blockquote>
 <p>Response:</p>
@@ -567,9 +976,9 @@
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves individual account details.</p>
-<h3 id='request-3'>Request</h3>
+<h3 id='request-6'>Request</h3>
 <p><code>GET https://b2b.revolut.com/api/1.0/accounts/&lt;id&gt;/bank-details</code></p>
-<h3 id='response-3'>Response</h3>
+<h3 id='response-6'>Response</h3>
 <table><thead>
 <tr>
 <th>Field</th>
@@ -688,10 +1097,10 @@
 <p>Add an individual Revolut user as counterparty</p>
 </blockquote>
 <pre class="highlight shell tab-shell--sandbox"><code>curl -X POST https://sandbox-b2b.revolut.com/api/1.0/counterparty <span class="se">\</span>
-  -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span> <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer &lt;your access token&gt;"</span> <span class="se">\</span>
   --data @- <span class="sh">&lt;&lt; EOF
 </span></code></pre><pre class="highlight shell tab-shell--production"><code>curl -X POST https://b2b.revolut.com/api/1.0/counterparty <span class="se">\</span>
-  -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span> <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer &lt;your access token&gt;"</span> <span class="se">\</span>
   --data @- <span class="sh">&lt;&lt; EOF
 </span></code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"profile_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"personal"</span><span class="p">,</span><span class="w">
@@ -730,10 +1139,10 @@
 <p>Add a business Revolut user as counterparty</p>
 </blockquote>
 <pre class="highlight shell tab-shell--sandbox"><code>curl -X POST https://sandbox-b2b.revolut.com/api/1.0/counterparty <span class="se">\</span>
-  -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span> <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer &lt;your access token&gt;"</span> <span class="se">\</span>
   --data @- <span class="sh">&lt;&lt; EOF
 </span></code></pre><pre class="highlight shell tab-shell--production"><code>curl -X POST https://b2b.revolut.com/api/1.0/counterparty <span class="se">\</span>
-  -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span> <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer &lt;your access token&gt;"</span> <span class="se">\</span>
   --data @- <span class="sh">&lt;&lt; EOF
 </span></code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"profile_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"business"</span><span class="p">,</span><span class="w">
@@ -798,7 +1207,7 @@
 <td>Email</td>
 </tr>
 </tbody></table>
-<h3 id='response-4'>Response</h3>
+<h3 id='response-7'>Response</h3>
 <table><thead>
 <tr>
 <th>Field</th>
@@ -868,10 +1277,10 @@
 </tr>
 </tbody></table>
 <h2 id='add-non-revolut-counterparty'>Add non-Revolut Counterparty</h2><pre class="highlight shell tab-shell--sandbox"><code>curl -X POST https://sandbox-b2b.revolut.com/api/1.0/counterparty <span class="se">\</span>
-  -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span> <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer &lt;your access token&gt;"</span> <span class="se">\</span>
   --data @- <span class="sh">&lt;&lt; EOF
 </span></code></pre><pre class="highlight shell tab-shell--production"><code>curl -X POST https://b2b.revolut.com/api/1.0/counterparty <span class="se">\</span>
-  -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span> <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer &lt;your access token&gt;"</span> <span class="se">\</span>
   --data @- <span class="sh">&lt;&lt; EOF
 </span></code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"company_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Smith Co."</span><span class="p">,</span><span class="w">
@@ -1069,7 +1478,7 @@
 <td>Text</td>
 </tr>
 </tbody></table>
-<h3 id='response-5'>Response</h3>
+<h3 id='response-8'>Response</h3>
 <table><thead>
 <tr>
 <th>Field</th>
@@ -1154,9 +1563,9 @@
 </tr>
 </tbody></table>
 <h2 id='delete-counterparty'>Delete Counterparty</h2><pre class="highlight shell tab-shell--sandbox"><code>curl -X DELETE https://sandbox-b2b.revolut.com/api/1.0/counterparty/6b3c696e-7c3d-464a-8dbe-fc70e183d42e <span class="se">\</span>
-  -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span>
+  -H <span class="s2">"Authorization: Bearer &lt;your access token&gt;"</span>
 </code></pre><pre class="highlight shell tab-shell--production"><code>curl -X DELETE https://b2b.revolut.com/api/1.0/counterparty/6b3c696e-7c3d-464a-8dbe-fc70e183d42e <span class="se">\</span>
-  -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span>
+  -H <span class="s2">"Authorization: Bearer &lt;your access token&gt;"</span>
 </code></pre>
 <blockquote>
 <p>Response:</p>
@@ -1164,7 +1573,7 @@
 <pre class="highlight shell tab-shell"><code>204 No Content
 </code></pre>
 <p>This endpoint deletes a counterparty with the given ID. Once a counterparty is deleted no payments can be made to it.</p>
-<h3 id='request-4'>Request</h3>
+<h3 id='request-7'>Request</h3>
 <p><code>DELETE https://b2b.revolut.com/api/1.0/counterparty/&lt;id&gt;</code></p>
 <h3 id='url-parameters-2'>URL Parameters</h3>
 <table><thead>
@@ -1181,9 +1590,9 @@
 </tr>
 </tbody></table>
 <h2 id='get-counterparty'>Get Counterparty</h2><pre class="highlight shell tab-shell--sandbox"><code>curl https://sandbox-b2b.revolut.com/api/1.0/counterparty/6b3c696e-7c3d-464a-8dbe-fc70e183d42e <span class="se">\</span>
-  -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span>
+  -H <span class="s2">"Authorization: Bearer &lt;your access token&gt;"</span>
 </code></pre><pre class="highlight shell tab-shell--production"><code>curl https://b2b.revolut.com/api/1.0/counterparty/6b3c696e-7c3d-464a-8dbe-fc70e183d42e <span class="se">\</span>
-  -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span>
+  -H <span class="s2">"Authorization: Bearer &lt;your access token&gt;"</span>
 </code></pre>
 <blockquote>
 <p>Response for Revolut counterparty:</p>
@@ -1223,7 +1632,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a counterparty by ID.</p>
-<h3 id='request-5'>Request</h3>
+<h3 id='request-8'>Request</h3>
 <p><code>GET https://b2b.revolut.com/api/1.0/counterparty/&lt;id&gt;</code></p>
 <h4 id='url-parameters-3'>URL Parameters</h4>
 <table><thead>
@@ -1239,7 +1648,7 @@
 <td>UUID</td>
 </tr>
 </tbody></table>
-<h3 id='response-6'>Response</h3>
+<h3 id='response-9'>Response</h3>
 <table><thead>
 <tr>
 <th>Field</th>
@@ -1339,9 +1748,9 @@
 </tr>
 </tbody></table>
 <h2 id='get-counterparties'>Get Counterparties</h2><pre class="highlight shell tab-shell--sandbox"><code>curl https://sandbox-b2b.revolut.com/api/1.0/counterparties <span class="se">\</span>
-  -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span>
+  -H <span class="s2">"Authorization: Bearer &lt;your access token&gt;"</span>
 </code></pre><pre class="highlight shell tab-shell--production"><code>curl https://b2b.revolut.com/api/1.0/counterparties <span class="se">\</span>
-  -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span>
+  -H <span class="s2">"Authorization: Bearer &lt;your access token&gt;"</span>
 </code></pre>
 <blockquote>
 <p>Response:</p>
@@ -1399,9 +1808,9 @@
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all your counterparties.</p>
-<h3 id='request-6'>Request</h3>
+<h3 id='request-9'>Request</h3>
 <p><code>GET https://b2b.revolut.com/api/1.0/counterparties</code></p>
-<h3 id='response-7'>Response</h3>
+<h3 id='response-10'>Response</h3>
 <table><thead>
 <tr>
 <th>Field</th>
@@ -1500,25 +1909,11 @@
 <td>Text</td>
 </tr>
 </tbody></table>
-<h1 id='payments'>Payments</h1>
-<p>All incoming and outgoing payments are represented as transactions and are processed in two stages from the user&#39;s perspective: </p>
-
-<ol>
-<li>a new transaction is created, </li>
-<li>the created transaction is processed, i.e. 
-
-<ul>
-<li>credit/debit on both sides of transaction if Revolut-to-Revolut, </li>
-<li>posted to the external payment network (Faster Paymetns, SEPA, SWIFT etc.).</li>
-</ul></li>
-</ol>
-
-<p>A new transaction has <code>pending</code> state, and a processed transaction&#39;s state can be one of <code>completed</code>, <code>failed</code>, <code>reverted</code> or <code>declined</code>.</p>
-<h2 id='transfer'>Transfer</h2><pre class="highlight shell tab-shell--sandbox"><code>curl -X POST https://sandbox-b2b.revolut.com/api/1.0/transfer <span class="se">\</span>
-  -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span> <span class="se">\</span>
+<h1 id='transfers'>Transfers</h1><h2 id='create-transfer'>Create transfer</h2><pre class="highlight shell tab-shell--sandbox"><code>curl -X POST https://sandbox-b2b.revolut.com/api/1.0/transfer <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer &lt;your access token&gt;"</span> <span class="se">\</span>
   --data @- <span class="sh">&lt;&lt; EOF
 </span></code></pre><pre class="highlight shell tab-shell--production"><code>curl -X POST https://b2b.revolut.com/api/1.0/transfer <span class="se">\</span>
-  -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span> <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer &lt;your access token&gt;"</span> <span class="se">\</span>
   --data @- <span class="sh">&lt;&lt; EOF
 </span></code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"request_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e0cbf84637264ee082a848b"</span><span class="p">,</span><span class="w">
@@ -1543,7 +1938,7 @@
 <p>This endpoint processes transfers between accounts of the business with the same currency.</p>
 
 <p>The resulting transaction has type &quot;transfer&quot;.</p>
-<h3 id='request-7'>Request</h3>
+<h3 id='request-10'>Request</h3>
 <p><code>POST https://b2b.revolut.com/api/1.0/transfer</code></p>
 <h4 id='request-fields-2'>Request fields</h4>
 <table><thead>
@@ -1584,7 +1979,7 @@
 <td>Text</td>
 </tr>
 </tbody></table>
-<h3 id='response-8'>Response</h3>
+<h3 id='response-11'>Response</h3>
 <table><thead>
 <tr>
 <th>Field</th>
@@ -1613,15 +2008,31 @@
 <td>ISO date/time</td>
 </tr>
 </tbody></table>
+<h1 id='payments'>Payments</h1>
+<p>All incoming and outgoing payments are represented as transactions and are processed in two stages from the user&#39;s perspective: </p>
+
+<ol>
+<li>a new transaction is created, </li>
+<li>the created transaction is processed, i.e. 
+
+<ul>
+<li>credit/debit on both sides of transaction if Revolut-to-Revolut, </li>
+<li>posted to the external payment network (Faster Paymetns, SEPA, SWIFT etc.).</li>
+</ul></li>
+</ol>
+
+<p>A new transaction has <code>pending</code> state, and a processed transaction&#39;s state can be one of <code>completed</code>, <code>failed</code>, <code>reverted</code> or <code>declined</code>.</p>
+
+<p>This however does not apply to Revolut-to-Revolut payments (payments to/from other Revolut accounts), which are executed instantly.</p>
 <h2 id='create-payment'>Create Payment</h2>
 <blockquote>
 <p>Pay a counterparty</p>
 </blockquote>
 <pre class="highlight shell tab-shell--sandbox"><code>curl -X POST https://sandbox-b2b.revolut.com/api/1.0/pay <span class="se">\ </span>
-  -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span> <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer &lt;your access token&gt;"</span> <span class="se">\</span>
   --data @- <span class="sh">&lt;&lt; EOF
 </span></code></pre><pre class="highlight shell tab-shell--production"><code>curl -X POST https://b2b.revolut.com/api/1.0/pay <span class="se">\ </span>
-  -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span> <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer &lt;your access token&gt;"</span> <span class="se">\</span>
   --data @- <span class="sh">&lt;&lt; EOF
 </span></code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"request_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e0cbf84637264ee082a848b"</span><span class="p">,</span><span class="w">
@@ -1658,7 +2069,9 @@
 <p>This endpoint creates a new payment. If the payment is for another Revolut account, business or personal, the transaction may be processed synchronously.</p>
 
 <aside class="notice">To avoid duplicate payment submission because of an error in your code, <code>request_id</code> must be unique for each submitted payment. The <code>request_id</code> must be previously persisted on your side.</aside>
-<h3 id='request-8'>Request</h3>
+
+<aside class="notice">For security reasons, this endpoint is not available to apps created using the Developer Portal. You can use Payment Drafts instead.</aside>
+<h3 id='request-11'>Request</h3>
 <p><code>POST https://b2b.revolut.com/api/1.0/pay</code></p>
 <h4 id='request-fields-3'>Request fields</h4>
 <table><thead>
@@ -1685,7 +2098,7 @@
 </tr>
 <tr>
 <td>receiver.account_id</td>
-<td>an optional ID of the receiving counterparty&#39;s account, can be own account (only for internal counterparties)</td>
+<td>the ID of the receiving counterparty&#39;s account, provide only for payments to <code>business</code> counterparties, can be own account (only for internal counterparties)</td>
 <td>UUID</td>
 </tr>
 <tr>
@@ -1704,7 +2117,7 @@
 <td>Text</td>
 </tr>
 </tbody></table>
-<h3 id='response-9'>Response</h3>
+<h3 id='response-12'>Response</h3>
 <table><thead>
 <tr>
 <th>Field</th>
@@ -1739,10 +2152,10 @@
 </tr>
 </tbody></table>
 <h2 id='schedule-payment'>Schedule Payment</h2><pre class="highlight shell tab-shell--sandbox"><code>curl -X POST https://sandbox-b2b.revolut.com/api/1.0/pay <span class="se">\</span>
-  -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span> <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer &lt;your access token&gt;"</span> <span class="se">\</span>
   --data @- <span class="sh">&lt;&lt; EOF
 </span></code></pre><pre class="highlight shell tab-shell--production"><code>curl -X POST https://b2b.revolut.com/api/1.0/pay <span class="se">\</span>
-  -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span> <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer &lt;your access token&gt;"</span> <span class="se">\</span>
   --data @- <span class="sh">&lt;&lt; EOF
 </span></code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"request_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e0cbf84637264ee082a848b"</span><span class="p">,</span><span class="w">
@@ -1778,10 +2191,12 @@ To schedule a future payment, as opposed to immediate execution, just pass an ad
 </tbody></table>
 
 <aside class="notice">Payments scheduled for the same time are not guaranteed to be executed all at the same time. As scheduled processor runs every several hours, the payments will be processed in batches, and if you schedule too many payments it will require more time to process all of them.</aside>
-<h2 id='check-payment-status'>Check Payment Status</h2><pre class="highlight shell tab-shell--sandbox"><code>curl https://sandbox-b2b.revolut.com/api/1.0/transaction/e0cbf84637264ee082a848b?id_type<span class="o">=</span>request_id <span class="se">\</span>
-  -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span>
+
+<aside class="notice">For security reasons, this endpoint is not available to apps created using the Developer Portal. You can use Payment Drafts instead.</aside>
+<h2 id='get-transaction'>Get Transaction</h2><pre class="highlight shell tab-shell--sandbox"><code>curl https://sandbox-b2b.revolut.com/api/1.0/transaction/e0cbf84637264ee082a848b?id_type<span class="o">=</span>request_id <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer &lt;your access token&gt;"</span>
 </code></pre><pre class="highlight shell tab-shell--production"><code>curl https://b2b.revolut.com/api/1.0/transaction/e0cbf84637264ee082a848b?id_type<span class="o">=</span>request_id <span class="se">\</span>
-  -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span>
+  -H <span class="s2">"Authorization: Bearer &lt;your access token&gt;"</span>
 </code></pre>
 <blockquote>
 <p>Example response for internal transfer between your accounts:</p>
@@ -1966,7 +2381,7 @@ To schedule a future payment, as opposed to immediate execution, just pass an ad
 </span></code></pre>
 <p>This endpoint retrieves transaction details by transaction ID or by request ID.
 It also allows you to find out more about the transaction, such as cardholder details for card payments.</p>
-<h3 id='request-9'>Request</h3>
+<h3 id='request-12'>Request</h3>
 <p>To retrieve a transaction by ID:</p>
 
 <p><code>GET https://b2b.revolut.com/api/1.0/transaction/&lt;id&gt;</code></p>
@@ -1974,7 +2389,7 @@ It also allows you to find out more about the transaction, such as cardholder de
 <p>To retrieve a transaction by request ID:</p>
 
 <p><code>GET https://b2b.revolut.com/api/1.0/transaction/&lt;request_id&gt;?id_type=request_id</code></p>
-<h3 id='response-10'>Response</h3>
+<h3 id='response-13'>Response</h3>
 <table><thead>
 <tr>
 <th>Field</th>
@@ -2139,9 +2554,9 @@ It also allows you to find out more about the transaction, such as cardholder de
 </tr>
 </tbody></table>
 <h2 id='cancel-payment'>Cancel Payment</h2><pre class="highlight shell tab-shell--sandbox"><code>curl -X DELETE https://sandbox-b2b.revolut.com/api/1.0/transaction/62b61a4f-fb09-4e87-b0ab-b66c85f5485c <span class="se">\</span>
-  -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span>
+  -H <span class="s2">"Authorization: Bearer &lt;your access token&gt;"</span>
 </code></pre><pre class="highlight shell tab-shell--production"><code>curl -X DELETE https://b2b.revolut.com/api/1.0/transaction/62b61a4f-fb09-4e87-b0ab-b66c85f5485c <span class="se">\</span>
-  -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span>
+  -H <span class="s2">"Authorization: Bearer &lt;your access token&gt;&gt;"</span>
 </code></pre>
 <blockquote>
 <p>Response:
@@ -2151,7 +2566,7 @@ It also allows you to find out more about the transaction, such as cardholder de
 </blockquote>
 
 <p>This endpoint allows to cancel a scheduled transaction that was initiated by you, via API.</p>
-<h3 id='request-10'>Request</h3>
+<h3 id='request-13'>Request</h3>
 <p><code>DELETE https://b2b.revolut.com/api/1.0/transaction/&lt;id&gt;</code></p>
 <h4 id='url-parameters-4'>URL Parameters</h4>
 <table><thead>
@@ -2172,13 +2587,13 @@ It also allows you to find out more about the transaction, such as cardholder de
   &amp;from<span class="o">=</span>2017-06-01 <span class="se">\</span>
   &amp;to<span class="o">=</span>2017-06-10 <span class="se">\</span>
   &amp;count <span class="se">\</span>
-  -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span>
+  -H <span class="s2">"Authorization: Bearer &lt;your access token&gt;"</span>
 </code></pre><pre class="highlight shell tab-shell--production"><code>curl https://b2b.revolut.com/api/1.0/transactions? <span class="se">\</span>
   <span class="nv">counterparty</span><span class="o">=</span>5138z40d1-05bb-49c0-b130-75e8cf2f7693 <span class="se">\</span>
   &amp;from<span class="o">=</span>2017-06-01 <span class="se">\</span>
   &amp;to<span class="o">=</span>2017-06-10 <span class="se">\</span>
   &amp;count <span class="se">\</span>
-  -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span>
+  -H <span class="s2">"Authorization: Bearer &lt;your access token&gt;"</span>
 </code></pre>
 <blockquote>
 <p>Response:</p>
@@ -2259,7 +2674,11 @@ It also allows you to find out more about the transaction, such as cardholder de
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves historical transactions based on the provided query criteria.</p>
-<h3 id='request-11'>Request</h3>
+
+<aside class="notice">
+    The API will return a maximum of 1000 transactions per request.
+</aside>
+<h3 id='request-14'>Request</h3>
 <p><code>GET https://b2b.revolut.com/api/1.0/transactions</code></p>
 <h4 id='url-parameters-5'>URL Parameters</h4>
 <table><thead>
@@ -2297,7 +2716,7 @@ It also allows you to find out more about the transaction, such as cardholder de
 </tbody></table>
 
 <p>All filters are optional.</p>
-<h3 id='response-11'>Response</h3>
+<h3 id='response-14'>Response</h3>
 <table><thead>
 <tr>
 <th>Field</th>
@@ -2411,6 +2830,342 @@ It also allows you to find out more about the transaction, such as cardholder de
 <td>Text</td>
 </tr>
 </tbody></table>
+<h1 id='payment-drafts'>Payment Drafts</h1>
+<p>Payment drafts are payments that are not executed immediately, but need to be approved by a business owner/admin first.</p>
+
+<aside class="notice">
+    Apps built using the Developer Portal (OAuth) don't have access to the Payment API. Payment Drafts are a more secure way for third parties to create payments that will then be approved by an admin.
+</aside>
+
+<aside class="warning">
+    Once Payment drafts are created, they need to be manually approved by an admin. This feature is not yet available in the UI (coming very soon). We made the API available to you so that you can start building with it. Currently, drafted payments will remain in DRAFT state.
+</aside>
+<h2 id='create-payment-draft'>Create Payment Draft</h2><pre class="highlight shell tab-shell--sandbox"><code>curl -X POST https://sandbox-b2b.revolut.com/api/1.0/payment-drafts <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer &lt;your access token&gt;"</span> <span class="se">\</span>
+  --data @ <span class="sh">&lt;&lt; EOF
+</span></code></pre><pre class="highlight shell tab-shell--production"><code>curl -X POST https://b2b.revolut.com/api/1.0/payment-drafts <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer &lt;your access token&gt;"</span> <span class="se">\</span>
+  --data @ <span class="sh">&lt;&lt; EOF
+</span></code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"title"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Title of payment"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"schedule_for"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-10"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"payments"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EUR"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"db7c73d3-b0df-4e0e-8a9a-f42aa99f52ab"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiver"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> 
+            </span><span class="s2">"counterparty_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5138z40d1-05bb-49c0-b130-75e8cf2f7693"</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bdab1c20-8d8c-430d-b967-87ac01af060c"</span><span class="w">
+        </span><span class="p">},</span><span class="w">  
+        </span><span class="s2">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"External transfer"</span><span class="w">
+      </span><span class="p">},</span><span class="w"> 
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"321"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"db7c73d3-b0df-4e0e-8a9a-f42aa99f52ab"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiver"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> 
+            </span><span class="s2">"counterparty_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4e32d331-68aa-4e4b-a295-3e3d7625819b"</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aa70d9be-c851-44ac-abb8-f80ac06bbe37"</span><span class="w"> 
+        </span><span class="p">},</span><span class="w"> 
+        </span><span class="s2">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Internal business transfer"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GBP"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"111"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"db7c73d3-b0df-4e0e-8a9a-f42aa99f52ab"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiver"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> 
+            </span><span class="s2">"counterparty_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3342e60b-70c5-4170-b00f-73fee46c93c9"</span><span class="w"> 
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Internal user transfer"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><pre class="highlight shell tab-shell"><code>EOF
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> 
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d56dd396-523b-4613-8cc7-54974c17bcac"</span><span class="w"> 
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='request-15'>Request</h3>
+<p><code>POST https://b2b.revolut.com/api/1.0/payment-drafts</code></p>
+<h4 id='request-fields-4'>Request fields</h4>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>title</td>
+<td>an optional title of payment</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>schedule_for</td>
+<td>an optional future date/time</td>
+<td>ISO date/time</td>
+</tr>
+<tr>
+<td>payments</td>
+<td>a list of planned transactions</td>
+<td>array of json</td>
+</tr>
+<tr>
+<td>account_id</td>
+<td>the ID of the account to pay from (must be the same for all payments json)</td>
+<td>UUID</td>
+</tr>
+<tr>
+<td>receiver.counterparty_id</td>
+<td>the ID of the receiving counterparty</td>
+<td>UUID</td>
+</tr>
+<tr>
+<td>receiver.account_id</td>
+<td>an optional ID of the receiving counterparty&#39;s account, can be own account (only for internal counterparties)</td>
+<td>UUID</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>the transaction amount</td>
+<td>Decimalcurrency</td>
+</tr>
+<tr>
+<td>reference</td>
+<td>an optional textual reference shown on the transaction</td>
+<td>Text</td>
+</tr>
+</tbody></table>
+<h3 id='response-15'>Response</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>the ID of the created draft payment</td>
+<td>UUID</td>
+</tr>
+</tbody></table>
+<h2 id='get-payment-drafts'>Get Payment Drafts</h2><pre class="highlight shell tab-shell--sandbox"><code>curl https://sandbox-b2b.revolut.com/api/1.0/payment-drafts <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer &lt;your access token&gt;"</span>
+</code></pre><pre class="highlight shell tab-shell--production"><code>curl https://b2b.revolut.com/api/1.0/payment-drafts <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer &lt;your access token&gt;"</span>
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"payment_orders"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w"> 
+      </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"d56dd396-523b-4613-8cc7-54974c17bcac"</span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"scheduled_for"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-10"</span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"title"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Title of payment"</span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"payments_count"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w"> 
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint returns all created payment drafts, which were not processed.</p>
+<h3 id='request-16'>Request</h3>
+<p><code>GET https://b2b.revolut.com/api/1.0/payment-drafts</code></p>
+<h3 id='response-16'>Response</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>the ID of the draft payment</td>
+<td>UUID</td>
+</tr>
+<tr>
+<td>scheduled_for</td>
+<td>an optional future date/time</td>
+<td>ISO date/time</td>
+</tr>
+<tr>
+<td>title</td>
+<td>an optional title of payment</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>payments_count</td>
+<td>count of payments in current draft</td>
+<td>Integer</td>
+</tr>
+</tbody></table>
+<h2 id='get-payment-draft-by-id'>Get Payment Draft by ID</h2><pre class="highlight shell tab-shell--sandbox"><code>curl https://sandbox-b2b.revolut.com/api/1.0/payment-drafts/&lt;id&gt; <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer &lt;your access token&gt;"</span>
+</code></pre><pre class="highlight shell tab-shell--production"><code>curl -X GET https://b2b.revolut.com/api/1.0/payment-drafts/&lt;id&gt; <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer &lt;your access token&gt;"</span>
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"scheduled_for"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-10"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"title"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Title of payment"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"payments"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"62b61a4f-fb09-4e87-b0ab-b66c85f5485c"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> 
+          </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w"> 
+          </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GBP"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"account_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"db7c73d3-b0df-4e0e-8a9a-f42aa99f52ab"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"External transfer"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"receiver"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> 
+          </span><span class="s2">"counterparty_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5138z40d1-05bb-49c0-b130-75e8cf2f7693"</span><span class="p">,</span><span class="w"> 
+          </span><span class="s2">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bdab1c20-8d8c-430d-b967-87ac01af060c"</span><span class="w"> 
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CREATED"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"reason"</span><span class="p">:</span><span class="s2">"Suspicious activity"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"error_message"</span><span class="p">:</span><span class="s2">"Unable to create transaction"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"current_charge_options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"from"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> 
+              </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w"> 
+              </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GBP"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="s2">"to"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> 
+              </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w"> 
+              </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GBP"</span><span class="w"> 
+          </span><span class="p">},</span><span class="w">
+          </span><span class="s2">"rate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0000"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"fee"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> 
+              </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> 
+              </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GBP"</span><span class="w"> 
+          </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='request-17'>Request</h3>
+<p><code>GET https://b2b.revolut.com/api/1.0/payment-drafts/&lt;id&gt;</code></p>
+
+<p>URL Parameters</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>the ID of the payment draft to delete</td>
+<td>UUID</td>
+</tr>
+</tbody></table>
+<h3 id='response-17'>Response</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>scheduled_for</td>
+<td>an optional future date/time</td>
+<td>ISO date/time</td>
+</tr>
+<tr>
+<td>title</td>
+<td>an optional title of payment</td>
+<td>Textid</td>
+</tr>
+<tr>
+<td>amount.amount</td>
+<td>the transaction amount</td>
+<td>Decimal</td>
+</tr>
+<tr>
+<td>amount.currency</td>
+<td>the transaction currency</td>
+<td>3-letter ISO currency code</td>
+</tr>
+<tr>
+<td>account_id</td>
+<td>the ID of the account to pay from</td>
+<td>UUID</td>
+</tr>
+<tr>
+<td>reference</td>
+<td>an optional textual reference shown on the transaction</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>receiver.counterparty_id</td>
+<td>the ID of the receiving counterparty</td>
+<td>UUID</td>
+</tr>
+<tr>
+<td>receiver.account_id</td>
+<td>an optional ID of the receiving counterparty&#39;s account, can be own account (only for internal counterparties)</td>
+<td>UUID</td>
+</tr>
+<tr>
+<td>state</td>
+<td>the state of the transaction, one of <code>CREATED</code>, <code>PENDING</code>, <code>COMPLETED</code>, <code>REVERTED</code>, <code>DECLINED</code>, <code>CANCELLED</code>, <code>FAILED</code>, <code>DELETED</code></td>
+<td>Text</td>
+</tr>
+<tr>
+<td>reason</td>
+<td>an optional textual description of state reason</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>error_message</td>
+<td>an optional textual description of error</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>current_charge_options</td>
+<td>explanation of conversation process</td>
+<td>json</td>
+</tr>
+</tbody></table>
+<h2 id='delete-payment-draft'>Delete Payment Draft</h2><pre class="highlight shell tab-shell--sandbox"><code>curl -X DELETE https://sandbox-b2b.revolut.com/api/1.0/payment-drafts/&lt;id&gt; <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer &lt;your access token&gt;"</span>
+</code></pre><pre class="highlight shell tab-shell--production"><code>curl -X DELETE https://b2b.revolut.com/api/1.0/payment-drafts/&lt;id&gt; <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer &lt;your access token&gt;"</span>
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>204 No Content
+</code></pre>
+<p>This endpoint deletes a payment draft with the given ID. Payment draft may be deleted only if it was not processed.</p>
+<h3 id='request-18'>Request</h3>
+<p><code>DELETE https://b2b.revolut.com/api/1.0/payment-drafts/&lt;id&gt;</code></p>
+
+<p>URL Parameters</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>the ID of the payment draft to delete</td>
+<td>UUID</td>
+</tr>
+</tbody></table>
 <h1 id='web-hooks'>Web-hooks</h1>
 <p>Web-hook is a mechanism that allows you to receive updates about your account to an HTTPS endpoint provided by you. 
 When a supported event occurs, a notification will be posted, via HTTP POST method, to the specified endpoint. 
@@ -2423,16 +3178,18 @@ If the receiver returns an HTTP error response, there will be two more consequen
 <li>Transaction State Change (TransactionStateChanged)</li>
 </ul>
 <h2 id='setting-up-a-web-hook'>Setting up a web-hook</h2><pre class="highlight shell tab-shell--sandbox"><code>curl -X POST https://sandbox-b2b.revolut.com/api/1.0/webhook <span class="se">\ </span>
-  -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span> <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer &lt;your access token&gt;"</span> <span class="se">\</span>
   --data @- <span class="sh">&lt;&lt; EOF
 </span></code></pre><pre class="highlight shell tab-shell--production"><code>curl -X POST https://b2b.revolut.com/api/1.0/webhook <span class="se">\ </span>
-  -H <span class="s2">"Authorization: Bearer &lt;your api-key&gt;"</span> <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer &lt;your access token&gt;"</span> <span class="se">\</span>
   --data @- <span class="sh">&lt;&lt; EOF
 </span></code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.com/example/path"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><pre class="highlight shell tab-shell"><code>EOF
-</code></pre><h3 id='request-12'>Request</h3>
+</code></pre><h3 id='request-19'>Request</h3>
+<p>Use this API to create your web-hook endpoint. Only HTTPS web-hooks are supported.</p>
+
 <table><thead>
 <tr>
 <th>Field</th>
@@ -2446,8 +3203,12 @@ If the receiver returns an HTTP error response, there will be two more consequen
 <td>URL</td>
 </tr>
 </tbody></table>
-
-<p>Use this API to create your web-hook endpoint. Only HTTPS web-hooks are supported.</p>
+<h2 id='deleting-a-web-hook'>Deleting a web-hook</h2><pre class="highlight shell tab-shell--sandbox"><code>curl -X DELETE https://sandbox-b2b.revolut.com/api/1.0/webhook <span class="se">\ </span>
+  -H <span class="s2">"Authorization: Bearer &lt;your access token&gt;"</span>
+</code></pre><pre class="highlight shell tab-shell--production"><code>curl -X DELETE https://b2b.revolut.com/api/1.0/webhook <span class="se">\ </span>
+  -H <span class="s2">"Authorization: Bearer &lt;your access token&gt;"</span> 
+</code></pre>
+<p>Use this API request to delete a web-hook</p>
 <h2 id='transaction-created-event'>Transaction Created event</h2>
 <blockquote>
 <p>The example of payload</p>
@@ -2478,7 +3239,7 @@ If the receiver returns an HTTP error response, there will be two more consequen
     </span><span class="p">]</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='response-12'>Response</h3>
+</span></code></pre><h3 id='response-18'>Response</h3>
 <table><thead>
 <tr>
 <th>Field</th>
