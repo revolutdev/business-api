@@ -358,6 +358,17 @@
               </ul>
           </li>
           <li>
+            <a href="#exchanges" class="toc-h1 toc-link" data-title="Exchanges">Exchanges</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-exchange-rates" class="toc-h2 toc-link" data-title="Exchanges">Get exchange rates</a>
+                  </li>
+                  <li>
+                    <a href="#exchange-currency" class="toc-h2 toc-link" data-title="Exchanges">Exchange currency</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#web-hooks" class="toc-h1 toc-link" data-title="Web-hooks">Web-hooks</a>
               <ul class="toc-list-h2">
                   <li>
@@ -3186,6 +3197,259 @@ It also allows you to find out more about the transaction, such as cardholder de
 <td>UUID</td>
 </tr>
 </tbody></table>
+<h1 id='exchanges'>Exchanges</h1><h2 id='get-exchange-rates'>Get exchange rates</h2><pre class="highlight shell tab-shell--sandbox"><code>curl https://sandbox-b2b.revolut.com/api/1.0/rate?from<span class="o">=</span>USD&amp;to<span class="o">=</span>EUR&amp;amount<span class="o">=</span>100 <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer &lt;your access token&gt;"</span>
+</code></pre><pre class="highlight shell tab-shell--production"><code>curl https://b2b.revolut.com/api/1.0/rate?from<span class="o">=</span>USD&amp;to<span class="o">=</span>EUR&amp;amount<span class="o">=</span>100 <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer &lt;your access token&gt;"</span>
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"from"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"amount"</span><span class="p">:</span><span class="mi">100</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency"</span><span class="p">:</span><span class="s2">"USD"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"to"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"amount"</span><span class="p">:</span><span class="mf">78.9</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency"</span><span class="p">:</span><span class="s2">"EUR"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"rate"</span><span class="p">:</span><span class="mf">0.789</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"fee"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"amount"</span><span class="p">:</span><span class="mf">0.85</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency"</span><span class="p">:</span><span class="s2">"EUR"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"rate_date"</span><span class="p">:</span><span class="s2">"2019-01-16T13:01:47.229Z"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='request-19'>Request</h3>
+<p><code>GET https://b2b.revolut.com/api/1.0/rate?from=&lt;currency&gt;&amp;to=&lt;currency&gt;&amp;amount=&lt;amount&gt;</code></p>
+<h4 id='get-parameters-2'>GET parameters</h4>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>from</td>
+<td>the currency you would like to exchange from</td>
+<td>3-letter ISO currency code</td>
+</tr>
+<tr>
+<td>to</td>
+<td>the currency you would like to exchange to</td>
+<td>3-letter ISO currency code</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>exchange amount, default is 1.00</td>
+<td>Decimal</td>
+</tr>
+</tbody></table>
+<h3 id='response-18'>Response</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>from</td>
+<td>information about the currency to exchange from</td>
+<td>Object</td>
+</tr>
+<tr>
+<td>from.amount</td>
+<td>amount of &quot;sold &quot;currency</td>
+<td>Decimal</td>
+</tr>
+<tr>
+<td>from.currency</td>
+<td>the currency to exchange from</td>
+<td>3-letter ISO currency code</td>
+</tr>
+<tr>
+<td>to</td>
+<td>information about the currency to exchange to</td>
+<td>Object</td>
+</tr>
+<tr>
+<td>to.amount</td>
+<td>amount of &quot;bought&quot; currency</td>
+<td>Decimal</td>
+</tr>
+<tr>
+<td>to.currency</td>
+<td>the currency to exchange to</td>
+<td>3-letter ISO currency code</td>
+</tr>
+<tr>
+<td>rate</td>
+<td>exchange rate</td>
+<td>Decimal</td>
+</tr>
+<tr>
+<td>fee</td>
+<td>fee for the operation</td>
+<td>Object</td>
+</tr>
+<tr>
+<td>fee.amount</td>
+<td>amount of fee</td>
+<td>Decimal</td>
+</tr>
+<tr>
+<td>fee.currency</td>
+<td>fee currency</td>
+<td>3-letter ISO currency code</td>
+</tr>
+<tr>
+<td>rate_date</td>
+<td>date of proposed exchange rate</td>
+<td>ISO date/time</td>
+</tr>
+</tbody></table>
+<h2 id='exchange-currency'>Exchange currency</h2><pre class="highlight shell tab-shell--sandbox"><code>curl -X POST https://sandbox-b2b.revolut.com/api/1.0/exchange <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer &lt;your access token&gt;"</span> <span class="se">\</span>
+  --data @ <span class="sh">&lt;&lt; EOF
+</span></code></pre><pre class="highlight shell tab-shell--production"><code>curl -X POST https://b2b.revolut.com/api/1.0/exchange <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer &lt;your access token&gt;"</span> <span class="se">\</span>
+  --data @ <span class="sh">&lt;&lt; EOF
+</span></code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"from"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d56dd396-523b-4613-8cc7-54974c17bcac"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">135.5</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"to"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a44dd365-523b-4613-8457-54974c8cc7ac"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EUR"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"reference"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Time to sell"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"request_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e0cbf84637264ee082a848b"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><pre class="highlight shell tab-shell"><code>EOF
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d56d5596-523b-4613-2cc7-54974a37bcac"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"completed"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-01T10:10:10.0Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"completed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-01T10:10:10.0Z"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Limit of exchange operations - 14 per day.</p>
+
+<p>There are two ways of using this endpoint:</p>
+
+<p>If you know the amount of currency you want to sell (e.g: I want to exchange 135.5 USD to EUR), then you should specify the amount in the &quot;from&quot; object (see example on the right).</p>
+
+<p>If, on the other hand, you want to specify the amount of currency you want to buy (e.g: I want to exchange USD to receive 200 EUR), then you should specify the amount in the &quot;to&quot; object.</p>
+
+<aside class="warning">Please note that the "amount" field can be specified only once, either in the "from" object or in the "to" object.</aside>
+
+<p>To check the exchange rate and fees for the operation, please use the /rate endpoint.</p>
+<h3 id='request-20'>Request</h3>
+<p><code>POST https://b2b.revolut.com/api/1.0/exchange</code></p>
+<h4 id='request-fields-5'>Request fields</h4>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>from</td>
+<td>information about the account you want to exchange from</td>
+<td>Object</td>
+</tr>
+<tr>
+<td>from.account_id</td>
+<td>the account ID</td>
+<td>UUID</td>
+</tr>
+<tr>
+<td>from.currency</td>
+<td>currency to exchange from</td>
+<td>3-letter ISO currency code</td>
+</tr>
+<tr>
+<td>from.amount</td>
+<td>amount to sell (optional)</td>
+<td>Decimal</td>
+</tr>
+<tr>
+<td>to</td>
+<td>information about the account you want to exchange to</td>
+<td>Object</td>
+</tr>
+<tr>
+<td>to.account_id</td>
+<td>the account ID</td>
+<td>UUID</td>
+</tr>
+<tr>
+<td>to.currency</td>
+<td>currency to exchange to</td>
+<td>3-letter ISO currency code</td>
+</tr>
+<tr>
+<td>to.amount</td>
+<td>amount to buy (optional)</td>
+<td>Decimal</td>
+</tr>
+<tr>
+<td>reference</td>
+<td>a user-provided exchange reference</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>request_id</td>
+<td>a unique value used to handle duplicates submitted as a result of lost connection or another client error (40 characters max)</td>
+<td>Text</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">To avoid duplicate payment submission because of an error in your code, <code>request_id</code> must be unique for each submitted payment. The <code>request_id</code> must be previously persisted on your side.</aside>
+<h3 id='response-19'>Response</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>the ID of transaction</td>
+<td>UUID</td>
+</tr>
+<tr>
+<td>type</td>
+<td>is always <code>exchange</code></td>
+<td>Text</td>
+</tr>
+<tr>
+<td>reason_code</td>
+<td>reason code for <code>declined</code> or <code>failed</code> transaction state</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>the instant when the transaction was created</td>
+<td>ISO date/time</td>
+</tr>
+<tr>
+<td>completed_at</td>
+<td>the instant when the transaction was completed</td>
+<td>ISO date/time</td>
+</tr>
+</tbody></table>
 <h1 id='web-hooks'>Web-hooks</h1>
 <p>Web-hook is a mechanism that allows you to receive updates about your account to an HTTPS endpoint provided by you. 
 When a supported event occurs, a notification will be posted, via HTTP POST method, to the specified endpoint. 
@@ -3207,7 +3471,7 @@ If the receiver returns an HTTP error response, there will be two more consequen
   </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.com/example/path"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><pre class="highlight shell tab-shell"><code>EOF
-</code></pre><h3 id='request-19'>Request</h3>
+</code></pre><h3 id='request-21'>Request</h3>
 <p>Use this API to create your web-hook endpoint. Only HTTPS web-hooks are supported.</p>
 
 <table><thead>
@@ -3260,7 +3524,7 @@ If the receiver returns an HTTP error response, there will be two more consequen
     </span><span class="p">]</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='response-18'>Response</h3>
+</span></code></pre><h3 id='response-20'>Response</h3>
 <table><thead>
 <tr>
 <th>Field</th>
