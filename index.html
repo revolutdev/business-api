@@ -615,7 +615,7 @@ https://business.revolut.com/app-confirm?client_id<span class="o">=</span>rmPBoI
     </span><span class="s2">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"oa_sand_rPo9OmbMAuguhQffR6RLR4nvmzpx4NJtpdyvGKkrS3U"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"token_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bearer"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"expires_in"</span><span class="p">:</span><span class="w"> </span><span class="mi">604800</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"refresh_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"oa_prod_hQacSGnwx-luIfj3dlVByrytVV9rWAnyHkpJTwG_Tr8"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"refresh_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"oa_prod_hQacSGnwx-luIfj3dlVByrytVV9rWAnyHkpJTwG_Tr8"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint is used to exchange an authorisation code with an access token.</p>
@@ -2397,6 +2397,27 @@ To schedule a future payment, as opposed to immediate execution, just pass an ad
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
+<blockquote>
+<p>Example response for refund</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6402a0db-1a7a-4523-9625-eb5f7a6cb96f"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"refund"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"completed"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-06-06T11:43:45.040769Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-06-06T11:43:45.040769Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"completed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-06-06T11:43:45.048483Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"related_transaction_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2b9062e2-7209-468a-b93d-f2a3a2965309"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"legs"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+    </span><span class="s2">"leg_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a9e28a1a-216d-43d3-a7e5-b136ee89d28a"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fb661529-44eb-4da5-8ebf-bdad9e1f2fc0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">-15</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GBP"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Refund for Fee"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"balance"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+  </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 <p>This endpoint retrieves transaction details by transaction ID or by request ID.
 It also allows you to find out more about the transaction, such as cardholder details for card payments.</p>
 <h3 id='request-12'>Request</h3>
@@ -2459,6 +2480,11 @@ It also allows you to find out more about the transaction, such as cardholder de
 <td>scheduled_for</td>
 <td>an optional date when the transaction was scheduled for</td>
 <td>ISO date</td>
+</tr>
+<tr>
+<td>related_transaction_id</td>
+<td>the ID of the original transaction which has been refunded (only for refunds)</td>
+<td>UUID</td>
 </tr>
 <tr>
 <td>merchant</td>
@@ -2668,7 +2694,7 @@ It also allows you to find out more about the transaction, such as cardholder de
         </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">-500.00</span><span class="p">,</span><span class="w">
         </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EUR"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"To Blows &amp; Wistles Co."</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"balance"</span><span class="p">:</span><span class="w"> </span><span class="mf">50.5</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"balance"</span><span class="p">:</span><span class="w"> </span><span class="mf">50.5</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
   </span><span class="p">},</span><span class="w">
@@ -2794,6 +2820,11 @@ It also allows you to find out more about the transaction, such as cardholder de
 <td>scheduled_for</td>
 <td>an optional date when the transaction was scheduled for</td>
 <td>ISO date</td>
+</tr>
+<tr>
+<td>related_transaction_id</td>
+<td>the ID of the original transaction which has been refunded (only for refunds)</td>
+<td>UUID</td>
 </tr>
 <tr>
 <td>reference</td>
