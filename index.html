@@ -2368,10 +2368,10 @@ https://business.revolut.com/app-confirm?client_id<span class="o">=</span>rmPBoI
 <blockquote>
 <p>Pay a counterparty</p>
 </blockquote>
-<pre class="highlight shell tab-shell--sandbox"><code>curl -X POST https://sandbox-b2b.revolut.com/api/1.0/pay <span class="se">\ </span>
+<pre class="highlight shell tab-shell--sandbox"><code>curl -X POST https://sandbox-b2b.revolut.com/api/1.0/pay <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer &lt;your access token&gt;"</span> <span class="se">\</span>
   --data @- <span class="sh">&lt;&lt; EOF
-</span></code></pre><pre class="highlight shell tab-shell--production"><code>curl -X POST https://b2b.revolut.com/api/1.0/pay <span class="se">\ </span>
+</span></code></pre><pre class="highlight shell tab-shell--production"><code>curl -X POST https://b2b.revolut.com/api/1.0/pay <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer &lt;your access token&gt;"</span> <span class="se">\</span>
   --data @- <span class="sh">&lt;&lt; EOF
 </span></code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -3676,10 +3676,10 @@ It also allows you to find out more about the transaction, such as cardholder de
 </tbody></table>
 <h2 id='exchange-currency'>Exchange currency</h2><pre class="highlight shell tab-shell--sandbox"><code>curl -X POST https://sandbox-b2b.revolut.com/api/1.0/exchange <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer &lt;your access token&gt;"</span> <span class="se">\</span>
-  --data @ <span class="sh">&lt;&lt; EOF
+  --data @- <span class="sh">&lt;&lt; EOF
 </span></code></pre><pre class="highlight shell tab-shell--production"><code>curl -X POST https://b2b.revolut.com/api/1.0/exchange <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer &lt;your access token&gt;"</span> <span class="se">\</span>
-  --data @ <span class="sh">&lt;&lt; EOF
+  --data @- <span class="sh">&lt;&lt; EOF
 </span></code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"from"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d56dd396-523b-4613-8cc7-54974c17bcac"</span><span class="p">,</span><span class="w">
@@ -3824,10 +3824,10 @@ If the receiver returns an HTTP error response, there will be two more consequen
 <li>Transaction Creation (TransactionCreated)</li>
 <li>Transaction State Change (TransactionStateChanged)</li>
 </ul>
-<h2 id='setting-up-a-web-hook'>Setting up a web-hook</h2><pre class="highlight shell tab-shell--sandbox"><code>curl -X POST https://sandbox-b2b.revolut.com/api/1.0/webhook <span class="se">\ </span>
+<h2 id='setting-up-a-web-hook'>Setting up a web-hook</h2><pre class="highlight shell tab-shell--sandbox"><code>curl -X POST https://sandbox-b2b.revolut.com/api/1.0/webhook <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer &lt;your access token&gt;"</span> <span class="se">\</span>
   --data @- <span class="sh">&lt;&lt; EOF
-</span></code></pre><pre class="highlight shell tab-shell--production"><code>curl -X POST https://b2b.revolut.com/api/1.0/webhook <span class="se">\ </span>
+</span></code></pre><pre class="highlight shell tab-shell--production"><code>curl -X POST https://b2b.revolut.com/api/1.0/webhook <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer &lt;your access token&gt;"</span> <span class="se">\</span>
   --data @- <span class="sh">&lt;&lt; EOF
 </span></code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -3850,9 +3850,9 @@ If the receiver returns an HTTP error response, there will be two more consequen
 <td>URL</td>
 </tr>
 </tbody></table>
-<h2 id='deleting-a-web-hook'>Deleting a web-hook</h2><pre class="highlight shell tab-shell--sandbox"><code>curl -X DELETE https://sandbox-b2b.revolut.com/api/1.0/webhook <span class="se">\ </span>
+<h2 id='deleting-a-web-hook'>Deleting a web-hook</h2><pre class="highlight shell tab-shell--sandbox"><code>curl -X DELETE https://sandbox-b2b.revolut.com/api/1.0/webhook <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer &lt;your access token&gt;"</span>
-</code></pre><pre class="highlight shell tab-shell--production"><code>curl -X DELETE https://b2b.revolut.com/api/1.0/webhook <span class="se">\ </span>
+</code></pre><pre class="highlight shell tab-shell--production"><code>curl -X DELETE https://b2b.revolut.com/api/1.0/webhook <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer &lt;your access token&gt;"</span> 
 </code></pre>
 <p>Use this API request to delete a web-hook</p>
