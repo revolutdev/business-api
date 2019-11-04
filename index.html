@@ -318,6 +318,23 @@
               </ul>
           </li>
           <li>
+            <a href="#payment-drafts" class="toc-h1 toc-link" data-title="Payment Drafts">Payment Drafts</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#create-a-payment-draft" class="toc-h2 toc-link" data-title="Payment Drafts">Create a Payment Draft</a>
+                  </li>
+                  <li>
+                    <a href="#get-payment-drafts" class="toc-h2 toc-link" data-title="Payment Drafts">Get Payment Drafts</a>
+                  </li>
+                  <li>
+                    <a href="#get-payment-draft-by-id" class="toc-h2 toc-link" data-title="Payment Drafts">Get Payment Draft by ID</a>
+                  </li>
+                  <li>
+                    <a href="#delete-payment-draft" class="toc-h2 toc-link" data-title="Payment Drafts">Delete Payment Draft</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#exchanges" class="toc-h1 toc-link" data-title="Exchanges">Exchanges</a>
               <ul class="toc-list-h2">
                   <li>
@@ -2923,6 +2940,338 @@ It also allows you to find out more about the transaction, such as cardholder de
 <td>Decimal</td>
 </tr>
 </tbody></table>
+<h1 id='payment-drafts'>Payment Drafts</h1>
+<p>Payment drafts are payments that are not executed immediately, but need to be approved by a business owner/admin first.</p>
+
+<aside class="warning">
+    Once Payment drafts are created, they need to be manually approved by an admin through our web interface.
+</aside>
+<h2 id='create-a-payment-draft'>Create a Payment Draft</h2><pre class="highlight shell tab-shell--sandbox"><code>curl -X POST https://sandbox-b2b.revolut.com/api/1.0/payment-drafts <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer &lt;your access token&gt;"</span> <span class="se">\</span>
+  --data @ <span class="sh">&lt;&lt; EOF
+</span></code></pre><pre class="highlight shell tab-shell--production"><code>curl -X POST https://b2b.revolut.com/api/1.0/payment-drafts <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer &lt;your access token&gt;"</span> <span class="se">\</span>
+  --data @ <span class="sh">&lt;&lt; EOF
+</span></code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"title"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Title of payment"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"schedule_for"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-10"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"payments"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EUR"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"db7c73d3-b0df-4e0e-8a9a-f42aa99f52ab"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiver"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> 
+            </span><span class="s2">"counterparty_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5138z40d1-05bb-49c0-b130-75e8cf2f7693"</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bdab1c20-8d8c-430d-b967-87ac01af060c"</span><span class="w">
+        </span><span class="p">},</span><span class="w">  
+        </span><span class="s2">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"External transfer"</span><span class="w">
+      </span><span class="p">},</span><span class="w"> 
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">321</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"db7c73d3-b0df-4e0e-8a9a-f42aa99f52ab"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiver"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> 
+            </span><span class="s2">"counterparty_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4e32d331-68aa-4e4b-a295-3e3d7625819b"</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aa70d9be-c851-44ac-abb8-f80ac06bbe37"</span><span class="w"> 
+        </span><span class="p">},</span><span class="w"> 
+        </span><span class="s2">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Internal business transfer"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GBP"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">111</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"db7c73d3-b0df-4e0e-8a9a-f42aa99f52ab"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiver"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> 
+            </span><span class="s2">"counterparty_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3342e60b-70c5-4170-b00f-73fee46c93c9"</span><span class="w"> 
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Internal user transfer"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><pre class="highlight shell tab-shell"><code>EOF
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> 
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d56dd396-523b-4613-8cc7-54974c17bcac"</span><span class="w"> 
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='request-15'>Request</h3>
+<p><code>POST https://b2b.revolut.com/api/1.0/payment-drafts</code></p>
+<h4 id='request-fields-4'>Request fields</h4>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>title</td>
+<td>an optional title of payment</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>schedule_for</td>
+<td>an optional future date/time</td>
+<td>ISO date/time</td>
+</tr>
+<tr>
+<td>payments</td>
+<td>a list of planned transactions</td>
+<td>array of json</td>
+</tr>
+<tr>
+<td>account_id</td>
+<td>the ID of the account to pay from (must be the same for all payments json)</td>
+<td>UUID</td>
+</tr>
+<tr>
+<td>receiver.counterparty_id</td>
+<td>the ID of the receiving counterparty</td>
+<td>UUID</td>
+</tr>
+<tr>
+<td>receiver.account_id</td>
+<td>an optional ID of the receiving counterparty&#39;s account, can be own account (only for internal counterparties)</td>
+<td>UUID</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>the transaction amount</td>
+<td>Decimalcurrency</td>
+</tr>
+<tr>
+<td>reference</td>
+<td>a mandatory textual reference shown on the transaction</td>
+<td>Text</td>
+</tr>
+</tbody></table>
+<h3 id='response-15'>Response</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>the ID of the created draft payment</td>
+<td>UUID</td>
+</tr>
+</tbody></table>
+<h2 id='get-payment-drafts'>Get Payment Drafts</h2><pre class="highlight shell tab-shell--sandbox"><code>curl https://sandbox-b2b.revolut.com/api/1.0/payment-drafts <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer &lt;your access token&gt;"</span>
+</code></pre><pre class="highlight shell tab-shell--production"><code>curl https://b2b.revolut.com/api/1.0/payment-drafts <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer &lt;your access token&gt;"</span>
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"payment_orders"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w"> 
+      </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"d56dd396-523b-4613-8cc7-54974c17bcac"</span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"scheduled_for"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-10"</span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"title"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Title of payment"</span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"payments_count"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w"> 
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint returns all created payment drafts, which were not processed.</p>
+<h3 id='request-16'>Request</h3>
+<p><code>GET https://b2b.revolut.com/api/1.0/payment-drafts</code></p>
+<h3 id='response-16'>Response</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>the ID of the draft payment</td>
+<td>UUID</td>
+</tr>
+<tr>
+<td>scheduled_for</td>
+<td>an optional future date/time</td>
+<td>ISO date/time</td>
+</tr>
+<tr>
+<td>title</td>
+<td>an optional title of payment</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>payments_count</td>
+<td>count of payments in current draft</td>
+<td>Integer</td>
+</tr>
+</tbody></table>
+<h2 id='get-payment-draft-by-id'>Get Payment Draft by ID</h2><pre class="highlight shell tab-shell--sandbox"><code>curl https://sandbox-b2b.revolut.com/api/1.0/payment-drafts/&lt;id&gt; <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer &lt;your access token&gt;"</span>
+</code></pre><pre class="highlight shell tab-shell--production"><code>curl -X GET https://b2b.revolut.com/api/1.0/payment-drafts/&lt;id&gt; <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer &lt;your access token&gt;"</span>
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"scheduled_for"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-10"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"title"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Title of payment"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"payments"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"62b61a4f-fb09-4e87-b0ab-b66c85f5485c"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> 
+          </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w"> 
+          </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GBP"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"account_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"db7c73d3-b0df-4e0e-8a9a-f42aa99f52ab"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"External transfer"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"receiver"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> 
+          </span><span class="s2">"counterparty_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5138z40d1-05bb-49c0-b130-75e8cf2f7693"</span><span class="p">,</span><span class="w"> 
+          </span><span class="s2">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bdab1c20-8d8c-430d-b967-87ac01af060c"</span><span class="w"> 
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CREATED"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"reason"</span><span class="p">:</span><span class="s2">"Suspicious activity"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"error_message"</span><span class="p">:</span><span class="s2">"Unable to create transaction"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"current_charge_options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"from"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> 
+              </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w"> 
+              </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GBP"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="s2">"to"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> 
+              </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w"> 
+              </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GBP"</span><span class="w"> 
+          </span><span class="p">},</span><span class="w">
+          </span><span class="s2">"rate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0000"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"fee"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> 
+              </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> 
+              </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GBP"</span><span class="w"> 
+          </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='request-17'>Request</h3>
+<p><code>GET https://b2b.revolut.com/api/1.0/payment-drafts/&lt;id&gt;</code></p>
+
+<p>URL Parameters</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>the ID of the payment draft to delete</td>
+<td>UUID</td>
+</tr>
+</tbody></table>
+<h3 id='response-17'>Response</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>scheduled_for</td>
+<td>an optional future date/time</td>
+<td>ISO date/time</td>
+</tr>
+<tr>
+<td>title</td>
+<td>an optional title of payment</td>
+<td>Textid</td>
+</tr>
+<tr>
+<td>amount.amount</td>
+<td>the transaction amount</td>
+<td>Decimal</td>
+</tr>
+<tr>
+<td>amount.currency</td>
+<td>the transaction currency</td>
+<td>3-letter ISO currency code</td>
+</tr>
+<tr>
+<td>account_id</td>
+<td>the ID of the account to pay from</td>
+<td>UUID</td>
+</tr>
+<tr>
+<td>reference</td>
+<td>an optional textual reference shown on the transaction</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>receiver.counterparty_id</td>
+<td>the ID of the receiving counterparty</td>
+<td>UUID</td>
+</tr>
+<tr>
+<td>receiver.account_id</td>
+<td>an optional ID of the receiving counterparty&#39;s account, can be own account (only for internal counterparties)</td>
+<td>UUID</td>
+</tr>
+<tr>
+<td>state</td>
+<td>the state of the transaction, one of <code>CREATED</code>, <code>PENDING</code>, <code>COMPLETED</code>, <code>REVERTED</code>, <code>DECLINED</code>, <code>CANCELLED</code>, <code>FAILED</code>, <code>DELETED</code></td>
+<td>Text</td>
+</tr>
+<tr>
+<td>reason</td>
+<td>an optional textual description of state reason</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>error_message</td>
+<td>an optional textual description of error</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>current_charge_options</td>
+<td>explanation of conversation process</td>
+<td>json</td>
+</tr>
+</tbody></table>
+<h2 id='delete-payment-draft'>Delete Payment Draft</h2><pre class="highlight shell tab-shell--sandbox"><code>curl -X DELETE https://sandbox-b2b.revolut.com/api/1.0/payment-drafts/&lt;id&gt; <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer &lt;your access token&gt;"</span>
+</code></pre><pre class="highlight shell tab-shell--production"><code>curl -X DELETE https://b2b.revolut.com/api/1.0/payment-drafts/&lt;id&gt; <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer &lt;your access token&gt;"</span>
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>204 No Content
+</code></pre>
+<p>This endpoint deletes a payment draft with the given ID. Payment draft may be deleted only if it was not processed.</p>
+<h3 id='request-18'>Request</h3>
+<p><code>DELETE https://b2b.revolut.com/api/1.0/payment-drafts/&lt;id&gt;</code></p>
+
+<p>URL Parameters</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>the ID of the payment draft to delete</td>
+<td>UUID</td>
+</tr>
+</tbody></table>
 <h1 id='exchanges'>Exchanges</h1><h2 id='get-exchange-rates'>Get exchange rates</h2><pre class="highlight shell tab-shell--sandbox"><code>curl https://sandbox-b2b.revolut.com/api/1.0/rate?from<span class="o">=</span>USD&amp;to<span class="o">=</span>EUR&amp;amount<span class="o">=</span>100 <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer &lt;your access token&gt;"</span>
 </code></pre><pre class="highlight shell tab-shell--production"><code>curl https://b2b.revolut.com/api/1.0/rate?from<span class="o">=</span>USD&amp;to<span class="o">=</span>EUR&amp;amount<span class="o">=</span>100 <span class="se">\</span>
@@ -2947,7 +3296,7 @@ It also allows you to find out more about the transaction, such as cardholder de
     </span><span class="p">},</span><span class="w">
     </span><span class="s2">"rate_date"</span><span class="p">:</span><span class="s2">"2019-01-16T13:01:47.229Z"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='request-15'>Request</h3>
+</span></code></pre><h3 id='request-19'>Request</h3>
 <p><code>GET https://b2b.revolut.com/api/1.0/rate?from=&lt;currency&gt;&amp;to=&lt;currency&gt;&amp;amount=&lt;amount&gt;</code></p>
 <h4 id='get-parameters-2'>GET parameters</h4>
 <table><thead>
@@ -2973,7 +3322,7 @@ It also allows you to find out more about the transaction, such as cardholder de
 <td>Decimal</td>
 </tr>
 </tbody></table>
-<h3 id='response-15'>Response</h3>
+<h3 id='response-18'>Response</h3>
 <table><thead>
 <tr>
 <th>Field</th>
@@ -3077,9 +3426,9 @@ It also allows you to find out more about the transaction, such as cardholder de
 <aside class="warning">Please note that the "amount" field can be specified only once, either in the "from" object or in the "to" object.</aside>
 
 <p>To check the exchange rate and fees for the operation, please use the /rate endpoint.</p>
-<h3 id='request-16'>Request</h3>
+<h3 id='request-20'>Request</h3>
 <p><code>POST https://b2b.revolut.com/api/1.0/exchange</code></p>
-<h4 id='request-fields-4'>Request fields</h4>
+<h4 id='request-fields-5'>Request fields</h4>
 <table><thead>
 <tr>
 <th>Field</th>
@@ -3140,7 +3489,7 @@ It also allows you to find out more about the transaction, such as cardholder de
 </tbody></table>
 
 <aside class="notice">To avoid duplicate payment submission because of an error in your code, <code>request_id</code> must be unique for each submitted payment. The <code>request_id</code> must be previously persisted on your side.</aside>
-<h3 id='response-16'>Response</h3>
+<h3 id='response-19'>Response</h3>
 <table><thead>
 <tr>
 <th>Field</th>
@@ -3195,7 +3544,7 @@ If the receiver returns an HTTP error response, there will be two more consequen
   </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.com/example/path"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><pre class="highlight shell tab-shell"><code>EOF
-</code></pre><h3 id='request-17'>Request</h3>
+</code></pre><h3 id='request-21'>Request</h3>
 <p>Use this API to create your web-hook endpoint. Only HTTPS web-hooks are supported.</p>
 
 <table><thead>
@@ -3248,7 +3597,7 @@ If the receiver returns an HTTP error response, there will be two more consequen
     </span><span class="p">]</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='response-17'>Response</h3>
+</span></code></pre><h3 id='response-20'>Response</h3>
 <table><thead>
 <tr>
 <th>Field</th>
