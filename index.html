@@ -2939,6 +2939,31 @@ It also allows you to find out more about the transaction, such as cardholder de
 <td>a total balance of the account the transaction is associated with (optional)</td>
 <td>Decimal</td>
 </tr>
+<tr>
+<td>card</td>
+<td>the card information (only for card payments)</td>
+<td>Object</td>
+</tr>
+<tr>
+<td>card.card_number</td>
+<td>the masked card number</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>card.first_name</td>
+<td>the cardholder&#39;s first name</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>card.last_name</td>
+<td>the cardholder&#39;s last name</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>card.phone</td>
+<td>the cardholder&#39;s phone number</td>
+<td>Text</td>
+</tr>
 </tbody></table>
 <h1 id='payment-drafts'>Payment Drafts</h1>
 <p>Payment drafts are payments that are not executed immediately, but need to be approved by a business owner/admin first.</p>
