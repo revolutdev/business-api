@@ -2795,7 +2795,7 @@ It also allows you to find out more about the transaction, such as cardholder de
 </tr>
 <tr>
 <td>to</td>
-<td>an optional timestamp to query to, , filtering on the created_at field. Default is now</td>
+<td>an optional timestamp to query to, filtering on the created_at field. Default is now</td>
 <td>ISO date/time</td>
 </tr>
 <tr>
@@ -2965,6 +2965,8 @@ It also allows you to find out more about the transaction, such as cardholder de
 <td>Text</td>
 </tr>
 </tbody></table>
+<h3 id='pagination'>Pagination</h3>
+<p>The endpoint supports time-based pagination. It returns transactions in reverse chronological order (<code>from</code> &lt;= <code>created_at</code> &lt; <code>to</code>) limited to most recent <code>count</code> entities. Thus, to get the next page of results, you should set parameter <code>to</code> with the value of <code>created_at</code> last item of the previous page.</p>
 <h1 id='payment-drafts'>Payment Drafts</h1>
 <p>Payment drafts are payments that are not executed immediately, but need to be approved by a business owner/admin first.</p>
 
