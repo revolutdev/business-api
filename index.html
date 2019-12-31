@@ -789,7 +789,9 @@ https://business.revolut.com/app-confirm?client_id<span class="o">=</span>rmPBoI
 <td>Integer</td>
 </tr>
 </tbody></table>
-<h1 id='accounts'>Accounts</h1><h2 id='get-accounts'>Get Accounts</h2><pre class="highlight shell tab-shell--sandbox"><code>curl https://sandbox-b2b.revolut.com/api/1.0/accounts <span class="se">\</span>
+<h1 id='accounts'>Accounts</h1>
+<p><a href="https://raw.githubusercontent.com/revolutdev/business-api-spec/master/accounts.yaml">OpenAPI Specification</a></p>
+<h2 id='get-accounts'>Get Accounts</h2><pre class="highlight shell tab-shell--sandbox"><code>curl https://sandbox-b2b.revolut.com/api/1.0/accounts <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer &lt;your access token&gt;"</span>
 </code></pre><pre class="highlight shell tab-shell--production"><code>curl https://b2b.revolut.com/api/1.0/accounts <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer &lt;your access token&gt;"</span>
@@ -1124,6 +1126,8 @@ https://business.revolut.com/app-confirm?client_id<span class="o">=</span>rmPBoI
 </tr>
 </tbody></table>
 <h1 id='counterparties'>Counterparties</h1>
+<p><a href="https://raw.githubusercontent.com/revolutdev/business-api-spec/master/counterparties.yaml">OpenAPI Specification</a></p>
+
 <p>Before a transfer or payment can be made, you need to add the counterparties with which you intend to transact with.</p>
 
 <aside class="notice">
@@ -1969,7 +1973,9 @@ https://business.revolut.com/app-confirm?client_id<span class="o">=</span>rmPBoI
 <td>Text</td>
 </tr>
 </tbody></table>
-<h1 id='transfers'>Transfers</h1><h2 id='create-transfer'>Create transfer</h2><pre class="highlight shell tab-shell--sandbox"><code>curl -X POST https://sandbox-b2b.revolut.com/api/1.0/transfer <span class="se">\</span>
+<h1 id='transfers'>Transfers</h1>
+<p><a href="https://raw.githubusercontent.com/revolutdev/business-api-spec/master/transactions.yaml">OpenAPI Specification</a></p>
+<h2 id='create-transfer'>Create transfer</h2><pre class="highlight shell tab-shell--sandbox"><code>curl -X POST https://sandbox-b2b.revolut.com/api/1.0/transfer <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer &lt;your access token&gt;"</span> <span class="se">\</span>
   --data @- <span class="sh">&lt;&lt; EOF
 </span></code></pre><pre class="highlight shell tab-shell--production"><code>curl -X POST https://b2b.revolut.com/api/1.0/transfer <span class="se">\</span>
@@ -2069,6 +2075,8 @@ https://business.revolut.com/app-confirm?client_id<span class="o">=</span>rmPBoI
 </tr>
 </tbody></table>
 <h1 id='payments'>Payments</h1>
+<p><a href="https://raw.githubusercontent.com/revolutdev/business-api-spec/master/transactions.yaml">OpenAPI Specification</a></p>
+
 <p>All incoming and outgoing payments are represented as transactions and are processed in two stages from the user&#39;s perspective: </p>
 
 <ol>
@@ -2968,6 +2976,8 @@ It also allows you to find out more about the transaction, such as cardholder de
 <h3 id='pagination'>Pagination</h3>
 <p>The endpoint supports time-based pagination. It returns transactions in reverse chronological order (<code>from</code> &lt;= <code>created_at</code> &lt; <code>to</code>) limited to most recent <code>count</code> entities. Thus, to get the next page of results, you should set parameter <code>to</code> with the value of <code>created_at</code> last item of the previous page.</p>
 <h1 id='payment-drafts'>Payment Drafts</h1>
+<p><a href="https://raw.githubusercontent.com/revolutdev/business-api-spec/master/drafts.yaml">OpenAPI Specification</a></p>
+
 <p>Payment drafts are payments that are not executed immediately, but need to be approved by a business owner/admin first.</p>
 
 <aside class="warning">
@@ -3197,7 +3207,7 @@ It also allows you to find out more about the transaction, such as cardholder de
 </thead><tbody>
 <tr>
 <td>id</td>
-<td>the ID of the payment draft to delete</td>
+<td>the ID of the payment draft</td>
 <td>UUID</td>
 </tr>
 </tbody></table>
@@ -3299,7 +3309,9 @@ It also allows you to find out more about the transaction, such as cardholder de
 <td>UUID</td>
 </tr>
 </tbody></table>
-<h1 id='exchanges'>Exchanges</h1><h2 id='get-exchange-rates'>Get exchange rates</h2><pre class="highlight shell tab-shell--sandbox"><code>curl https://sandbox-b2b.revolut.com/api/1.0/rate?from<span class="o">=</span>USD&amp;to<span class="o">=</span>EUR&amp;amount<span class="o">=</span>100 <span class="se">\</span>
+<h1 id='exchanges'>Exchanges</h1>
+<p><a href="https://raw.githubusercontent.com/revolutdev/business-api-spec/master/exchanges.yaml">OpenAPI Specification</a></p>
+<h2 id='get-exchange-rates'>Get exchange rates</h2><pre class="highlight shell tab-shell--sandbox"><code>curl https://sandbox-b2b.revolut.com/api/1.0/rate?from<span class="o">=</span>USD&amp;to<span class="o">=</span>EUR&amp;amount<span class="o">=</span>100 <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer &lt;your access token&gt;"</span>
 </code></pre><pre class="highlight shell tab-shell--production"><code>curl https://b2b.revolut.com/api/1.0/rate?from<span class="o">=</span>USD&amp;to<span class="o">=</span>EUR&amp;amount<span class="o">=</span>100 <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer &lt;your access token&gt;"</span>
@@ -3551,6 +3563,8 @@ It also allows you to find out more about the transaction, such as cardholder de
 </tr>
 </tbody></table>
 <h1 id='web-hooks'>Web-hooks</h1>
+<p><a href="https://raw.githubusercontent.com/revolutdev/business-api-spec/master/webhooks.yaml">OpenAPI Specification</a></p>
+
 <p>Web-hook is a mechanism that allows you to receive updates about your account to an HTTPS endpoint provided by you. 
 When a supported event occurs, a notification will be posted, via HTTP POST method, to the specified endpoint. 
 If the receiver returns an HTTP error response, there will be two more consequent attempts for delivery.</p>
