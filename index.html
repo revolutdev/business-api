@@ -3058,27 +3058,32 @@ It also allows you to find out more about the transaction, such as cardholder de
 <td>array of json</td>
 </tr>
 <tr>
-<td>account_id</td>
+<td>payments[n].account_id</td>
 <td>the ID of the account to pay from (must be the same for all payments json)</td>
 <td>UUID</td>
 </tr>
 <tr>
-<td>receiver.counterparty_id</td>
+<td>payments[n].receiver.counterparty_id</td>
 <td>the ID of the receiving counterparty</td>
 <td>UUID</td>
 </tr>
 <tr>
-<td>receiver.account_id</td>
+<td>payments[n].receiver.account_id</td>
 <td>an optional ID of the receiving counterparty&#39;s account, can be own account (only for internal counterparties)</td>
 <td>UUID</td>
 </tr>
 <tr>
-<td>amount</td>
+<td>payments[n].amount</td>
 <td>the transaction amount</td>
-<td>Decimalcurrency</td>
+<td>Decimal</td>
 </tr>
 <tr>
-<td>reference</td>
+<td>payments[n].currency</td>
+<td>the transaction currency</td>
+<td>3-letter ISO currency code</td>
+</tr>
+<tr>
+<td>payments[n].reference</td>
 <td>a mandatory textual reference shown on the transaction</td>
 <td>Text</td>
 </tr>
@@ -3128,22 +3133,27 @@ It also allows you to find out more about the transaction, such as cardholder de
 </tr>
 </thead><tbody>
 <tr>
-<td>id</td>
+<td>payment_orders</td>
+<td>a list of payments</td>
+<td>array of json</td>
+</tr>
+<tr>
+<td>payment_orders[n].id</td>
 <td>the ID of the draft payment</td>
 <td>UUID</td>
 </tr>
 <tr>
-<td>scheduled_for</td>
+<td>payment_orders[n].scheduled_for</td>
 <td>an optional future date/time</td>
 <td>ISO date/time</td>
 </tr>
 <tr>
-<td>title</td>
+<td>payment_orders[n].title</td>
 <td>an optional title of payment</td>
 <td>Text</td>
 </tr>
 <tr>
-<td>payments_count</td>
+<td>payment_orders[n].payments_count</td>
 <td>count of payments in current draft</td>
 <td>Integer</td>
 </tr>
@@ -3230,52 +3240,57 @@ It also allows you to find out more about the transaction, such as cardholder de
 <td>Textid</td>
 </tr>
 <tr>
-<td>amount.amount</td>
+<td>payments</td>
+<td>a list of payments</td>
+<td>array of json</td>
+</tr>
+<tr>
+<td>payments[n].amount.amount</td>
 <td>the transaction amount</td>
 <td>Decimal</td>
 </tr>
 <tr>
-<td>amount.currency</td>
+<td>payments[n].amount.currency</td>
 <td>the transaction currency</td>
 <td>3-letter ISO currency code</td>
 </tr>
 <tr>
-<td>account_id</td>
+<td>payments[n].account_id</td>
 <td>the ID of the account to pay from</td>
 <td>UUID</td>
 </tr>
 <tr>
-<td>reference</td>
+<td>payments[n].reference</td>
 <td>an optional textual reference shown on the transaction</td>
 <td>Text</td>
 </tr>
 <tr>
-<td>receiver.counterparty_id</td>
+<td>payments[n].receiver.counterparty_id</td>
 <td>the ID of the receiving counterparty</td>
 <td>UUID</td>
 </tr>
 <tr>
-<td>receiver.account_id</td>
+<td>payments[n].receiver.account_id</td>
 <td>an optional ID of the receiving counterparty&#39;s account, can be own account (only for internal counterparties)</td>
 <td>UUID</td>
 </tr>
 <tr>
-<td>state</td>
+<td>payments[n].state</td>
 <td>the state of the transaction, one of <code>CREATED</code>, <code>PENDING</code>, <code>COMPLETED</code>, <code>REVERTED</code>, <code>DECLINED</code>, <code>CANCELLED</code>, <code>FAILED</code>, <code>DELETED</code></td>
 <td>Text</td>
 </tr>
 <tr>
-<td>reason</td>
+<td>payments[n].reason</td>
 <td>an optional textual description of state reason</td>
 <td>Text</td>
 </tr>
 <tr>
-<td>error_message</td>
+<td>payments[n].error_message</td>
 <td>an optional textual description of error</td>
 <td>Text</td>
 </tr>
 <tr>
-<td>current_charge_options</td>
+<td>payments[n].current_charge_options</td>
 <td>explanation of conversation process</td>
 <td>json</td>
 </tr>
@@ -3829,7 +3844,7 @@ If the receiver returns an HTTP error response, there will be two more consequen
 </tr>
 <tr>
 <td>401</td>
-<td>Unauthorized -- Your API key is wrong.</td>
+<td>Unauthorized -- Your access token is wrong.</td>
 </tr>
 <tr>
 <td>403</td>
